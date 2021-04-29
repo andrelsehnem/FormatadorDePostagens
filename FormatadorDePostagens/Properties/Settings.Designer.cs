@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FormatadorDeVersoes.Properties {
+namespace FormatadorDePostagens.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
