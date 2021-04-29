@@ -1,7 +1,7 @@
 ﻿
 namespace FormatadorDePostagens
 {
-    partial class Form1
+    partial class frm_menu
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,10 +29,16 @@ namespace FormatadorDePostagens
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_menu));
+            this.SuspendLayout();
+            // 
+            // frm_menu
+            // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "frm_menu";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
