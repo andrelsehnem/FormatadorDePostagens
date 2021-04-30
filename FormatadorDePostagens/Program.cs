@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace FormatadorDePostagens
 {
+
     static class Program
     {
         /// <summary>

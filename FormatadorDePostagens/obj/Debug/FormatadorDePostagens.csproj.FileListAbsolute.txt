@@ -34,3 +34,4 @@ D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\bin\Debug\System.Memory.
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\bin\Debug\System.Numerics.Vectors.xml
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.csproj.CopyComplete
+D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.frm_menu2.resources

@@ -16,6 +16,7 @@ namespace FormatadorDePostagens
     public partial class frm_menu : Form
     {
         public MySqlConnection cnn = new MySqlConnection();
+        public String usuario = "";
 
         public frm_menu()
         {
@@ -25,6 +26,7 @@ namespace FormatadorDePostagens
             conectaBd();        
             String comandoLogin = "insert into log_login (pc,appLanguage) VALUES('" + nomeDoComputador + "', 'C#')";
             //comandoSql(comandoLogin);
+            
         }
 
         
@@ -42,6 +44,28 @@ namespace FormatadorDePostagens
             }
         }
 
+        private void bt_sair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         
+
+        private void formClosing_main(object sender, FormClosingEventArgs e)
+        {
+            //Criar um MessageBox com os botões Sim e Não e deixar o botão 2(Não) selecionado por padrão
+            if (DialogResult.Yes != MessageBox.Show("Tem certeza que deseja fechar a janela?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                //Cancelar o evento
+                e.Cancel = true;
+            }
+        }
+
+        private void bt_conectar_Click(object sender, EventArgs e)
+        {
+            frm_menu2 frmmenu2 = new frm_menu2();
+            frmmenu2.Show();
+            
+        }
     }
 }

@@ -62,6 +62,7 @@ namespace FormatadorDePostagens
             resources.ApplyResources(this.bt_conectar, "bt_conectar");
             this.bt_conectar.Name = "bt_conectar";
             this.bt_conectar.UseVisualStyleBackColor = true;
+            this.bt_conectar.Click += new System.EventHandler(this.bt_conectar_Click);
             // 
             // bt_criarBD
             // 
@@ -124,6 +125,7 @@ namespace FormatadorDePostagens
             resources.ApplyResources(this.bt_sair, "bt_sair");
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.UseVisualStyleBackColor = true;
+            this.bt_sair.Click += new System.EventHandler(this.bt_sair_Click);
             // 
             // frm_menu
             // 
@@ -147,6 +149,8 @@ namespace FormatadorDePostagens
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "frm_menu";
+            this.Tag = "frmMenuLogin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formClosing_main);
             this.ResumeLayout(false);
             this.PerformLayout();
 

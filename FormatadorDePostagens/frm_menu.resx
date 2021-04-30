@@ -171,7 +171,7 @@
     <value>13</value>
   </data>
   <data name="bt_conectar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 97</value>
+    <value>248, 41</value>
   </data>
   <data name="bt_conectar.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 50</value>
@@ -199,7 +199,7 @@
     <value>NoControl</value>
   </data>
   <data name="bt_criarBD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 168</value>
+    <value>248, 106</value>
   </data>
   <data name="bt_criarBD.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 50</value>
@@ -226,7 +226,7 @@
     <value>True</value>
   </data>
   <data name="lbl_servidor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 240</value>
+    <value>12, 89</value>
   </data>
   <data name="lbl_servidor.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 13</value>
@@ -256,7 +256,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_banco.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 336</value>
+    <value>97, 185</value>
   </data>
   <data name="lbl_banco.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -283,7 +283,7 @@
     <value>True</value>
   </data>
   <data name="lbl_porta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 240</value>
+    <value>190, 89</value>
   </data>
   <data name="lbl_porta.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -310,7 +310,7 @@
     <value>True</value>
   </data>
   <data name="lbl_user.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 288</value>
+    <value>12, 137</value>
   </data>
   <data name="lbl_user.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 13</value>
@@ -337,7 +337,7 @@
     <value>True</value>
   </data>
   <data name="lbl_pass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 288</value>
+    <value>184, 137</value>
   </data>
   <data name="lbl_pass.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 13</value>
@@ -361,7 +361,7 @@
     <value>6</value>
   </data>
   <data name="txt_servidor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 257</value>
+    <value>12, 106</value>
   </data>
   <data name="txt_servidor.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -385,7 +385,7 @@
     <value>5</value>
   </data>
   <data name="txt_porta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 257</value>
+    <value>122, 106</value>
   </data>
   <data name="txt_porta.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -412,7 +412,7 @@
     <value>4</value>
   </data>
   <data name="text_user.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 304</value>
+    <value>12, 153</value>
   </data>
   <data name="text_user.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -436,7 +436,7 @@
     <value>3</value>
   </data>
   <data name="txt_senha.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 304</value>
+    <value>122, 153</value>
   </data>
   <data name="txt_senha.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>*</value>
@@ -466,7 +466,7 @@
     <value>2</value>
   </data>
   <data name="txt_banco.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 352</value>
+    <value>67, 201</value>
   </data>
   <data name="txt_banco.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
@@ -476,6 +476,9 @@
   </data>
   <data name="txt_banco.Text" xml:space="preserve">
     <value>formatador</value>
+  </data>
+  <data name="txt_banco.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txt_banco.Name" xml:space="preserve">
     <value>txt_banco</value>
@@ -490,10 +493,10 @@
     <value>1</value>
   </data>
   <data name="bt_sair.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 347</value>
+    <value>248, 171</value>
   </data>
   <data name="bt_sair.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>130, 50</value>
   </data>
   <data name="bt_sair.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -520,7 +523,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>235, 411</value>
+    <value>392, 242</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -597,6 +600,9 @@
         AC/kAAAv5AAAL+QAAE/kFABP/6IAT+gCAJ/0tACf//UBX//yAr//5AJ//+QC///EAv//yAL//8gC///Q
         BP//0AT//8gE///UBf//0ZX//+Rl///9C/8=
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Formatador de Postagens</value>

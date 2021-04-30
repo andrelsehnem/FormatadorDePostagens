@@ -104,6 +104,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_menu2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_menu2.Designer.cs">
+      <DependentUpon>frm_menu2.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm_menu2.resx">
+      <DependentUpon>frm_menu2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_menu.pt-BR.resx">
       <DependentUpon>frm_menu.cs</DependentUpon>
     </EmbeddedResource>
