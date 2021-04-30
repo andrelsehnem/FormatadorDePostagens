@@ -118,25 +118,493 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="txt_nomeUsuario.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 57</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+  <data name="txt_nomeUsuario.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 20</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txt_nomeUsuario.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frm_menu</value>
+  <data name="&gt;&gt;txt_nomeUsuario.Name" xml:space="preserve">
+    <value>txt_nomeUsuario</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Formatador de Postagens</value>
+  <data name="&gt;&gt;txt_nomeUsuario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_nomeUsuario.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txt_nomeUsuario.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 29</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 16</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Nome do Usuário</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="bt_conectar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 97</value>
+  </data>
+  <data name="bt_conectar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 50</value>
+  </data>
+  <data name="bt_conectar.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="bt_conectar.Text" xml:space="preserve">
+    <value>Conectar ao banco</value>
+  </data>
+  <data name="&gt;&gt;bt_conectar.Name" xml:space="preserve">
+    <value>bt_conectar</value>
+  </data>
+  <data name="&gt;&gt;bt_conectar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bt_conectar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bt_conectar.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="bt_criarBD.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="bt_criarBD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 168</value>
+  </data>
+  <data name="bt_criarBD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 50</value>
+  </data>
+  <data name="bt_criarBD.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="bt_criarBD.Text" xml:space="preserve">
+    <value>Criar banco de dados</value>
+  </data>
+  <data name="&gt;&gt;bt_criarBD.Name" xml:space="preserve">
+    <value>bt_criarBD</value>
+  </data>
+  <data name="&gt;&gt;bt_criarBD.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bt_criarBD.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bt_criarBD.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="lbl_servidor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_servidor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 240</value>
+  </data>
+  <data name="lbl_servidor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="lbl_servidor.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lbl_servidor.Text" xml:space="preserve">
+    <value>Servidor</value>
+  </data>
+  <data name="&gt;&gt;lbl_servidor.Name" xml:space="preserve">
+    <value>lbl_servidor</value>
+  </data>
+  <data name="&gt;&gt;lbl_servidor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_servidor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_servidor.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lbl_banco.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_banco.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_banco.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 336</value>
+  </data>
+  <data name="lbl_banco.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lbl_banco.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lbl_banco.Text" xml:space="preserve">
+    <value>Banco</value>
+  </data>
+  <data name="&gt;&gt;lbl_banco.Name" xml:space="preserve">
+    <value>lbl_banco</value>
+  </data>
+  <data name="&gt;&gt;lbl_banco.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_banco.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_banco.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="lbl_porta.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_porta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 240</value>
+  </data>
+  <data name="lbl_porta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="lbl_porta.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lbl_porta.Text" xml:space="preserve">
+    <value>Porta</value>
+  </data>
+  <data name="&gt;&gt;lbl_porta.Name" xml:space="preserve">
+    <value>lbl_porta</value>
+  </data>
+  <data name="&gt;&gt;lbl_porta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_porta.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_porta.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lbl_user.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_user.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 288</value>
+  </data>
+  <data name="lbl_user.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="lbl_user.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lbl_user.Text" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="&gt;&gt;lbl_user.Name" xml:space="preserve">
+    <value>lbl_user</value>
+  </data>
+  <data name="&gt;&gt;lbl_user.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_user.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_user.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lbl_pass.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_pass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 288</value>
+  </data>
+  <data name="lbl_pass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="lbl_pass.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lbl_pass.Text" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="&gt;&gt;lbl_pass.Name" xml:space="preserve">
+    <value>lbl_pass</value>
+  </data>
+  <data name="&gt;&gt;lbl_pass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_pass.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_pass.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txt_servidor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 257</value>
+  </data>
+  <data name="txt_servidor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txt_servidor.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="txt_servidor.Text" xml:space="preserve">
+    <value>localhost</value>
+  </data>
+  <data name="&gt;&gt;txt_servidor.Name" xml:space="preserve">
+    <value>txt_servidor</value>
+  </data>
+  <data name="&gt;&gt;txt_servidor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_servidor.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txt_servidor.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txt_porta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 257</value>
+  </data>
+  <data name="txt_porta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txt_porta.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="txt_porta.Text" xml:space="preserve">
+    <value>3306</value>
+  </data>
+  <data name="txt_porta.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;txt_porta.Name" xml:space="preserve">
+    <value>txt_porta</value>
+  </data>
+  <data name="&gt;&gt;txt_porta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_porta.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txt_porta.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="text_user.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 304</value>
+  </data>
+  <data name="text_user.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="text_user.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="text_user.Text" xml:space="preserve">
+    <value>root</value>
+  </data>
+  <data name="&gt;&gt;text_user.Name" xml:space="preserve">
+    <value>text_user</value>
+  </data>
+  <data name="&gt;&gt;text_user.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;text_user.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;text_user.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txt_senha.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 304</value>
+  </data>
+  <data name="txt_senha.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="txt_senha.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txt_senha.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="txt_senha.Text" xml:space="preserve">
+    <value>vssql</value>
+  </data>
+  <data name="txt_senha.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;txt_senha.Name" xml:space="preserve">
+    <value>txt_senha</value>
+  </data>
+  <data name="&gt;&gt;txt_senha.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_senha.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txt_senha.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txt_banco.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 352</value>
+  </data>
+  <data name="txt_banco.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="txt_banco.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="txt_banco.Text" xml:space="preserve">
+    <value>formatador</value>
+  </data>
+  <data name="&gt;&gt;txt_banco.Name" xml:space="preserve">
+    <value>txt_banco</value>
+  </data>
+  <data name="&gt;&gt;txt_banco.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_banco.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txt_banco.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="bt_sair.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 347</value>
+  </data>
+  <data name="bt_sair.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 28</value>
+  </data>
+  <data name="bt_sair.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="bt_sair.Text" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="&gt;&gt;bt_sair.Name" xml:space="preserve">
+    <value>bt_sair</value>
+  </data>
+  <data name="&gt;&gt;bt_sair.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bt_sair.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bt_sair.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pt-BR</value>
-  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>235, 411</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAACMuAAAjLgAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmZmYAZmZmAGZmZgBmZmYAZmZmAWZm
+        ZgJmZmYEb3BwA3VHLQFyTDgEckw3BHJMNwVyTDcEckw3A3JMNwFyTDcAckw3AHJMNwAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGZmZgBmZmYAZmZmAGZmZgBmZmYCZmZmBGZm
+        ZgNmZmYAY21yAHY9HQBxSTMAcUo0AHFKNABySjUAAAAAAHJMNwByTDcAckw3AXJMNwJyTDcAckw3AHJM
+        NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZmZmAGZmZgBmZmYBZmZmAmZm
+        ZgBmZmYAZmZmAGZmZgNmZmYgZmZmYG5vcEB4QiQSckw4WXJMN3lyTDd9ckw3Z3JMNzpyTDcHckw3AHJM
+        NwByTDcAckw3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGZmZgBmZmYAZmZmAGZm
+        ZgBmZmYFZmZmMWZmZmhmZmaiZmZm12ZmZvllZ2j/c2tn63NLNetyTDf/ckw3/nJMN/9yTDf+ckw3/3JM
+        N+ByTDc/ckw3AHJMNwJyTDcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACZzP8AkbzmAGRi
+        YACGpscAV0g5AGZmZrBmZmb/ZmZm/WZmZv9mZmb/ZWVk/2hrbfx3Y1n9ckky/3JNOPxyTDf7ckw3+3JM
+        N/tyTDf6ckw3/3JMN6ByTDcAckw3BHJMNwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJnM
+        /wCZzP8Acn6LBFlLPgBoams8Zmdn/2ZmZv1mZmb7ZmZm+2ZmZv1kZGT+bm5v/3ZXR/5xSTP+ck04/3JM
+        N/9yTDf/cUs2/3JMN/tzTTj/cUs2qHROOAB0TjgDZkEuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AACZzP8Amcz/AK72/wBtc3oFYl9bAGJdWYVlZGP/ZmZn+2ZmZv9mZmb/ZmZm/2VmZ/9zbWr/dE45/3JL
+        Nv9yTDf/ckw3/3FLNv91Tzr/dE45+3BKNf90Tjmqckw3AHFLNgNvSTYAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAJnM/wCZzP8Bms3/AJC65Aqb0P+giq7S8mpucv9lZGP+ZmZn/2ZmZv9mZWX/Z2pr/3Zm
+        Xf9ySTP/ck04/3JMN/9yTDf/dlA6/2A7KP9CHhD8OhYJ/0MfEb47FwkAOxYIAT4aDQAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAmMv+AJnM/wSZzP8Amcz/Y5jK/P+f2P/7fpeq/2JeW/9naGj/ZmZm/2Vk
+        ZP9sbm//d1tL/3FJM/9yTjr/ck46/3ZRPP9SLh7/MAwB/zENAf4yDgL/NBAF/UomGilIJBgARSEVAgAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACZzP8Amcv+BJjL/gCYy/6gmc3+/5zS//pzgI7/ZGFf/2dn
+        aP9mZmb/ZWZm/3Fta/90Tzv/cks2/3FGLv9zRiz/TSMR/ygAAP81EQb/NREF/zIOAvw9GQ3/WTUpSlk1
+        KQBSLiIDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJnM/wCbzv4DndL/AJrM/quazv//fJKo/GNh
+        Xv9mZ2f/ZmZm/2VlZf9pbG3+ZFdS/mpDLv9zTDX/dXBz/3h3fv96j6z/X2Fw/zAJAP81EQX/MQ0B/Ewo
+        HP9dOS1KXjouAFYyJgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfbPiAIW55wSJxPgAh8L2mnOE
+        lP9iXVj7Z2do/2ZmZv5mZmb8Y2Nj+25wcP1NNS7+Yzwo/3VMNf+Iqsz/mtf//57U+v+i3f//YmZ4/ysC
+        AP9EIRb/WDQo/1QwJDJWMiYAVjImAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACD0/IAbH2MBGx9
+        jABwi6CCZWdo/2VlZfdkZWX9ZWVl/2ZmZv5paWn/dHNz7DcWDPBdNyT/dlA7/5O42v+d1///l8n6/6Hd
+        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
+        BP//0AT//8gE///UBf//0ZX//+Rl///9C/8=
+</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Formatador de Postagens</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frm_menu</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
