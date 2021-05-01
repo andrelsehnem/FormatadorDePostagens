@@ -16,8 +16,7 @@ namespace FormatadorDePostagens.Forms
         public frm_adicionaTexto(Versoes versoesObj)
         {
             InitializeComponent();
-            lbl_liberacao.Text = "Liberação da versão " + versoesObj.versao + " do " + versoesObj.sistema + ", compatível com o " + versoesObj.sistemaCompatibilidade
-                + " (" + versoesObj.versaoCompatibilidade + ")";
+            lbl_liberacao.Text = "Liberação da versão " + versoesObj.versao + " do " + versoesObj.sistema + ", compatível com o " + versoesObj.sistemaCompatibilidade + " (" + versoesObj.versaoCompatibilidade + ")";
         }
 
         private void frm_adicionaTexto_Load(object sender, EventArgs e)

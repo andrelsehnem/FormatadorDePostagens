@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FormatadorDePostagens
 {
-    class Versoes
+    internal class Versoes
     {
         public String versao = "";
         public String versaoCompatibilidade = "";

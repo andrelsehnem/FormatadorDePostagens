@@ -35,6 +35,7 @@ namespace FormatadorDePostagens.Forms
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.bt_adicionar = new System.Windows.Forms.Button();
             this.bt_cancelar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_liberacao
@@ -43,9 +44,9 @@ namespace FormatadorDePostagens.Forms
             this.lbl_liberacao.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_liberacao.Location = new System.Drawing.Point(12, 9);
             this.lbl_liberacao.Name = "lbl_liberacao";
-            this.lbl_liberacao.Size = new System.Drawing.Size(109, 29);
+            this.lbl_liberacao.Size = new System.Drawing.Size(111, 29);
             this.lbl_liberacao.TabIndex = 0;
-            this.lbl_liberacao.Text = "Liberação do: ";
+            this.lbl_liberacao.Text = "Liberação do...";
             // 
             // label1
             // 
@@ -66,7 +67,7 @@ namespace FormatadorDePostagens.Forms
             // 
             // bt_adicionar
             // 
-            this.bt_adicionar.Location = new System.Drawing.Point(671, 357);
+            this.bt_adicionar.Location = new System.Drawing.Point(671, 364);
             this.bt_adicionar.Name = "bt_adicionar";
             this.bt_adicionar.Size = new System.Drawing.Size(108, 42);
             this.bt_adicionar.TabIndex = 3;
@@ -75,7 +76,7 @@ namespace FormatadorDePostagens.Forms
             // 
             // bt_cancelar
             // 
-            this.bt_cancelar.Location = new System.Drawing.Point(538, 357);
+            this.bt_cancelar.Location = new System.Drawing.Point(547, 364);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(108, 42);
             this.bt_cancelar.TabIndex = 4;
@@ -83,11 +84,23 @@ namespace FormatadorDePostagens.Forms
             this.bt_cancelar.UseVisualStyleBackColor = true;
             this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(710, 409);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 7);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Por André Luis Sehnem";
+            // 
             // frm_adicionaTexto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 418);
+            this.ClientSize = new System.Drawing.Size(792, 418);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.bt_adicionar);
             this.Controls.Add(this.richTextBox1);
@@ -111,5 +124,6 @@ namespace FormatadorDePostagens.Forms
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button bt_adicionar;
         private System.Windows.Forms.Button bt_cancelar;
+        private System.Windows.Forms.Label label2;
     }
 }
