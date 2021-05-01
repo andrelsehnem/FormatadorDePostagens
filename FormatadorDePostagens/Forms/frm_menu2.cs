@@ -17,7 +17,9 @@ namespace FormatadorDePostagens
         public Boolean versaoFinal = false;
         public String sistema = "";
         public String sistemaCompatibilidade = "";
+
         public Boolean validado = false;
+        private Versoes versaoObj = new Versoes();
 
         public frm_menu2()
         {
@@ -34,7 +36,7 @@ namespace FormatadorDePostagens
             validado = false;
         }
 
-        private void validaSistemas()
+        private void validaVersoes()
         {
             validado = false;
             if (msk_versao.Text == " .  .  .")
@@ -64,10 +66,51 @@ namespace FormatadorDePostagens
 
         private void bt_adicionar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Validação " + validado);
-            validaSistemas();
-            MessageBox.Show("Validação " + validado);
+            validaVersoes();
+            if (validado)
+            {
+                getVers();
+                //aqui coloca pra ir pro form de adicionar os textos passando o objeto de versoes
+                
+                
+            }
+           
 
+        }
+
+        private String validaSistema()
+        {
+            String sistema = "";
+
+            if (rbt_mycommerce.Checked) sistema = rbt_mycommerce.Text;
+            else if (rbt_mymilk.Checked) sistema = rbt_mymilk.Text;
+            else if (rbt_pdv.Checked) sistema = rbt_pdv.Text;
+
+            return sistema;
+        }
+
+        private String validaCompativel()
+        {
+            String sistema = "";
+
+            if (rbt_compat_myc.Checked) sistema = rbt_compat_myc.Text;
+            else if (rbt_compat_pdv.Checked) sistema = rbt_compat_pdv.Text;
+
+            return sistema;
+        }
+
+        private void getVers()
+        {
+            versaoObj.sistema = validaSistema();
+            versaoObj.sistemaCompatibilidade = validaCompativel();
+            versaoObj.versao = versao;
+            versaoObj.versaoCompatibilidade = versaoCompatibilidade;
+            versaoObj.versaoFinal = versaoFinal;
+        }
+
+        private void bt_visualizar_Click(object sender, EventArgs e)
+        {
+            getVers();
         }
     }
 }

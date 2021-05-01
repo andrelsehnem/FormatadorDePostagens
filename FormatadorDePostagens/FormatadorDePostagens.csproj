@@ -104,27 +104,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frm_menu2.cs">
+    <Compile Include="Classes\Versoes.cs" />
+    <Compile Include="Forms\frm_adicionaTexto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_menu2.Designer.cs">
+    <Compile Include="Forms\frm_adicionaTexto.Designer.cs">
+      <DependentUpon>frm_adicionaTexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_menu2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_menu2.Designer.cs">
       <DependentUpon>frm_menu2.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_menu.cs">
+    <Compile Include="Forms\frm_menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_menu.Designer.cs">
+    <Compile Include="Forms\frm_menu.Designer.cs">
       <DependentUpon>frm_menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frm_menu2.resx">
+    <EmbeddedResource Include="Forms\frm_adicionaTexto.resx">
+      <DependentUpon>frm_adicionaTexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_menu2.resx">
       <DependentUpon>frm_menu2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_menu.pt-BR.resx">
+    <EmbeddedResource Include="Forms\frm_menu.pt-BR.resx">
       <DependentUpon>frm_menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_menu.resx">
+    <EmbeddedResource Include="Forms\frm_menu.resx">
       <DependentUpon>frm_menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

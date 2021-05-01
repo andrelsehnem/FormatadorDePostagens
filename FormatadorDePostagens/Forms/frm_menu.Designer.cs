@@ -45,6 +45,7 @@ namespace FormatadorDePostagens
             this.txt_senha = new System.Windows.Forms.TextBox();
             this.txt_banco = new System.Windows.Forms.TextBox();
             this.bt_sair = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txt_nomeUsuario
@@ -127,10 +128,16 @@ namespace FormatadorDePostagens
             this.bt_sair.UseVisualStyleBackColor = true;
             this.bt_sair.Click += new System.EventHandler(this.bt_sair_Click);
             // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
             // frm_menu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.bt_sair);
             this.Controls.Add(this.txt_banco);
             this.Controls.Add(this.txt_senha);
@@ -151,6 +158,7 @@ namespace FormatadorDePostagens
             this.Name = "frm_menu";
             this.Tag = "frmMenuLogin";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formClosing_main);
+            this.Load += new System.EventHandler(this.frm_menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,6 +181,7 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.TextBox txt_senha;
         private System.Windows.Forms.TextBox txt_banco;
         private System.Windows.Forms.Button bt_sair;
+        private System.Windows.Forms.Label label2;
     }
 }
 

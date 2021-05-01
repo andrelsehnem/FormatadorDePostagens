@@ -67,5 +67,10 @@ namespace FormatadorDePostagens
             frmmenu2.Show();
             
         }
+
+        private void frm_menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
