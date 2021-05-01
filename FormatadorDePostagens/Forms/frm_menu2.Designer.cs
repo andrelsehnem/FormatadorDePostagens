@@ -232,6 +232,7 @@ namespace FormatadorDePostagens
             this.Controls.Add(this.label1);
             this.Controls.Add(this.msk_versao);
             this.Controls.Add(this.group_Sistema);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frm_menu2";

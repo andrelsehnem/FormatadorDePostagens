@@ -69,13 +69,11 @@ namespace FormatadorDePostagens
             validaVersoes();
             if (validado)
             {
-                getVers();
-                //aqui coloca pra ir pro form de adicionar os textos passando o objeto de versoes
-                
-                
+                setVers();
+                Forms.frm_adicionaTexto frmadd = new Forms.frm_adicionaTexto(versaoObj);
+                frmadd.Show();
             }
            
-
         }
 
         private String validaSistema()
@@ -99,7 +97,7 @@ namespace FormatadorDePostagens
             return sistema;
         }
 
-        private void getVers()
+        private void setVers()
         {
             versaoObj.sistema = validaSistema();
             versaoObj.sistemaCompatibilidade = validaCompativel();
@@ -110,7 +108,7 @@ namespace FormatadorDePostagens
 
         private void bt_visualizar_Click(object sender, EventArgs e)
         {
-            getVers();
+            setVers();
         }
     }
 }
