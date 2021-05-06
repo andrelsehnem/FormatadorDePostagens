@@ -108,12 +108,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Versoes.cs" />
-    <Compile Include="Forms\frm_versaoRelease.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\frm_versaoRelease.Designer.cs">
-      <DependentUpon>frm_versaoRelease.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frm_versaoFinal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,9 +134,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\frm_versaoRelease.resx">
-      <DependentUpon>frm_versaoRelease.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_adicionaTexto.resx">
       <DependentUpon>frm_adicionaTexto.cs</DependentUpon>
     </EmbeddedResource>

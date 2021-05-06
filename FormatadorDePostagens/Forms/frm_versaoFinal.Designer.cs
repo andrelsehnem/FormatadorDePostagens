@@ -33,6 +33,8 @@ namespace FormatadorDePostagens.Forms
             this.lbl_liberacao = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rch_hitoricoFinal = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bt_cancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_liberacao
@@ -63,11 +65,34 @@ namespace FormatadorDePostagens.Forms
             this.rch_hitoricoFinal.TabIndex = 3;
             this.rch_hitoricoFinal.Text = "";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(708, 411);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 7);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Por André Luis Sehnem";
+            // 
+            // bt_cancelar
+            // 
+            this.bt_cancelar.Location = new System.Drawing.Point(670, 363);
+            this.bt_cancelar.Name = "bt_cancelar";
+            this.bt_cancelar.Size = new System.Drawing.Size(108, 42);
+            this.bt_cancelar.TabIndex = 18;
+            this.bt_cancelar.Text = "Fechar";
+            this.bt_cancelar.UseVisualStyleBackColor = true;
+            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
+            // 
             // frm_versaoFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 418);
+            this.Controls.Add(this.bt_cancelar);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.rch_hitoricoFinal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_liberacao);
@@ -89,5 +114,7 @@ namespace FormatadorDePostagens.Forms
         private System.Windows.Forms.Label lbl_liberacao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox rch_hitoricoFinal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button bt_cancelar;
     }
 }

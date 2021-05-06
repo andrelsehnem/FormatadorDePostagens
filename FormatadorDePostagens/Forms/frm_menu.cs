@@ -34,8 +34,8 @@ namespace FormatadorDePostagens
         {
             try
             {
-                cnn.ConnectionString = "server=localhost;database=lojinha;uid=root;pwd=admin;SslMode=none";
-                cnn.Open();
+                //cnn.ConnectionString = "server=localhost;database=lojinha;uid=root;pwd=admin;SslMode=none";
+                //cnn.Open();
                 //lbl_statusMenu.Text = "Conectado em " + cnn.Database;
             }
             catch (Exception ex)

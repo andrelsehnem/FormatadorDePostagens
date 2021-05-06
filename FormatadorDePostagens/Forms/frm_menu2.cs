@@ -41,36 +41,30 @@ namespace FormatadorDePostagens
         private void validaVersoes()
         {
             validado = false;
-            if (msk_versao.Text == " .  .  .")
-            {
+            if (msk_versao.Text == " .  .  ."){
                 MessageBox.Show("Informe o número da versão que vai ser liberada");
                 return;
             }
-            else
-            {
+            else{
                 versao = msk_versao.Text;
                 //pegar o radio button
             }
-            if (msk_compVersao.Text == " .  .  .")
-            {
+            if (msk_compVersao.Text == " .  .  ."){
                 MessageBox.Show("Informe o número da versão de compatibilidade");
                 return;
             }
-            else
-            {
+            else{
                 versaoCompatibilidade = msk_compVersao.Text;
                 //pegar o radio button
             }
-
-            versaoFinal = check_Final.Checked;
+                        versaoFinal = check_Final.Checked;
             validado = true;
         }
 
         private void bt_adicionar_Click(object sender, EventArgs e)
         {
             validaVersoes();
-            if (validado)
-            {
+            if (validado){
                 setVers();
                 Forms.frm_adicionaTexto frmadd = new Forms.frm_adicionaTexto(versaoObj);
                 frmadd.Show();
@@ -113,16 +107,14 @@ namespace FormatadorDePostagens
         {
             validaVersoes();
             setVers();
-            Forms.frm_versaoFinal frmFinal = new Forms.frm_versaoFinal(versaoObj);
-            Forms.frm_versaoRelease frmRelease = new Forms.frm_versaoRelease(versaoObj);
+            if (validado) { 
+                Forms.frm_versaoFinal frmFinal = new Forms.frm_versaoFinal(versaoObj);
+                Forms.frm_versaoRelease frmRelease = new Forms.frm_versaoRelease(versaoObj);
+                // if (check_Final.Checked) frmFinal.Show();
+                //  else frmRelease.Show();
 
-
-            if (check_Final.Checked) frmFinal.Show();
-            else frmRelease.Show();
-        }
-
-
-
-        
+                frmFinal.Show();
+            }
+        }     
     }
 }
