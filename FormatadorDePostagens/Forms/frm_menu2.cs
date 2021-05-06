@@ -17,13 +17,15 @@ namespace FormatadorDePostagens
         public Boolean versaoFinal = false;
         public String sistema = "";
         public String sistemaCompatibilidade = "";
+        public String colaborador = "";
 
         public Boolean validado = false;
         private Versoes versaoObj = new Versoes();
 
-        public frm_menu2()
+        public frm_menu2(String usuario)
         {
             InitializeComponent();
+            colaborador = usuario;
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)
@@ -104,11 +106,23 @@ namespace FormatadorDePostagens
             versaoObj.versao = versao;
             versaoObj.versaoCompatibilidade = versaoCompatibilidade;
             versaoObj.versaoFinal = versaoFinal;
+            versaoObj.colaborador = colaborador;
         }
 
         private void bt_visualizar_Click(object sender, EventArgs e)
         {
+            validaVersoes();
             setVers();
+            Forms.frm_versaoFinal frmFinal = new Forms.frm_versaoFinal(versaoObj);
+            Forms.frm_versaoRelease frmRelease = new Forms.frm_versaoRelease(versaoObj);
+
+
+            if (check_Final.Checked) frmFinal.Show();
+            else frmRelease.Show();
         }
+
+
+
+        
     }
 }

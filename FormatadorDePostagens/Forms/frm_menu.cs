@@ -63,7 +63,7 @@ namespace FormatadorDePostagens
 
         private void bt_conectar_Click(object sender, EventArgs e)
         {
-            frm_menu2 frmmenu2 = new frm_menu2();
+            frm_menu2 frmmenu2 = new frm_menu2(txt_nomeUsuario.Text);
             frmmenu2.Show();
             
         }

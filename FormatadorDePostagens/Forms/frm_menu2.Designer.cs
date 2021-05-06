@@ -46,6 +46,7 @@ namespace FormatadorDePostagens
             this.bt_visualizar = new System.Windows.Forms.Button();
             this.bt_fechar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.bt_editarCorrecoes = new System.Windows.Forms.Button();
             this.group_Sistema.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -177,7 +178,7 @@ namespace FormatadorDePostagens
             // 
             // bt_adicionar
             // 
-            this.bt_adicionar.Location = new System.Drawing.Point(356, 92);
+            this.bt_adicionar.Location = new System.Drawing.Point(356, 72);
             this.bt_adicionar.Name = "bt_adicionar";
             this.bt_adicionar.Size = new System.Drawing.Size(109, 45);
             this.bt_adicionar.TabIndex = 10;
@@ -187,7 +188,7 @@ namespace FormatadorDePostagens
             // 
             // bt_visualizar
             // 
-            this.bt_visualizar.Location = new System.Drawing.Point(356, 154);
+            this.bt_visualizar.Location = new System.Drawing.Point(356, 184);
             this.bt_visualizar.Name = "bt_visualizar";
             this.bt_visualizar.Size = new System.Drawing.Size(109, 45);
             this.bt_visualizar.TabIndex = 11;
@@ -197,7 +198,7 @@ namespace FormatadorDePostagens
             // 
             // bt_fechar
             // 
-            this.bt_fechar.Location = new System.Drawing.Point(356, 221);
+            this.bt_fechar.Location = new System.Drawing.Point(356, 239);
             this.bt_fechar.Name = "bt_fechar";
             this.bt_fechar.Size = new System.Drawing.Size(109, 45);
             this.bt_fechar.TabIndex = 12;
@@ -216,11 +217,21 @@ namespace FormatadorDePostagens
             this.label3.TabIndex = 16;
             this.label3.Text = "Por André Luis Sehnem";
             // 
+            // bt_editarCorrecoes
+            // 
+            this.bt_editarCorrecoes.Location = new System.Drawing.Point(356, 128);
+            this.bt_editarCorrecoes.Name = "bt_editarCorrecoes";
+            this.bt_editarCorrecoes.Size = new System.Drawing.Size(109, 45);
+            this.bt_editarCorrecoes.TabIndex = 17;
+            this.bt_editarCorrecoes.Text = "Editar Correções";
+            this.bt_editarCorrecoes.UseVisualStyleBackColor = true;
+            // 
             // frm_menu2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 325);
+            this.Controls.Add(this.bt_editarCorrecoes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.bt_fechar);
             this.Controls.Add(this.bt_visualizar);
@@ -265,5 +276,6 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.Button bt_fechar;
         private System.Windows.Forms.RadioButton rbt_pdv;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button bt_editarCorrecoes;
     }
 }

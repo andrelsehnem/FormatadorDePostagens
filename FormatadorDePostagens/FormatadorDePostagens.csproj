@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>man_poeple_person_inspector_revisor_checker_icon_179805.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -105,6 +108,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Versoes.cs" />
+    <Compile Include="Forms\frm_versaoRelease.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_versaoRelease.Designer.cs">
+      <DependentUpon>frm_versaoRelease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm_versaoFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_versaoFinal.Designer.cs">
+      <DependentUpon>frm_versaoFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frm_adicionaTexto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +140,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frm_versaoRelease.resx">
+      <DependentUpon>frm_versaoRelease.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_adicionaTexto.resx">
       <DependentUpon>frm_adicionaTexto.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_menu.resx">
       <DependentUpon>frm_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_versaoFinal.resx">
+      <DependentUpon>frm_versaoFinal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -172,6 +193,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="man_poeple_person_inspector_revisor_checker_icon_179805.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
