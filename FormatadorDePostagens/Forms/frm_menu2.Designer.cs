@@ -219,6 +219,7 @@ namespace FormatadorDePostagens
             // 
             // bt_editarCorrecoes
             // 
+            this.bt_editarCorrecoes.Enabled = false;
             this.bt_editarCorrecoes.Location = new System.Drawing.Point(356, 128);
             this.bt_editarCorrecoes.Name = "bt_editarCorrecoes";
             this.bt_editarCorrecoes.Size = new System.Drawing.Size(109, 45);

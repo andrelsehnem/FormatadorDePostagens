@@ -36,7 +36,6 @@ D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePo
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.frm_menu2.resources
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_adicionaTexto.resources
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_versaoFinal.resources
-D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_versaoRelease.resources
 C:\Users\João\Documents\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\bin\Debug\FormatadorDePostagens.exe.config
 C:\Users\João\Documents\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\bin\Debug\FormatadorDePostagens.exe
 C:\Users\João\Documents\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\bin\Debug\FormatadorDePostagens.pdb
@@ -77,3 +76,4 @@ C:\Users\João\Documents\Projetos C#\FormatadorDePostagens\FormatadorDePostagens
 C:\Users\João\Documents\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.csproj.CopyComplete
 C:\Users\João\Documents\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.exe
 C:\Users\João\Documents\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.pdb
+D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.csprojAssemblyReference.cache

@@ -41,7 +41,7 @@ namespace FormatadorDePostagens
             this.lbl_pass = new System.Windows.Forms.Label();
             this.txt_servidor = new System.Windows.Forms.TextBox();
             this.txt_porta = new System.Windows.Forms.TextBox();
-            this.text_user = new System.Windows.Forms.TextBox();
+            this.txt_user = new System.Windows.Forms.TextBox();
             this.txt_senha = new System.Windows.Forms.TextBox();
             this.txt_banco = new System.Windows.Forms.TextBox();
             this.bt_sair = new System.Windows.Forms.Button();
@@ -70,6 +70,7 @@ namespace FormatadorDePostagens
             resources.ApplyResources(this.bt_criarBD, "bt_criarBD");
             this.bt_criarBD.Name = "bt_criarBD";
             this.bt_criarBD.UseVisualStyleBackColor = true;
+            this.bt_criarBD.Click += new System.EventHandler(this.bt_criarBD_Click);
             // 
             // lbl_servidor
             // 
@@ -106,10 +107,10 @@ namespace FormatadorDePostagens
             resources.ApplyResources(this.txt_porta, "txt_porta");
             this.txt_porta.Name = "txt_porta";
             // 
-            // text_user
+            // txt_user
             // 
-            resources.ApplyResources(this.text_user, "text_user");
-            this.text_user.Name = "text_user";
+            resources.ApplyResources(this.txt_user, "txt_user");
+            this.txt_user.Name = "txt_user";
             // 
             // txt_senha
             // 
@@ -141,7 +142,7 @@ namespace FormatadorDePostagens
             this.Controls.Add(this.bt_sair);
             this.Controls.Add(this.txt_banco);
             this.Controls.Add(this.txt_senha);
-            this.Controls.Add(this.text_user);
+            this.Controls.Add(this.txt_user);
             this.Controls.Add(this.txt_porta);
             this.Controls.Add(this.txt_servidor);
             this.Controls.Add(this.lbl_pass);
@@ -177,7 +178,7 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.Label lbl_pass;
         private System.Windows.Forms.TextBox txt_servidor;
         private System.Windows.Forms.TextBox txt_porta;
-        private System.Windows.Forms.TextBox text_user;
+        private System.Windows.Forms.TextBox txt_user;
         private System.Windows.Forms.TextBox txt_senha;
         private System.Windows.Forms.TextBox txt_banco;
         private System.Windows.Forms.Button bt_sair;

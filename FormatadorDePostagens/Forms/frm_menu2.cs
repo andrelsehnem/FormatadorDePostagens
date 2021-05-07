@@ -20,17 +20,20 @@ namespace FormatadorDePostagens
         public String colaborador = "";
 
         public Boolean validado = false;
+
+        private BancoInfos infoBd = new BancoInfos();
         private Versoes versaoObj = new Versoes();
 
-        public frm_menu2(String usuario)
+        public frm_menu2(BancoInfos temp_bcInf)
         {
             InitializeComponent();
-            colaborador = usuario;
+            colaborador = temp_bcInf.user;
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void frm_menu2_Load(object sender, EventArgs e)
@@ -109,10 +112,6 @@ namespace FormatadorDePostagens
             setVers();
             if (validado) { 
                 Forms.frm_versaoFinal frmFinal = new Forms.frm_versaoFinal(versaoObj);
-                Forms.frm_versaoRelease frmRelease = new Forms.frm_versaoRelease(versaoObj);
-                // if (check_Final.Checked) frmFinal.Show();
-                //  else frmRelease.Show();
-
                 frmFinal.Show();
             }
         }     

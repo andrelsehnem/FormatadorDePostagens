@@ -15,32 +15,30 @@ namespace FormatadorDePostagens
 {
     public partial class frm_menu : Form
     {
-        public MySqlConnection cnn = new MySqlConnection();
         public String usuario = "";
+        BancoInfos infoBd = new BancoInfos();
+        public MySqlConnection cnn = new MySqlConnection();
+        private String nomeDoComputador;
 
         public frm_menu()
         {
             InitializeComponent();
             //lbl_statusMenu.Text = "Banco não conectado";
-            var nomeDoComputador = Environment.MachineName;
-            conectaBd();        
-            String comandoLogin = "insert into log_login (pc,appLanguage) VALUES('" + nomeDoComputador + "', 'C#')";
-            //comandoSql(comandoLogin);
-            
         }
 
-        
         public void conectaBd()
         {
+            setInfosBanco();
             try
             {
-                //cnn.ConnectionString = "server=localhost;database=lojinha;uid=root;pwd=admin;SslMode=none";
+                cnn.ConnectionString = "server=" + infoBd.servidor + ";database=" + infoBd.banco + ";uid=" + infoBd.user + ";pwd=" + infoBd.senha + ";SslMode=none";
                 //cnn.Open();
                 //lbl_statusMenu.Text = "Conectado em " + cnn.Database;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                MessageBox.Show("Conexão não estabelecida, verifique as informações inseridas");
             }
         }
 
@@ -48,8 +46,7 @@ namespace FormatadorDePostagens
         {
             this.Close();
         }
-
-        
+                
 
         private void formClosing_main(object sender, FormClosingEventArgs e)
         {
@@ -63,13 +60,35 @@ namespace FormatadorDePostagens
 
         private void bt_conectar_Click(object sender, EventArgs e)
         {
-            frm_menu2 frmmenu2 = new frm_menu2(txt_nomeUsuario.Text);
+            frm_menu2 frmmenu2 = new frm_menu2(infoBd);
             frmmenu2.Show();
-            
+
+            conectaBd();
+            String comandoLogin = "insert into log_login (pc,appLanguage) VALUES('" + nomeDoComputador + "', 'C#')";
+            //comandoSql();
+
         }
 
         private void frm_menu_Load(object sender, EventArgs e)
         {
+            nomeDoComputador = Environment.MachineName;
+        }
+
+        private void setInfosBanco()
+        {
+            infoBd.servidor = txt_servidor.Text;
+            infoBd.porta = Convert.ToInt32(txt_porta.Text);
+            infoBd.user = txt_user.Text;
+            infoBd.senha = txt_senha.Text;
+            infoBd.banco = txt_banco.Text;
+            infoBd.pcName = nomeDoComputador;
+            infoBd.colaborador = txt_nomeUsuario.Text;
+        }
+
+        private void bt_criarBD_Click(object sender, EventArgs e)
+        {
+            setInfosBanco();
+
 
         }
     }

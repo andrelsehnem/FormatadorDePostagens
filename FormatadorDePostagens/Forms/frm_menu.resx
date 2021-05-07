@@ -414,28 +414,28 @@
   <data name="&gt;&gt;txt_porta.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="text_user.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txt_user.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 153</value>
   </data>
-  <data name="text_user.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txt_user.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
-  <data name="text_user.TabIndex" type="System.Int32, mscorlib">
+  <data name="txt_user.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="text_user.Text" xml:space="preserve">
+  <data name="txt_user.Text" xml:space="preserve">
     <value>root</value>
   </data>
-  <data name="&gt;&gt;text_user.Name" xml:space="preserve">
-    <value>text_user</value>
+  <data name="&gt;&gt;txt_user.Name" xml:space="preserve">
+    <value>txt_user</value>
   </data>
-  <data name="&gt;&gt;text_user.Type" xml:space="preserve">
+  <data name="&gt;&gt;txt_user.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;text_user.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txt_user.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;text_user.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txt_user.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="txt_senha.Location" type="System.Drawing.Point, System.Drawing">
