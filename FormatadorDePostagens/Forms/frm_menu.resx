@@ -211,7 +211,7 @@
     <value>3</value>
   </data>
   <data name="bt_criarBD.Text" xml:space="preserve">
-    <value>Criar banco de dados</value>
+    <value>Criar banco de dados e conectar</value>
   </data>
   <data name="&gt;&gt;bt_criarBD.Name" xml:space="preserve">
     <value>bt_criarBD</value>
@@ -451,7 +451,7 @@
     <value>12</value>
   </data>
   <data name="txt_senha.Text" xml:space="preserve">
-    <value>vssql</value>
+    <value>admin</value>
   </data>
   <data name="txt_senha.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
