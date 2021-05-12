@@ -102,7 +102,7 @@ namespace FormatadorDePostagens
             setInfosBanco();
             try
             {
-                cnn.ConnectionString = "server=" + infoBd.servidor + ";uid=" + infoBd.user + ";pwd=" + infoBd.senha + ";SslMode=none";
+                cnn.ConnectionString = "server=" + infoBd.servidor + ";Port=" + infoBd.porta +";uid=" + infoBd.user + ";pwd=" + infoBd.senha + ";SslMode=none";
                 cnn.Open();
                 //lbl_statusMenu.Text = "Conectado em " + cnn.Database;
             }
