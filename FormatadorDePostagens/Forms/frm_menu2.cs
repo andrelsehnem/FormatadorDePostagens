@@ -27,7 +27,7 @@ namespace FormatadorDePostagens
         public frm_menu2(BancoInfos temp_bcInf)
         {
             InitializeComponent();
-            colaborador = temp_bcInf.user;
+            colaborador = temp_bcInf.colaborador;
         }
         
         private void frm_menu2_Load(object sender, EventArgs e)
