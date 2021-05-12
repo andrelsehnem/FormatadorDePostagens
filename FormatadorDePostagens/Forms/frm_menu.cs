@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.SqlServer;
 using MySql.Data.MySqlClient;
+using MySql.Data.Types;
 
 namespace FormatadorDePostagens
 {
@@ -18,12 +19,82 @@ namespace FormatadorDePostagens
         public String usuario = "";
         BancoInfos infoBd = new BancoInfos();
         public MySqlConnection cnn = new MySqlConnection();
+        public MySqlCommand comandoProSql = new MySqlCommand();
+        public MySqlDataReader reader;
         private String nomeDoComputador;
+        private bool valido = false;
+
+        //reader.getString()
 
         public frm_menu()
         {
             InitializeComponent();
+            comandoProSql.Connection = cnn;
+            comandoProSql.CommandType = CommandType.Text;
             //lbl_statusMenu.Text = "Banco não conectado";
+        }
+
+        private void frm_menu_Load(object sender, EventArgs e)
+        {
+            nomeDoComputador = Environment.MachineName;
+        }
+
+        private void bt_sair_Click(object sender, EventArgs e)
+        {
+            cnn.Close();
+            this.Close();
+        }
+
+        private void formClosing_main(object sender, FormClosingEventArgs e)
+        {
+            cnn.Close();
+            this.Visible = true;
+            //Criar um MessageBox com os botões Sim e Não e deixar o botão 2(Não) selecionado por padrão
+            if (DialogResult.Yes != MessageBox.Show("Tem certeza que deseja fechar a janela?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                //Cancelar o evento
+                e.Cancel = true;
+
+            }
+        }
+
+        private void bt_conectar_Click(object sender, EventArgs e)
+        {
+            conectaBd();
+            comandoSql("use " + infoBd.banco);
+            String comandoLogin = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador + "')";
+            comandoSql(comandoLogin);
+            abreMenu2();
+
+        }
+
+        private void bt_criarBD_Click(object sender, EventArgs e)
+        {
+            criaBD();
+            abreMenu2();
+        }
+
+        private void abreMenu2()
+        {
+            if (cnn.State == ConnectionState.Open)
+            {
+                alteraTabelas();
+                frm_menu2 frmmenu2 = new frm_menu2(infoBd);
+                frmmenu2.Show();
+                this.Visible = false;
+            }
+        }
+        
+
+        private void setInfosBanco()
+        {
+            infoBd.servidor = txt_servidor.Text;
+            infoBd.porta = Convert.ToInt32(txt_porta.Text);
+            infoBd.user = txt_user.Text;
+            infoBd.senha = txt_senha.Text;
+            infoBd.banco = txt_banco.Text;
+            infoBd.pcName = nomeDoComputador;
+            infoBd.colaborador = txt_nomeUsuario.Text;
         }
 
         public void conectaBd()
@@ -37,67 +108,19 @@ namespace FormatadorDePostagens
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
                 MessageBox.Show("Conexão não estabelecida, verifique as informações inseridas");
                 return;
             }
         }
 
-        private void bt_sair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-                
-
-        private void formClosing_main(object sender, FormClosingEventArgs e)
-        {
-            //Criar um MessageBox com os botões Sim e Não e deixar o botão 2(Não) selecionado por padrão
-            if (DialogResult.Yes != MessageBox.Show("Tem certeza que deseja fechar a janela?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
-            {
-                //Cancelar o evento
-                e.Cancel = true;
-            }
-        }
-
-        private void bt_conectar_Click(object sender, EventArgs e)
-        {
-            conectaBd();
-            comandoSql("use " + infoBd.banco);
-            String comandoLogin = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador + "')";
-            comandoSql(comandoLogin);
-        }
-
-        private void frm_menu_Load(object sender, EventArgs e)
-        {
-            nomeDoComputador = Environment.MachineName;
-        }
-
-        private void setInfosBanco()
-        {
-            infoBd.servidor = txt_servidor.Text;
-            infoBd.porta = Convert.ToInt32(txt_porta.Text);
-            infoBd.user = txt_user.Text;
-            infoBd.senha = txt_senha.Text;
-            infoBd.banco = txt_banco.Text;
-            infoBd.pcName = nomeDoComputador;
-            infoBd.colaborador = txt_nomeUsuario.Text;
-        }
-
-        private void bt_criarBD_Click(object sender, EventArgs e)
-        {
-            criaBD();
-
-            frm_menu2 frmmenu2 = new frm_menu2(infoBd);
-            frmmenu2.Show();
-
-        }
-
         private void criaBD()
         {
+            String cmd = ""; 
             conectaBd();
             try
             {
-                String cmd = "CREATE DATABASE IF NOT EXISTS " + infoBd.banco ;
+                cmd = "CREATE DATABASE IF NOT EXISTS " + infoBd.banco ;
                 comandoSql(cmd);
                 comandoSql("use " + infoBd.banco);
                 criaTabelas();
@@ -106,17 +129,16 @@ namespace FormatadorDePostagens
             {
                 MessageBox.Show("Verifique a conexão SQL");
                 return;
+                
             }
 
-            String comandoLogin = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador +"')";
-            comandoSql(comandoLogin);
+            cmd = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador +"')";
+            comandoSql(cmd);
         }
 
         public void comandoSql(String cmd)
         {
-            MySqlCommand comandoProSql = new MySqlCommand();
-            comandoProSql.Connection = cnn;
-            comandoProSql.CommandType = CommandType.Text;
+            
             comandoProSql.CommandText = cmd;
 
             try
@@ -125,7 +147,8 @@ namespace FormatadorDePostagens
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
+                MessageBox.Show("Não foi possível executar a seguinte query: " + cmd);
             }
 
         }
@@ -145,8 +168,35 @@ namespace FormatadorDePostagens
             //TRIGGER DE LOG PARA INSERIR NA TABELA DE TAREFAS DA VERSAO QUANDO HOUVER ALTERAÇÕES
             comandoSql("create trigger if not exists dataUpdate before update on tarefas for each row set new.dataAlteracao = NOW()");
             //TRIGGER DE LOG PARA INSERIR NA TABELA DE TAREFAS DA VERSAO quem alterou
-            comandoSql("create trigger if not exists userUpdate before update on tarefas for each row set new.usuarioAlteracao = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1)");
+            comandoSql("create trigger if not exists userUpdate before update on tarefas for each row set new.usuarioAlteracao = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1)");  
+        }
 
+        private void alteraTabelas() //para cada alter table fazer o if com o valida tabela
+        {
+            try{
+                if (!validaTabela("tarefas","tipoTarefa"))
+                {
+                    reader.Close();
+                    comandoSql("ALTER TABLE tarefas add tipoTarefa varchar(15) NOT NULL DEFAULT 'EXTERNA';");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Tabelas atualizadas!");
+            }
+            
+        }
+
+        private Boolean validaTabela(String tabela, String coluna)
+        {
+            //essa função vai retornar se a coluna existe nesta tabela
+            comandoSql("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" + infoBd.banco +"' AND TABLE_NAME = '"+ tabela +"' AND COLUMN_NAME = '"+ coluna +"'");
+            reader = comandoProSql.ExecuteReader();
+            //reader.Read();
+            
+            
+           
+            return reader.HasRows; //se existir retorna TRUE
         }
     }
 }

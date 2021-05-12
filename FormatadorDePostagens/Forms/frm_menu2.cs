@@ -29,16 +29,39 @@ namespace FormatadorDePostagens
             InitializeComponent();
             colaborador = temp_bcInf.user;
         }
+        
+        private void frm_menu2_Load(object sender, EventArgs e)
+        {
+            validado = false;
+        }
 
         private void bt_fechar_Click(object sender, EventArgs e)
-        {
+        {   
             this.Close();
             Application.Exit();
         }
 
-        private void frm_menu2_Load(object sender, EventArgs e)
+        private void bt_adicionar_Click(object sender, EventArgs e)
         {
-            validado = false;
+            validaVersoes();
+            if (validado)
+            {
+                setVers();
+                Forms.frm_adicionaTexto frmadd = new Forms.frm_adicionaTexto(versaoObj);
+                frmadd.Show();
+            }
+
+        }
+
+        private void bt_visualizar_Click(object sender, EventArgs e)
+        {
+            validaVersoes();
+            setVers();
+            if (validado)
+            {
+                Forms.frm_versaoFinal frmFinal = new Forms.frm_versaoFinal(versaoObj);
+                frmFinal.Show();
+            }
         }
 
         private void validaVersoes()
@@ -47,32 +70,19 @@ namespace FormatadorDePostagens
             if (msk_versao.Text == " .  .  ."){
                 MessageBox.Show("Informe o número da versão que vai ser liberada");
                 return;
-            }
-            else{
+            }else{
                 versao = msk_versao.Text;
                 //pegar o radio button
             }
             if (msk_compVersao.Text == " .  .  ."){
                 MessageBox.Show("Informe o número da versão de compatibilidade");
                 return;
-            }
-            else{
+            }else{
                 versaoCompatibilidade = msk_compVersao.Text;
                 //pegar o radio button
             }
-                        versaoFinal = check_Final.Checked;
+            versaoFinal = check_Final.Checked;
             validado = true;
-        }
-
-        private void bt_adicionar_Click(object sender, EventArgs e)
-        {
-            validaVersoes();
-            if (validado){
-                setVers();
-                Forms.frm_adicionaTexto frmadd = new Forms.frm_adicionaTexto(versaoObj);
-                frmadd.Show();
-            }
-           
         }
 
         private String validaSistema()
@@ -104,16 +114,6 @@ namespace FormatadorDePostagens
             versaoObj.versaoCompatibilidade = versaoCompatibilidade;
             versaoObj.versaoFinal = versaoFinal;
             versaoObj.colaborador = colaborador;
-        }
-
-        private void bt_visualizar_Click(object sender, EventArgs e)
-        {
-            validaVersoes();
-            setVers();
-            if (validado) { 
-                Forms.frm_versaoFinal frmFinal = new Forms.frm_versaoFinal(versaoObj);
-                frmFinal.Show();
-            }
         }     
     }
 }
