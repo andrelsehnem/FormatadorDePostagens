@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using Microsoft.SqlServer;
 using MySql.Data.MySqlClient;
 using MySql.Data.Types;
+using System.IO;
 
 namespace FormatadorDePostagens
 {
@@ -23,6 +24,7 @@ namespace FormatadorDePostagens
         public MySqlDataReader reader;
         private String nomeDoComputador;
         private bool valido = false;
+        public String arquivoConfig = "Config.txt";
 
         //reader.getString()
 
@@ -32,6 +34,7 @@ namespace FormatadorDePostagens
             comandoProSql.Connection = cnn;
             comandoProSql.CommandType = CommandType.Text;
             //lbl_statusMenu.Text = "Banco não conectado";
+            getTxt();
         }
 
         private void frm_menu_Load(object sender, EventArgs e)
@@ -82,6 +85,7 @@ namespace FormatadorDePostagens
                 frm_menu2 frmmenu2 = new frm_menu2(infoBd);
                 frmmenu2.Show();
                 this.Visible = false;
+                setTxt();
             }
         }
         
@@ -148,7 +152,7 @@ namespace FormatadorDePostagens
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.ToString());
-                MessageBox.Show("Não foi possível executar a seguinte query: " + cmd);
+                //MessageBox.Show("Não foi possível executar a seguinte query: " + cmd);
             }
 
         }
@@ -197,6 +201,83 @@ namespace FormatadorDePostagens
             
            
             return reader.HasRows; //se existir retorna TRUE
+        }
+
+        private void getTxt()
+        {
+            String line;
+            int cont = 1;
+            try
+            {
+                if (System.IO.File.Exists(arquivoConfig))
+                {
+                    StreamReader sr = new StreamReader(arquivoConfig);
+                    line = sr.ReadLine();
+
+                    while (line != null)
+                    {
+                        switch (cont)
+                        {
+                            case 1: txt_banco.Text = line;
+                                break;
+                            case 2: txt_nomeUsuario.Text = line;
+                                break;
+                            case 3: txt_porta.Text = line;
+                                break;
+                            case 4: txt_senha.Text = line;
+                                break;
+                            case 5: txt_servidor.Text = line;
+                                break;
+                            case 6: txt_user.Text = line;
+                                break;
+                        }
+                        cont++;
+                        line = sr.ReadLine();
+                    }
+                    sr.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Arquivo ''"+ arquivoConfig +"'' não encontrado na pasta, configurações de conexão não serão salvas");
+                }
+            }catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }finally
+            {
+                
+            }
+
+        }
+
+        private void setTxt()
+        {
+            try
+            {
+                if (System.IO.File.Exists(arquivoConfig))
+                {
+                    StreamWriter sw = new StreamWriter(arquivoConfig);
+                    sw.WriteLine(infoBd.banco);
+                    sw.WriteLine(infoBd.colaborador);
+                    sw.WriteLine(infoBd.porta);
+                    sw.WriteLine(infoBd.senha);
+                    sw.WriteLine(infoBd.servidor);
+                    sw.WriteLine(infoBd.user);
+                    sw.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Arquivo ''" + arquivoConfig + "'' não encontrado na pasta, configurações de conexão não serão salvas");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            finally
+            {
+
+            }
         }
     }
 }

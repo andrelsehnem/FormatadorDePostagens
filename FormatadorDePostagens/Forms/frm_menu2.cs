@@ -36,7 +36,7 @@ namespace FormatadorDePostagens
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)
-        {   
+            {   
             this.Close();
             Application.Exit();
         }
@@ -92,6 +92,7 @@ namespace FormatadorDePostagens
             if (rbt_mycommerce.Checked) sistema = rbt_mycommerce.Text;
             else if (rbt_mymilk.Checked) sistema = rbt_mymilk.Text;
             else if (rbt_pdv.Checked) sistema = rbt_pdv.Text;
+            else if (rbt_omni.Checked) sistema = rbt_omni.Text;
 
             return sistema;
         }

@@ -47,6 +47,8 @@ namespace FormatadorDePostagens
             this.bt_fechar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.bt_editarCorrecoes = new System.Windows.Forms.Button();
+            this.check_naoCompativel = new System.Windows.Forms.CheckBox();
+            this.rbt_omni = new System.Windows.Forms.RadioButton();
             this.group_Sistema.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +77,7 @@ namespace FormatadorDePostagens
             // 
             // group_Sistema
             // 
+            this.group_Sistema.Controls.Add(this.rbt_omni);
             this.group_Sistema.Controls.Add(this.rbt_pdv);
             this.group_Sistema.Controls.Add(this.rbt_mymilk);
             this.group_Sistema.Controls.Add(this.rbt_mycommerce);
@@ -227,11 +230,33 @@ namespace FormatadorDePostagens
             this.bt_editarCorrecoes.Text = "Editar Correções";
             this.bt_editarCorrecoes.UseVisualStyleBackColor = true;
             // 
+            // check_naoCompativel
+            // 
+            this.check_naoCompativel.AutoSize = true;
+            this.check_naoCompativel.Location = new System.Drawing.Point(301, 34);
+            this.check_naoCompativel.Name = "check_naoCompativel";
+            this.check_naoCompativel.Size = new System.Drawing.Size(123, 17);
+            this.check_naoCompativel.TabIndex = 18;
+            this.check_naoCompativel.Text = "Sem compatibilidade";
+            this.check_naoCompativel.UseVisualStyleBackColor = true;
+            // 
+            // rbt_omni
+            // 
+            this.rbt_omni.AutoSize = true;
+            this.rbt_omni.Location = new System.Drawing.Point(5, 89);
+            this.rbt_omni.Name = "rbt_omni";
+            this.rbt_omni.Size = new System.Drawing.Size(71, 17);
+            this.rbt_omni.TabIndex = 4;
+            this.rbt_omni.TabStop = true;
+            this.rbt_omni.Text = "OmniMulti";
+            this.rbt_omni.UseVisualStyleBackColor = true;
+            // 
             // frm_menu2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(489, 325);
+            this.Controls.Add(this.check_naoCompativel);
             this.Controls.Add(this.bt_editarCorrecoes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.bt_fechar);
@@ -278,5 +303,7 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.RadioButton rbt_pdv;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button bt_editarCorrecoes;
+        private System.Windows.Forms.RadioButton rbt_omni;
+        private System.Windows.Forms.CheckBox check_naoCompativel;
     }
 }
