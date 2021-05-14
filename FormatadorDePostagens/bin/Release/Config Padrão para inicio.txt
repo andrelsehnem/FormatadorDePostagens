@@ -1,0 +1,14 @@
+*/para este arquivo, deixe o nome somente como Config e a seguinte ordem de textos nas linhas:
+nome do banco
+nome do colaborador
+porta
+senha banco
+servidor
+user banco
+/*desse linha até a primeira apagar tudo
+formatador
+Nome Completo2
+3306
+admin
+localhost
+root

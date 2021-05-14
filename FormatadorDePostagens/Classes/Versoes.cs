@@ -10,5 +10,6 @@ namespace FormatadorDePostagens
         public String sistema = "";
         public String sistemaCompatibilidade = "";
         public String colaborador = "";
+        public Boolean naoCompativel = false;
     }
 }

@@ -181,7 +181,7 @@ namespace FormatadorDePostagens
                 if (!validaTabela("tarefas","tipoTarefa"))
                 {
                     reader.Close();
-                    comandoSql("ALTER TABLE tarefas add tipoTarefa varchar(15) NOT NULL DEFAULT 'EXTERNA';");
+                    comandoSql("ALTER TABLE tarefas add tipoTarefa varchar(45) NOT NULL DEFAULT 'INCONSISTÊNCIAS RELATADAS POR CLIENTES';");
                 }
             }
             catch

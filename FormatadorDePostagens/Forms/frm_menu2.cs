@@ -18,6 +18,7 @@ namespace FormatadorDePostagens
         public String sistema = "";
         public String sistemaCompatibilidade = "";
         public String colaborador = "";
+        public Boolean naoCompativel = false;
 
         public Boolean validado = false;
 
@@ -82,6 +83,7 @@ namespace FormatadorDePostagens
                 //pegar o radio button
             }
             versaoFinal = check_Final.Checked;
+            naoCompativel = check_naoCompativel.Checked;
             validado = true;
         }
 
@@ -115,6 +117,7 @@ namespace FormatadorDePostagens
             versaoObj.versaoCompatibilidade = versaoCompatibilidade;
             versaoObj.versaoFinal = versaoFinal;
             versaoObj.colaborador = colaborador;
+            versaoObj.naoCompativel = naoCompativel;
         }     
     }
 }

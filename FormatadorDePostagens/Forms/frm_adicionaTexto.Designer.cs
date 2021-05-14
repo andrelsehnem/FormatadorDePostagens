@@ -32,7 +32,7 @@ namespace FormatadorDePostagens.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_adicionaTexto));
             this.lbl_liberacao = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rch_historico = new System.Windows.Forms.RichTextBox();
             this.bt_adicionar = new System.Windows.Forms.Button();
             this.bt_cancelar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,17 +57,17 @@ namespace FormatadorDePostagens.Forms
             this.label1.TabIndex = 1;
             this.label1.Text = "Histórico de Correções:";
             // 
-            // richTextBox1
+            // rch_historico
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(16, 54);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(763, 297);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.rch_historico.Location = new System.Drawing.Point(16, 54);
+            this.rch_historico.Name = "rch_historico";
+            this.rch_historico.Size = new System.Drawing.Size(763, 297);
+            this.rch_historico.TabIndex = 2;
+            this.rch_historico.Text = "";
             // 
             // bt_adicionar
             // 
-            this.bt_adicionar.Location = new System.Drawing.Point(671, 364);
+            this.bt_adicionar.Location = new System.Drawing.Point(671, 363);
             this.bt_adicionar.Name = "bt_adicionar";
             this.bt_adicionar.Size = new System.Drawing.Size(108, 42);
             this.bt_adicionar.TabIndex = 3;
@@ -76,7 +76,7 @@ namespace FormatadorDePostagens.Forms
             // 
             // bt_cancelar
             // 
-            this.bt_cancelar.Location = new System.Drawing.Point(547, 364);
+            this.bt_cancelar.Location = new System.Drawing.Point(547, 363);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(108, 42);
             this.bt_cancelar.TabIndex = 4;
@@ -103,7 +103,7 @@ namespace FormatadorDePostagens.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.bt_adicionar);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rch_historico);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_liberacao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -121,7 +121,7 @@ namespace FormatadorDePostagens.Forms
 
         private System.Windows.Forms.Label lbl_liberacao;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rch_historico;
         private System.Windows.Forms.Button bt_adicionar;
         private System.Windows.Forms.Button bt_cancelar;
         private System.Windows.Forms.Label label2;
