@@ -68,7 +68,7 @@ namespace FormatadorDePostagens
             String comandoLogin = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador + "')";
             comandoSql(comandoLogin);
             abreMenu2();
-
+            cnn.Close();
         }
 
         private void bt_criarBD_Click(object sender, EventArgs e)
@@ -99,6 +99,8 @@ namespace FormatadorDePostagens
             infoBd.banco = txt_banco.Text;
             infoBd.pcName = nomeDoComputador;
             infoBd.colaborador = txt_nomeUsuario.Text;
+            infoBd.cnn = cnn; 
+            infoBd.comandoProSql = comandoProSql;
         }
 
         public void conectaBd()
@@ -278,6 +280,18 @@ namespace FormatadorDePostagens
             {
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e) //usado somente para testes
+        {
+            String teste1 = "105919 - Ajustada inconsistência ao finalizar venda com desconto.";
+            String codTarefa = "";
+            String descricaoT = "";
+            int i = teste1.IndexOf(" - ");
+            codTarefa = teste1.Substring(0, i);
+            descricaoT = teste1.Substring(i + 3);
+            MessageBox.Show(codTarefa);
+            MessageBox.Show(descricaoT);
         }
     }
 }

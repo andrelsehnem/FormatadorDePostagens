@@ -29,6 +29,8 @@ namespace FormatadorDePostagens
         {
             InitializeComponent();
             colaborador = temp_bcInf.colaborador;
+            infoBd = temp_bcInf;
+
         }
         
         private void frm_menu2_Load(object sender, EventArgs e)
@@ -48,7 +50,7 @@ namespace FormatadorDePostagens
             if (validado)
             {
                 setVers();
-                Forms.frm_adicionaTexto frmadd = new Forms.frm_adicionaTexto(versaoObj);
+                Forms.frm_adicionaTexto frmadd = new Forms.frm_adicionaTexto(versaoObj, infoBd);
                 frmadd.Show();
             }
 

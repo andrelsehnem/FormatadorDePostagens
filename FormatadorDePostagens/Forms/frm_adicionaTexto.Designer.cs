@@ -73,6 +73,7 @@ namespace FormatadorDePostagens.Forms
             this.bt_adicionar.TabIndex = 3;
             this.bt_adicionar.Text = "Adicionar";
             this.bt_adicionar.UseVisualStyleBackColor = true;
+            this.bt_adicionar.Click += new System.EventHandler(this.bt_adicionar_Click);
             // 
             // bt_cancelar
             // 

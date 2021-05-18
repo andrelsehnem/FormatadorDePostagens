@@ -46,6 +46,7 @@ namespace FormatadorDePostagens
             this.txt_banco = new System.Windows.Forms.TextBox();
             this.bt_sair = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_nomeUsuario
@@ -134,10 +135,18 @@ namespace FormatadorDePostagens
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frm_menu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bt_sair);
             this.Controls.Add(this.txt_banco);
@@ -183,6 +192,7 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.TextBox txt_banco;
         private System.Windows.Forms.Button bt_sair;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
