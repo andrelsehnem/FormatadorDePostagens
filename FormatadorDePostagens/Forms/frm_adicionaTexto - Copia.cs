@@ -53,7 +53,6 @@ namespace FormatadorDePostagens.Forms
             int nTarefa;
             String detalheTarefa;
             String line;
-			int contador = 0;
 
             try
             {
@@ -69,27 +68,18 @@ namespace FormatadorDePostagens.Forms
                         {
                             tipoTarefa = "INCONSISTÊNCIAS RELATADAS POR CLIENTES";
                             line = sr.ReadLine(); //le a proxima linha
-							contador = 0;
                         }
                         else if (line == "INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE:")
                         {
                             tipoTarefa = "INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE";
                             line = sr.ReadLine(); //le a proxima linha
-							contador = 0;
                         }
                         
                         else if (line == "CUSTOMIZAÇÕES INCLUSAS:")
                         {
                             tipoTarefa = "CUSTOMIZAÇÕES INCLUSAS";
                             line = sr.ReadLine(); //le a proxima linha
-							contador = 0;
                         }
-						else if(contador == 2){
-							line = null;
-						}
-						else if(line = ""){
-							contador = contador++;
-						}
                         else //caso não for uma definição do tipo de tarefa ele entra aqui para dai separa o numero do texto
                         {
                             //vai receber uma linha assim: 105919 - Ajustada inconsistência ao finalizar venda com desconto.
@@ -111,7 +101,6 @@ namespace FormatadorDePostagens.Forms
                                 comandoSql("INSERT INTO tarefas (codTarefa, descricao, sistema, versao, compatibilidade, versaoCompat,pc, tipoTarefa) VALUES (" + Convert.ToInt32(codTarefa) + ",'" + descricaoT + "','" + versoesObj.sistema + "', '" + versoesObj.versao + "', '" + versoesObj.sistemaCompatibilidade + "', '" + versoesObj.versaoCompatibilidade + "','" + infosBd.pcName + "', '" + tipoTarefa + "')");
                             }
                             line = sr.ReadLine();
-							contador = 0;
                         }
                     }
                     MessageBox.Show("Tarefas adicionadas com sucesso");
@@ -130,7 +119,6 @@ namespace FormatadorDePostagens.Forms
 
         private void jogaTxt()//nesse eu só to jogando pro arquivo .txt
         {
-			//vai ter que pegar um jeito de contar quantas linhas tem no richtext e fazer um loop com base nela dai inserir linha por linha
             try
             {
                 if (System.IO.File.Exists(nomeArquivo))
