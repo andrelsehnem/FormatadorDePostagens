@@ -87,9 +87,10 @@ namespace FormatadorDePostagens.Forms
 						else if(contador == 2){
 							line = null;
 						}
-						else if(line = ""){
+						else if(line == ""){
 							contador = contador++;
-						}
+                            line = sr.ReadLine();
+                        }
                         else //caso não for uma definição do tipo de tarefa ele entra aqui para dai separa o numero do texto
                         {
                             //vai receber uma linha assim: 105919 - Ajustada inconsistência ao finalizar venda com desconto.
@@ -98,18 +99,21 @@ namespace FormatadorDePostagens.Forms
                             int i = line.IndexOf(" - ");
                             codTarefa = line.Substring(0, i);
                             descricaoT = line.Substring(i + 3);
-                            comandoSql("SELECT * FROM tarefas WHERE tarefas.codTarefa = " + codTarefa + " AND tarefas.sistema = '" + versoesObj.sistema + "'");
+                            comandoSql("SELECT * FROM tarefas WHERE tarefas.codTarefa = " + Convert.ToInt32(codTarefa) + " AND tarefas.sistema = '" + versoesObj.sistema + "'");
                             cnn.Open();
                             reader = comandoProSql.ExecuteReader();
-                            cnn.Close();
+                            
                             if (reader.HasRows)// busca se tem linha com where tarefas.codTarefa = codTarefa and tarefas.sistema = versoesObj.sistema
                             {
+                                cnn.Close();
                                 MessageBox.Show("A tarefa " + codTarefa + " já foi adicionada anteriormente ao banco.");
                             }
                             else
                             {
+                                cnn.Close();
                                 comandoSql("INSERT INTO tarefas (codTarefa, descricao, sistema, versao, compatibilidade, versaoCompat,pc, tipoTarefa) VALUES (" + Convert.ToInt32(codTarefa) + ",'" + descricaoT + "','" + versoesObj.sistema + "', '" + versoesObj.versao + "', '" + versoesObj.sistemaCompatibilidade + "', '" + versoesObj.versaoCompatibilidade + "','" + infosBd.pcName + "', '" + tipoTarefa + "')");
                             }
+                            
                             line = sr.ReadLine();
 							contador = 0;
                         }

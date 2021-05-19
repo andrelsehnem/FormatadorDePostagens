@@ -50,6 +50,19 @@ namespace FormatadorDePostagens.Forms
         {
             rch_hitoricoFinal.Text = "Olá! Versão " + versoesObject.versao + " do " + versoesObject.sistema + " disponível para atualizações. \n\n";
 
+            //aqui valda se tem bugs externos
+            //se tiver insere o texto de bugs externos
+            //aqui vai os bugs externos
+
+            //aqui valda se tem bugs internos
+            //se tiver insere o texto de bugs internos
+            //aqui vai os bugs internos
+
+            //aqui valda se tem customizações
+            //se tiver insere o texto de customizações
+            //aqui vai as customizações
+
+
             if (versoesObject.naoCompativel)
             {
                 rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Não compatível com o " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
