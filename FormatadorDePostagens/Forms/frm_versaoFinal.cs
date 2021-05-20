@@ -38,10 +38,15 @@ namespace FormatadorDePostagens.Forms
             {
                 rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Não compatível com o " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
+            else if (versoesObject.sistemaCompatibilidade == "Sem compatibilidade")
+            {
+                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Atenciosamente, " + versoesObject.colaborador + ".";
+            }
             else
             {
                 rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Compatível com a versão " + versoesObject.versaoCompatibilidade + " do " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
+            
 
             
         }
@@ -61,7 +66,6 @@ namespace FormatadorDePostagens.Forms
             //aqui valda se tem customizações
             //se tiver insere o texto de customizações
             //aqui vai as customizações
-
 
             if (versoesObject.naoCompativel)
             {

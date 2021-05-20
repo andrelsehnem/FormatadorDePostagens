@@ -106,6 +106,7 @@ namespace FormatadorDePostagens
             String sistema = "";
 
             if (rbt_compat_myc.Checked) sistema = rbt_compat_myc.Text;
+            else if (rbt_semCompat.Checked) sistema = rbt_semCompat.Text;
             else if (rbt_compat_pdv.Checked) sistema = rbt_compat_pdv.Text;
 
             return sistema;
@@ -120,6 +121,20 @@ namespace FormatadorDePostagens
             versaoObj.versaoFinal = versaoFinal;
             versaoObj.colaborador = colaborador;
             versaoObj.naoCompativel = naoCompativel;
-        }     
+        }
+
+        private void rbt_semCompat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbt_semCompat.Checked)
+            {
+                check_naoCompativel.Checked = false;
+                check_naoCompativel.Enabled = false;
+            }
+            else
+            {
+                check_naoCompativel.Checked = false;
+                check_naoCompativel.Enabled = true;
+            }
+        }
     }
 }

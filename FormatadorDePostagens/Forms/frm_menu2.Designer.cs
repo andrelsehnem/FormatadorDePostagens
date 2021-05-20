@@ -33,6 +33,7 @@ namespace FormatadorDePostagens
             this.rbt_mycommerce = new System.Windows.Forms.RadioButton();
             this.rbt_mymilk = new System.Windows.Forms.RadioButton();
             this.group_Sistema = new System.Windows.Forms.GroupBox();
+            this.rbt_omni = new System.Windows.Forms.RadioButton();
             this.rbt_pdv = new System.Windows.Forms.RadioButton();
             this.msk_versao = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@ namespace FormatadorDePostagens
             this.label3 = new System.Windows.Forms.Label();
             this.bt_editarCorrecoes = new System.Windows.Forms.Button();
             this.check_naoCompativel = new System.Windows.Forms.CheckBox();
-            this.rbt_omni = new System.Windows.Forms.RadioButton();
+            this.rbt_semCompat = new System.Windows.Forms.RadioButton();
             this.group_Sistema.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,7 @@ namespace FormatadorDePostagens
             this.rbt_mycommerce.Location = new System.Drawing.Point(5, 19);
             this.rbt_mycommerce.Name = "rbt_mycommerce";
             this.rbt_mycommerce.Size = new System.Drawing.Size(89, 17);
-            this.rbt_mycommerce.TabIndex = 1;
+            this.rbt_mycommerce.TabIndex = 5;
             this.rbt_mycommerce.TabStop = true;
             this.rbt_mycommerce.Text = "MyCommerce";
             this.rbt_mycommerce.UseVisualStyleBackColor = true;
@@ -71,7 +72,7 @@ namespace FormatadorDePostagens
             this.rbt_mymilk.Location = new System.Drawing.Point(5, 42);
             this.rbt_mymilk.Name = "rbt_mymilk";
             this.rbt_mymilk.Size = new System.Drawing.Size(58, 17);
-            this.rbt_mymilk.TabIndex = 2;
+            this.rbt_mymilk.TabIndex = 6;
             this.rbt_mymilk.Text = "MyMilk";
             this.rbt_mymilk.UseVisualStyleBackColor = true;
             // 
@@ -84,9 +85,20 @@ namespace FormatadorDePostagens
             this.group_Sistema.Location = new System.Drawing.Point(12, 58);
             this.group_Sistema.Name = "group_Sistema";
             this.group_Sistema.Size = new System.Drawing.Size(160, 253);
-            this.group_Sistema.TabIndex = 3;
+            this.group_Sistema.TabIndex = 5;
             this.group_Sistema.TabStop = false;
             this.group_Sistema.Text = "Sistema a ser liberado";
+            // 
+            // rbt_omni
+            // 
+            this.rbt_omni.AutoSize = true;
+            this.rbt_omni.Location = new System.Drawing.Point(5, 89);
+            this.rbt_omni.Name = "rbt_omni";
+            this.rbt_omni.Size = new System.Drawing.Size(71, 17);
+            this.rbt_omni.TabIndex = 8;
+            this.rbt_omni.TabStop = true;
+            this.rbt_omni.Text = "OmniMulti";
+            this.rbt_omni.UseVisualStyleBackColor = true;
             // 
             // rbt_pdv
             // 
@@ -94,7 +106,7 @@ namespace FormatadorDePostagens
             this.rbt_pdv.Location = new System.Drawing.Point(5, 65);
             this.rbt_pdv.Name = "rbt_pdv";
             this.rbt_pdv.Size = new System.Drawing.Size(114, 17);
-            this.rbt_pdv.TabIndex = 3;
+            this.rbt_pdv.TabIndex = 7;
             this.rbt_pdv.TabStop = true;
             this.rbt_pdv.Text = "MyCommerce PDV";
             this.rbt_pdv.UseVisualStyleBackColor = true;
@@ -106,7 +118,7 @@ namespace FormatadorDePostagens
             this.msk_versao.Mask = "9,99,99,9999";
             this.msk_versao.Name = "msk_versao";
             this.msk_versao.Size = new System.Drawing.Size(106, 20);
-            this.msk_versao.TabIndex = 4;
+            this.msk_versao.TabIndex = 1;
             // 
             // label1
             // 
@@ -119,22 +131,23 @@ namespace FormatadorDePostagens
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rbt_semCompat);
             this.groupBox2.Controls.Add(this.rbt_compat_myc);
             this.groupBox2.Controls.Add(this.rbt_compat_pdv);
             this.groupBox2.Location = new System.Drawing.Point(188, 58);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(153, 252);
-            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Compatibilidade";
             // 
             // rbt_compat_myc
             // 
             this.rbt_compat_myc.AutoSize = true;
-            this.rbt_compat_myc.Location = new System.Drawing.Point(6, 42);
+            this.rbt_compat_myc.Location = new System.Drawing.Point(6, 65);
             this.rbt_compat_myc.Name = "rbt_compat_myc";
             this.rbt_compat_myc.Size = new System.Drawing.Size(89, 17);
-            this.rbt_compat_myc.TabIndex = 1;
+            this.rbt_compat_myc.TabIndex = 11;
             this.rbt_compat_myc.TabStop = true;
             this.rbt_compat_myc.Text = "MyCommerce";
             this.rbt_compat_myc.UseVisualStyleBackColor = true;
@@ -146,7 +159,7 @@ namespace FormatadorDePostagens
             this.rbt_compat_pdv.Location = new System.Drawing.Point(6, 19);
             this.rbt_compat_pdv.Name = "rbt_compat_pdv";
             this.rbt_compat_pdv.Size = new System.Drawing.Size(114, 17);
-            this.rbt_compat_pdv.TabIndex = 0;
+            this.rbt_compat_pdv.TabIndex = 9;
             this.rbt_compat_pdv.TabStop = true;
             this.rbt_compat_pdv.Text = "MyCommerce PDV";
             this.rbt_compat_pdv.UseVisualStyleBackColor = true;
@@ -157,7 +170,7 @@ namespace FormatadorDePostagens
             this.check_Final.Location = new System.Drawing.Point(124, 35);
             this.check_Final.Name = "check_Final";
             this.check_Final.Size = new System.Drawing.Size(48, 17);
-            this.check_Final.TabIndex = 7;
+            this.check_Final.TabIndex = 2;
             this.check_Final.Text = "Final";
             this.check_Final.UseVisualStyleBackColor = true;
             // 
@@ -177,14 +190,14 @@ namespace FormatadorDePostagens
             this.msk_compVersao.Mask = "9,99,99,9999";
             this.msk_compVersao.Name = "msk_compVersao";
             this.msk_compVersao.Size = new System.Drawing.Size(106, 20);
-            this.msk_compVersao.TabIndex = 9;
+            this.msk_compVersao.TabIndex = 3;
             // 
             // bt_adicionar
             // 
             this.bt_adicionar.Location = new System.Drawing.Point(356, 72);
             this.bt_adicionar.Name = "bt_adicionar";
             this.bt_adicionar.Size = new System.Drawing.Size(109, 45);
-            this.bt_adicionar.TabIndex = 10;
+            this.bt_adicionar.TabIndex = 12;
             this.bt_adicionar.Text = "Adicionar Correções";
             this.bt_adicionar.UseVisualStyleBackColor = true;
             this.bt_adicionar.Click += new System.EventHandler(this.bt_adicionar_Click);
@@ -194,7 +207,7 @@ namespace FormatadorDePostagens
             this.bt_visualizar.Location = new System.Drawing.Point(356, 184);
             this.bt_visualizar.Name = "bt_visualizar";
             this.bt_visualizar.Size = new System.Drawing.Size(109, 45);
-            this.bt_visualizar.TabIndex = 11;
+            this.bt_visualizar.TabIndex = 14;
             this.bt_visualizar.Text = "Visualizar Correções";
             this.bt_visualizar.UseVisualStyleBackColor = true;
             this.bt_visualizar.Click += new System.EventHandler(this.bt_visualizar_Click);
@@ -204,7 +217,7 @@ namespace FormatadorDePostagens
             this.bt_fechar.Location = new System.Drawing.Point(356, 239);
             this.bt_fechar.Name = "bt_fechar";
             this.bt_fechar.Size = new System.Drawing.Size(109, 45);
-            this.bt_fechar.TabIndex = 12;
+            this.bt_fechar.TabIndex = 15;
             this.bt_fechar.Text = "Fechar";
             this.bt_fechar.UseVisualStyleBackColor = true;
             this.bt_fechar.Click += new System.EventHandler(this.bt_fechar_Click);
@@ -226,7 +239,7 @@ namespace FormatadorDePostagens
             this.bt_editarCorrecoes.Location = new System.Drawing.Point(356, 128);
             this.bt_editarCorrecoes.Name = "bt_editarCorrecoes";
             this.bt_editarCorrecoes.Size = new System.Drawing.Size(109, 45);
-            this.bt_editarCorrecoes.TabIndex = 17;
+            this.bt_editarCorrecoes.TabIndex = 13;
             this.bt_editarCorrecoes.Text = "Editar Correções";
             this.bt_editarCorrecoes.UseVisualStyleBackColor = true;
             // 
@@ -235,21 +248,22 @@ namespace FormatadorDePostagens
             this.check_naoCompativel.AutoSize = true;
             this.check_naoCompativel.Location = new System.Drawing.Point(301, 34);
             this.check_naoCompativel.Name = "check_naoCompativel";
-            this.check_naoCompativel.Size = new System.Drawing.Size(123, 17);
-            this.check_naoCompativel.TabIndex = 18;
-            this.check_naoCompativel.Text = "Sem compatibilidade";
+            this.check_naoCompativel.Size = new System.Drawing.Size(100, 17);
+            this.check_naoCompativel.TabIndex = 4;
+            this.check_naoCompativel.Text = "Não compativel";
             this.check_naoCompativel.UseVisualStyleBackColor = true;
             // 
-            // rbt_omni
+            // rbt_semCompat
             // 
-            this.rbt_omni.AutoSize = true;
-            this.rbt_omni.Location = new System.Drawing.Point(5, 89);
-            this.rbt_omni.Name = "rbt_omni";
-            this.rbt_omni.Size = new System.Drawing.Size(71, 17);
-            this.rbt_omni.TabIndex = 4;
-            this.rbt_omni.TabStop = true;
-            this.rbt_omni.Text = "OmniMulti";
-            this.rbt_omni.UseVisualStyleBackColor = true;
+            this.rbt_semCompat.AutoSize = true;
+            this.rbt_semCompat.Location = new System.Drawing.Point(6, 42);
+            this.rbt_semCompat.Name = "rbt_semCompat";
+            this.rbt_semCompat.Size = new System.Drawing.Size(122, 17);
+            this.rbt_semCompat.TabIndex = 10;
+            this.rbt_semCompat.TabStop = true;
+            this.rbt_semCompat.Text = "Sem compatibilidade";
+            this.rbt_semCompat.UseVisualStyleBackColor = true;
+            this.rbt_semCompat.CheckedChanged += new System.EventHandler(this.rbt_semCompat_CheckedChanged);
             // 
             // frm_menu2
             // 
@@ -305,5 +319,6 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.Button bt_editarCorrecoes;
         private System.Windows.Forms.RadioButton rbt_omni;
         private System.Windows.Forms.CheckBox check_naoCompativel;
+        private System.Windows.Forms.RadioButton rbt_semCompat;
     }
 }
