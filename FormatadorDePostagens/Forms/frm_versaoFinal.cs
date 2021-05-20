@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +14,15 @@ namespace FormatadorDePostagens.Forms
     partial class frm_versaoFinal : Form
     {
         static Versoes versoesObject = new Versoes();
-        public frm_versaoFinal(Versoes versoesObj)
+        private BancoInfos infoBd;
+        public MySqlDataReader reader;
+        public frm_versaoFinal(Versoes temp_versoesObj, BancoInfos temp_infoBd)
         {
             InitializeComponent();
+            infoBd = temp_infoBd;
+            versoesObject = temp_versoesObj;
 
-            versoesObject = versoesObj;
-
-            lbl_liberacao.Text = "Liberação da versão " + versoesObj.versao + " do " + versoesObj.sistema + ", compatível com o " + versoesObj.sistemaCompatibilidade + " (" + versoesObj.versaoCompatibilidade + ")";
+            lbl_liberacao.Text = "Liberação da versão " + versoesObject.versao + " do " + versoesObject.sistema + ", compatível com o " + versoesObject.sistemaCompatibilidade + " (" + versoesObject.versaoCompatibilidade + ")";
             
             if (versoesObject.versaoFinal) versaoFinal();
             else versaoRelease();
@@ -54,27 +57,51 @@ namespace FormatadorDePostagens.Forms
         private void versaoRelease()
         {
             rch_hitoricoFinal.Text = "Olá! Versão " + versoesObject.versao + " do " + versoesObject.sistema + " disponível para atualizações. \n\n";
-
-            //aqui valda se tem bugs externos
-            //se tiver insere o texto de bugs externos
-            //aqui vai os bugs externos
+            
+            //aqui valda se tem bugs externos 
+            infoBd.ComandoSql("SELECT * FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS RELATADAS POR CLIENTES' AND t.sistema = '"+ versoesObject.sistema +"' AND t.versao = '"+ versoesObject.versao +"';");
+            infoBd.cnn.Open();
+            reader = infoBd.comandoProSql.ExecuteReader();
+            if (reader.HasRows)
+            {
+                //se tiver insere o texto de bugs externos
+                //aqui vai os bugs externos
+            }
 
             //aqui valda se tem bugs internos
-            //se tiver insere o texto de bugs internos
-            //aqui vai os bugs internos
+            infoBd.ComandoSql("SELECT * FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "';");
+            infoBd.cnn.Open();
+            reader = infoBd.comandoProSql.ExecuteReader();
+            if (reader.HasRows)
+            {
+                //se tiver insere o texto de bugs internos
+                //aqui vai os bugs internos
+            }
 
             //aqui valda se tem customizações
-            //se tiver insere o texto de customizações
-            //aqui vai as customizações
+            infoBd.ComandoSql("SELECT * FROM tarefas t WHERE t.tipoTarefa = 'CUSTOMIZAÇÕES INCLUSAS' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "';");
+            infoBd.cnn.Open();
+            reader = infoBd.comandoProSql.ExecuteReader();
+            if (reader.HasRows)
+            {
+                //se tiver insere o texto de customizações
+                //aqui vai as customizações
+            }
 
+            //aqui fica o texto do rodapé da mensagem, onde vai validar a mensagem para compatibilidade
             if (versoesObject.naoCompativel)
             {
                 rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Não compatível com o " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
+            }
+            else if (versoesObject.sistemaCompatibilidade == "Sem compatibilidade")
+            {
+                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Atenciosamente, " + versoesObject.colaborador + ".";
             }
             else
             {
                 rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Compatível com a versão " + versoesObject.versaoCompatibilidade + " do " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
+            
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)

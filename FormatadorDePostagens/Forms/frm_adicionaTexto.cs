@@ -1,20 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FormatadorDePostagens.Forms
 {
-     partial class frm_adicionaTexto : Form
+    partial class frm_adicionaTexto : Form
     {
-        public MySqlConnection cnn = new MySqlConnection();
         public MySqlCommand comandoProSql = new MySqlCommand();
         public MySqlDataReader reader;
         private String nomeArquivo = "tarefa.txt";
@@ -28,18 +21,13 @@ namespace FormatadorDePostagens.Forms
             versoesObj = tmp_versoesObj;
             lbl_liberacao.Text = "Liberação da versão " + versoesObj.versao + " do " + versoesObj.sistema + ", compatível com o " + versoesObj.sistemaCompatibilidade + " (" + versoesObj.versaoCompatibilidade + ")";
             infosBd = tmp_infosBd;
-            cnn = infosBd.cnn;
-            comandoProSql.Connection = cnn;
-            comandoProSql.CommandType = CommandType.Text;
-            
-            //cnn.ConnectionString = "server=" + infosBd.servidor + ";Port=" + infosBd.porta + ";uid=" + infosBd.user + ";pwd=" + infosBd.senha + ";SslMode=none";
-            //cnn.Open();
-            //comandoSql("use " + infosBd.banco);
+            comandoProSql = infosBd.comandoProSql;
+            infosBd.Execute();
         }
 
         private void frm_adicionaTexto_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)
@@ -48,18 +36,14 @@ namespace FormatadorDePostagens.Forms
         }
 
         private void separaTexto2()  //nesse vou lendo linha por linha pra separar
-        {   
-            int nLinha = 1;
-            int nTarefa;
-            String detalheTarefa;
+        {
             String line;
-			int contador = 0;
-
+            int contador = 0;
             try
             {
                 if (System.IO.File.Exists(nomeArquivo))
                 {
-                    
+
                     StreamReader sr = new StreamReader(nomeArquivo);
                     line = sr.ReadLine();
 
@@ -69,26 +53,28 @@ namespace FormatadorDePostagens.Forms
                         {
                             tipoTarefa = "INCONSISTÊNCIAS RELATADAS POR CLIENTES";
                             line = sr.ReadLine(); //le a proxima linha
-							contador = 0;
+                            contador = 0;
                         }
                         else if (line == "INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE:")
                         {
                             tipoTarefa = "INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE";
                             line = sr.ReadLine(); //le a proxima linha
-							contador = 0;
+                            contador = 0;
                         }
-                        
+
                         else if (line == "CUSTOMIZAÇÕES INCLUSAS:")
                         {
                             tipoTarefa = "CUSTOMIZAÇÕES INCLUSAS";
                             line = sr.ReadLine(); //le a proxima linha
-							contador = 0;
+                            contador = 0;
                         }
-						else if(contador == 2){
-							line = null;
-						}
-						else if(line == ""){
-							contador = contador++;
+                        else if (contador == 2)
+                        {
+                            line = null;
+                        }
+                        else if (line == "")
+                        {
+                            contador = contador++;
                             line = sr.ReadLine();
                         }
                         else //caso não for uma definição do tipo de tarefa ele entra aqui para dai separa o numero do texto
@@ -99,23 +85,23 @@ namespace FormatadorDePostagens.Forms
                             int i = line.IndexOf(" - ");
                             codTarefa = line.Substring(0, i);
                             descricaoT = line.Substring(i + 3);
-                            comandoSql("SELECT * FROM tarefas WHERE tarefas.codTarefa = " + Convert.ToInt32(codTarefa) + " AND tarefas.sistema = '" + versoesObj.sistema + "'");
-                            cnn.Open();
+                            infosBd.ComandoSql("SELECT * FROM tarefas WHERE tarefas.codTarefa = " + Convert.ToInt32(codTarefa) + " AND tarefas.sistema = '" + versoesObj.sistema + "'");
+                            infosBd.cnn.Open();
                             reader = comandoProSql.ExecuteReader();
-                            
+
                             if (reader.HasRows)// busca se tem linha com where tarefas.codTarefa = codTarefa and tarefas.sistema = versoesObj.sistema
                             {
-                                cnn.Close();
+                                infosBd.cnn.Close();
                                 MessageBox.Show("A tarefa " + codTarefa + " já foi adicionada anteriormente ao banco.");
                             }
                             else
                             {
-                                cnn.Close();
-                                comandoSql("INSERT INTO tarefas (codTarefa, descricao, sistema, versao, compatibilidade, versaoCompat,pc, tipoTarefa) VALUES (" + Convert.ToInt32(codTarefa) + ",'" + descricaoT + "','" + versoesObj.sistema + "', '" + versoesObj.versao + "', '" + versoesObj.sistemaCompatibilidade + "', '" + versoesObj.versaoCompatibilidade + "','" + infosBd.pcName + "', '" + tipoTarefa + "')");
+                                infosBd.cnn.Close();
+                                infosBd.ComandoSql("INSERT INTO tarefas (codTarefa, descricao, sistema, versao, compatibilidade, versaoCompat,pc, tipoTarefa) VALUES (" + Convert.ToInt32(codTarefa) + ",'" + descricaoT + "','" + versoesObj.sistema + "', '" + versoesObj.versao + "', '" + versoesObj.sistemaCompatibilidade + "', '" + versoesObj.versaoCompatibilidade + "','" + infosBd.pcName + "', '" + tipoTarefa + "')");
                             }
-                            
+
                             line = sr.ReadLine();
-							contador = 0;
+                            contador = 0;
                         }
                     }
                     MessageBox.Show("Tarefas adicionadas com sucesso");
@@ -134,7 +120,7 @@ namespace FormatadorDePostagens.Forms
 
         private void jogaTxt()//nesse eu só to jogando pro arquivo .txt
         {
-			//vai ter que pegar um jeito de contar quantas linhas tem no richtext e fazer um loop com base nela dai inserir linha por linha
+            //vai ter que pegar um jeito de contar quantas linhas tem no richtext e fazer um loop com base nela dai inserir linha por linha
             try
             {
                 if (System.IO.File.Exists(nomeArquivo))
@@ -154,24 +140,9 @@ namespace FormatadorDePostagens.Forms
             }
         }
 
-        public void comandoSql(String cmd)
-        {
-            cnn.Open();
-            comandoProSql.CommandText = cmd;
-            try 
-            { 
-                comandoProSql.ExecuteNonQuery();
-                cnn.Close();
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
         private void bt_adicionar_Click(object sender, EventArgs e)
         {
-            //jogaTxt();
+            jogaTxt();
             separaTexto2();
             this.Close();
         }

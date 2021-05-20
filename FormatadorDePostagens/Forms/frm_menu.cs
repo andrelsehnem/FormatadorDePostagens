@@ -23,7 +23,6 @@ namespace FormatadorDePostagens
         public MySqlCommand comandoProSql = new MySqlCommand();
         public MySqlDataReader reader;
         private String nomeDoComputador;
-        private bool valido = false;
         public String arquivoConfig = "Config.txt";
 
         //reader.getString()
@@ -31,9 +30,7 @@ namespace FormatadorDePostagens
         public frm_menu()
         {
             InitializeComponent();
-            comandoProSql.Connection = cnn;
-            comandoProSql.CommandType = CommandType.Text;
-            //lbl_statusMenu.Text = "Banco não conectado";
+            infoBd.Execute();
             getTxt();
         }
 
@@ -63,12 +60,13 @@ namespace FormatadorDePostagens
 
         private void bt_conectar_Click(object sender, EventArgs e)
         {
-            conectaBd();
-            comandoSql("use " + infoBd.banco);
+            
+            infoBd.ConectaBanco();
+            infoBd.ComandoSql("use " + infoBd.banco);
             String comandoLogin = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador + "')";
-            comandoSql(comandoLogin);
+            infoBd.ComandoSql(comandoLogin);
             abreMenu2();
-            cnn.Close();
+            infoBd.cnn.Close();
         }
 
         private void bt_criarBD_Click(object sender, EventArgs e)
@@ -79,7 +77,7 @@ namespace FormatadorDePostagens
 
         private void abreMenu2()
         {
-            if (cnn.State == ConnectionState.Open)
+            if (infoBd.conectado)
             {
                 alteraTabelas();
                 frm_menu2 frmmenu2 = new frm_menu2(infoBd);
@@ -88,7 +86,6 @@ namespace FormatadorDePostagens
                 setTxt();
             }
         }
-        
 
         private void setInfosBanco()
         {
@@ -103,32 +100,16 @@ namespace FormatadorDePostagens
             infoBd.comandoProSql = comandoProSql;
         }
 
-        public void conectaBd()
-        {
-            setInfosBanco();
-            try
-            {
-                cnn.ConnectionString = "server=" + infoBd.servidor + ";Port=" + infoBd.porta +";uid=" + infoBd.user + ";pwd=" + infoBd.senha + ";SslMode=none";
-                cnn.Open();
-                //lbl_statusMenu.Text = "Conectado em " + cnn.Database;
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.ToString());
-                MessageBox.Show("Conexão não estabelecida, verifique as informações inseridas");
-                return;
-            }
-        }
-
+        
         private void criaBD()
         {
             String cmd = ""; 
-            conectaBd();
+            infoBd.ConectaBanco();
             try
             {
                 cmd = "CREATE DATABASE IF NOT EXISTS " + infoBd.banco ;
-                comandoSql(cmd);
-                comandoSql("use " + infoBd.banco);
+                infoBd.ComandoSql(cmd);
+                infoBd.ComandoSql("use " + infoBd.banco);
                 criaTabelas();
             }
             catch
@@ -139,42 +120,25 @@ namespace FormatadorDePostagens
             }
 
             cmd = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador +"')";
-            comandoSql(cmd);
-        }
-
-        public void comandoSql(String cmd)
-        {
-            
-            comandoProSql.CommandText = cmd;
-
-            try
-            {
-                comandoProSql.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.ToString());
-                //MessageBox.Show("Não foi possível executar a seguinte query: " + cmd);
-            }
-
+            infoBd.ComandoSql(cmd);
         }
 
         private void criaTabelas()
         {
             //TABELA DE LOG DO LOGIN NO APP
-            comandoSql("CREATE TABLE if not exists log_login (codigo int(4) not null AUTO_INCREMENT, data datetime default null,pc varchar(30) null default null collate 'utf8_general_ci', usuario VARCHAR(50) NOT NULL DEFAULT 'Usuario', PRIMARY KEY(codigo));");
+            infoBd.ComandoSql("CREATE TABLE if not exists log_login (codigo int(4) not null AUTO_INCREMENT, data datetime default null,pc varchar(30) null default null collate 'utf8_general_ci', usuario VARCHAR(50) NOT NULL DEFAULT 'Usuario', PRIMARY KEY(codigo));");
             //TRIGGER PARA INSERIR NO LOG_LOGIN A DATA QUE FOI LOGADO
-            comandoSql("CREATE TRIGGER if not exists dataLogin BEFORE INSERT ON log_login FOR EACH ROW SET NEW.data = NOW()");
+            infoBd.ComandoSql("CREATE TRIGGER if not exists dataLogin BEFORE INSERT ON log_login FOR EACH ROW SET NEW.data = NOW()");
             //TABELA DE TAREFAS DA VERSÃO
-            comandoSql("CREATE TABLE if not exists tarefas (codigo int(4) not null AUTO_INCREMENT, codTarefa int(6) not null default 0, descricao varchar(200) not null default 'Não informado', sistema varchar(25) not null default 'N.A.', versao varchar(12) not null default 'N.A.', compatibilidade varchar(25) not null default 'N.A.', versaoCompat varchar(12) not null default 'N.A.',data datetime default null,pc varchar(30) null default null collate 'utf8_general_ci', usuario VARCHAR(50) NOT NULL DEFAULT 'Usuario', dataAlteracao datetime, usuarioAlteracao varchar(50), PRIMARY KEY(codigo));");
+            infoBd.ComandoSql("CREATE TABLE if not exists tarefas (codigo int(4) not null AUTO_INCREMENT, codTarefa int(6) not null default 0, descricao varchar(200) not null default 'Não informado', sistema varchar(25) not null default 'N.A.', versao varchar(12) not null default 'N.A.', compatibilidade varchar(25) not null default 'N.A.', versaoCompat varchar(12) not null default 'N.A.',data datetime default null,pc varchar(30) null default null collate 'utf8_general_ci', usuario VARCHAR(50) NOT NULL DEFAULT 'Usuario', dataAlteracao datetime, usuarioAlteracao varchar(50), PRIMARY KEY(codigo));");
             //TRIGGER PARA INSERIR NO tarefas A DATA QUE FOI inserido
-            comandoSql("CREATE TRIGGER if not exists dataInsert BEFORE INSERT ON tarefas FOR EACH ROW SET NEW.data = NOW()");
+            infoBd.ComandoSql("CREATE TRIGGER if not exists dataInsert BEFORE INSERT ON tarefas FOR EACH ROW SET NEW.data = NOW()");
             //TRIGER DE LOG PARA INSERIR NA TABELA DE TAREFAS DA VERSAO quem inseriu
-            comandoSql("create trigger if not exists userInsert before insert on tarefas for each row set new.usuario = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1)");
+            infoBd.ComandoSql("create trigger if not exists userInsert before insert on tarefas for each row set new.usuario = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1)");
             //TRIGGER DE LOG PARA INSERIR NA TABELA DE TAREFAS DA VERSAO QUANDO HOUVER ALTERAÇÕES
-            comandoSql("create trigger if not exists dataUpdate before update on tarefas for each row set new.dataAlteracao = NOW()");
+            infoBd.ComandoSql("create trigger if not exists dataUpdate before update on tarefas for each row set new.dataAlteracao = NOW()");
             //TRIGGER DE LOG PARA INSERIR NA TABELA DE TAREFAS DA VERSAO quem alterou
-            comandoSql("create trigger if not exists userUpdate before update on tarefas for each row set new.usuarioAlteracao = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1)");  
+            infoBd.ComandoSql("create trigger if not exists userUpdate before update on tarefas for each row set new.usuarioAlteracao = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1)");  
         }
 
         private void alteraTabelas() //para cada alter table fazer o if com o valida tabela
@@ -183,25 +147,22 @@ namespace FormatadorDePostagens
                 if (!validaTabela("tarefas","tipoTarefa"))
                 {
                     reader.Close();
-                    comandoSql("ALTER TABLE tarefas add tipoTarefa varchar(45) NOT NULL DEFAULT 'INCONSISTÊNCIAS RELATADAS POR CLIENTES';");
+                    infoBd.ComandoSql("ALTER TABLE tarefas add tipoTarefa varchar(45) NOT NULL DEFAULT 'INCONSISTÊNCIAS RELATADAS POR CLIENTES';");
                 }
             }
             catch
             {
                 MessageBox.Show("Tabelas atualizadas!");
             }
-            
         }
 
         private Boolean validaTabela(String tabela, String coluna)
         {
             //essa função vai retornar se a coluna existe nesta tabela
-            comandoSql("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" + infoBd.banco +"' AND TABLE_NAME = '"+ tabela +"' AND COLUMN_NAME = '"+ coluna +"'");
+            infoBd.ComandoSql("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" + infoBd.banco +"' AND TABLE_NAME = '"+ tabela +"' AND COLUMN_NAME = '"+ coluna +"'");
             reader = comandoProSql.ExecuteReader();
             //reader.Read();
-            
-            
-           
+ 
             return reader.HasRows; //se existir retorna TRUE
         }
 
@@ -284,14 +245,12 @@ namespace FormatadorDePostagens
 
         private void button1_Click(object sender, EventArgs e) //usado somente para testes
         {
-            String teste1 = "105919 - Ajustada inconsistência ao finalizar venda com desconto.";
-            String codTarefa = "";
-            String descricaoT = "";
-            int i = teste1.IndexOf(" - ");
-            codTarefa = teste1.Substring(0, i);
-            descricaoT = teste1.Substring(i + 3);
-            MessageBox.Show(codTarefa);
-            MessageBox.Show(descricaoT);
+            setInfosBanco();
+            infoBd.Execute();
+            infoBd.ConectaBanco();
+            infoBd.ComandoSql("use " + infoBd.banco);
+            String comandoLogin = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador + "')";
+            infoBd.ComandoSql(comandoLogin);
         }
     }
 }

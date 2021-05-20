@@ -62,7 +62,7 @@ namespace FormatadorDePostagens
             setVers();
             if (validado)
             {
-                Forms.frm_versaoFinal frmFinal = new Forms.frm_versaoFinal(versaoObj);
+                Forms.frm_versaoFinal frmFinal = new Forms.frm_versaoFinal(versaoObj, infoBd);
                 frmFinal.Show();
             }
         }
