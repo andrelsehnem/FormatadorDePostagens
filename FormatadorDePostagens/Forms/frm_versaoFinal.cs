@@ -56,36 +56,55 @@ namespace FormatadorDePostagens.Forms
 
         private void versaoRelease()
         {
+            String mensagem = "";
+            int codTarefa = 0;
+            String desc = "";
             rch_hitoricoFinal.Text = "Olá! Versão " + versoesObject.versao + " do " + versoesObject.sistema + " disponível para atualizações. \n\n";
             
             //aqui valda se tem bugs externos 
-            infoBd.ComandoSql("SELECT * FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS RELATADAS POR CLIENTES' AND t.sistema = '"+ versoesObject.sistema +"' AND t.versao = '"+ versoesObject.versao +"';");
+            infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS RELATADAS POR CLIENTES' AND t.sistema = '" + versoesObject.sistema +"' AND t.versao = '"+ versoesObject.versao + "' ORDER BY t.codTarefa;");
             infoBd.cnn.Open();
             reader = infoBd.comandoProSql.ExecuteReader();
-            if (reader.HasRows)
+            try
             {
-                //se tiver insere o texto de bugs externos
-                //aqui vai os bugs externos
-            }
+                if (reader.HasRows)
+                {
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "INCONSISTÊNCIAS RELATADAS POR CLIENTES \n";
+                    while (reader.HasRows)
+                    {
+                        codTarefa = reader.GetInt32(0);
+                        desc = reader.GetString(1);
+                        rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + codTarefa + " - " + desc + "\n";
+                        reader.NextResult();
+                    }
+                    //se tiver insere o texto de bugs externos
+                    //aqui vai os bugs externos
+                }
 
-            //aqui valda se tem bugs internos
-            infoBd.ComandoSql("SELECT * FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "';");
-            infoBd.cnn.Open();
-            reader = infoBd.comandoProSql.ExecuteReader();
-            if (reader.HasRows)
-            {
-                //se tiver insere o texto de bugs internos
-                //aqui vai os bugs internos
-            }
+                //aqui valda se tem bugs internos
+                infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
+                infoBd.cnn.Open();
+                reader = infoBd.comandoProSql.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    MessageBox.Show(reader.ToString());
+                    //se tiver insere o texto de bugs internos
+                    //aqui vai os bugs internos
+                }
 
-            //aqui valda se tem customizações
-            infoBd.ComandoSql("SELECT * FROM tarefas t WHERE t.tipoTarefa = 'CUSTOMIZAÇÕES INCLUSAS' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "';");
-            infoBd.cnn.Open();
-            reader = infoBd.comandoProSql.ExecuteReader();
-            if (reader.HasRows)
+                //aqui valda se tem customizações
+                infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'CUSTOMIZAÇÕES INCLUSAS' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
+                infoBd.cnn.Open();
+                reader = infoBd.comandoProSql.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    //se tiver insere o texto de customizações
+                    //aqui vai as customizações
+                }
+            }
+            catch
             {
-                //se tiver insere o texto de customizações
-                //aqui vai as customizações
+
             }
 
             //aqui fica o texto do rodapé da mensagem, onde vai validar a mensagem para compatibilidade
