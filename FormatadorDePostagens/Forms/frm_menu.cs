@@ -24,9 +24,7 @@ namespace FormatadorDePostagens
         public MySqlDataReader reader;
         private String nomeDoComputador;
         public String arquivoConfig = "Config.txt";
-
-        //reader.getString()
-
+        
         public frm_menu()
         {
             InitializeComponent();

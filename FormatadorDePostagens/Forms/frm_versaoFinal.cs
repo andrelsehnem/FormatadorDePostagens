@@ -59,7 +59,6 @@ namespace FormatadorDePostagens.Forms
             int codTarefa = 0;
             String desc = "";
             rch_hitoricoFinal.Text = "Olá! Versão " + versoesObject.versao + " do " + versoesObject.sistema + " disponível para atualizações. \n\n";
-             
             try
             {
                 //aqui valda se tem bugs externos
@@ -146,7 +145,6 @@ namespace FormatadorDePostagens.Forms
             {
                 rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\nCompatível com a versão " + versoesObject.versaoCompatibilidade + " do " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
-            
         }
 
         private void bt_cancelar_Click(object sender, EventArgs e)
