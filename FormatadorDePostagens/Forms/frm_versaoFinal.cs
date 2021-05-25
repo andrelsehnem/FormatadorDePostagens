@@ -59,16 +59,15 @@ namespace FormatadorDePostagens.Forms
             int codTarefa = 0;
             String desc = "";
             rch_hitoricoFinal.Text = "Olá! Versão " + versoesObject.versao + " do " + versoesObject.sistema + " disponível para atualizações. \n\n";
-
-            //aqui valda se tem bugs externos 
-            infoBd.ComandoSql("SELECT count(t.codigo) FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS RELATADAS POR CLIENTES' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
-            infoBd.cnn.Open();
-            reader = infoBd.comandoProSql.ExecuteReader();
-            reader.Read();
-            int numLinhas = reader.GetInt32(0);
-
+             
             try
             {
+                //aqui valda se tem bugs externos
+                infoBd.ComandoSql("SELECT count(t.codigo) FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS RELATADAS POR CLIENTES' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
+                infoBd.cnn.Open();
+                reader = infoBd.comandoProSql.ExecuteReader();
+                reader.Read();
+                int numLinhas = reader.GetInt32(0);
                 if (reader.HasRows)
                 {
                     infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS RELATADAS POR CLIENTES' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
@@ -81,32 +80,52 @@ namespace FormatadorDePostagens.Forms
                         codTarefa = reader.GetInt32(0);
                         desc = reader.GetString(1);
                         rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + codTarefa + " - " + desc + "\n";
-                        //reader.NextResult();
                         reader.Read();
                     }
-                    //se tiver insere o texto de bugs externos
-                    //aqui vai os bugs externos
                 }
 
                 //aqui valda se tem bugs internos
-                infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
+                infoBd.ComandoSql("SELECT count(t.codigo) FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
                 infoBd.cnn.Open();
                 reader = infoBd.comandoProSql.ExecuteReader();
+                reader.Read();
+                numLinhas = reader.GetInt32(0);
                 if (reader.HasRows)
                 {
-                    
-                    //se tiver insere o texto de bugs internos
-                    //aqui vai os bugs internos
+                    infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
+                    infoBd.cnn.Open();
+                    reader = infoBd.comandoProSql.ExecuteReader();
+                    reader.Read();
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\nINCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE \n";
+                    for (int i = 0; i < numLinhas; i++)
+                    {
+                        codTarefa = reader.GetInt32(0);
+                        desc = reader.GetString(1);
+                        rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + codTarefa + " - " + desc + "\n";
+                        reader.Read();
+                    }
                 }
 
-                //aqui valda se tem customizações
-                infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'CUSTOMIZAÇÕES INCLUSAS' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
+                //aqui valda se tem bugs internos
+                infoBd.ComandoSql("SELECT count(t.codigo) FROM tarefas t WHERE t.tipoTarefa = 'CUSTOMIZAÇÕES INCLUSAS' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
                 infoBd.cnn.Open();
                 reader = infoBd.comandoProSql.ExecuteReader();
+                reader.Read();
+                numLinhas = reader.GetInt32(0);
                 if (reader.HasRows)
                 {
-                    //se tiver insere o texto de customizações
-                    //aqui vai as customizações
+                    infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'CUSTOMIZAÇÕES INCLUSAS' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
+                    infoBd.cnn.Open();
+                    reader = infoBd.comandoProSql.ExecuteReader();
+                    reader.Read();
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\nCUSTOMIZAÇÕES INCLUSAS \n";
+                    for (int i = 0; i < numLinhas; i++)
+                    {
+                        codTarefa = reader.GetInt32(0);
+                        desc = reader.GetString(1);
+                        rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + codTarefa + " - " + desc + "\n";
+                        reader.Read();
+                    }
                 }
             }
             catch(Exception e)
