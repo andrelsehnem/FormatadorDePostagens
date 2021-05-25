@@ -56,26 +56,33 @@ namespace FormatadorDePostagens.Forms
 
         private void versaoRelease()
         {
-            String mensagem = "";
             int codTarefa = 0;
             String desc = "";
             rch_hitoricoFinal.Text = "Olá! Versão " + versoesObject.versao + " do " + versoesObject.sistema + " disponível para atualizações. \n\n";
-            
+
             //aqui valda se tem bugs externos 
-            infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS RELATADAS POR CLIENTES' AND t.sistema = '" + versoesObject.sistema +"' AND t.versao = '"+ versoesObject.versao + "' ORDER BY t.codTarefa;");
+            infoBd.ComandoSql("SELECT count(t.codigo) FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS RELATADAS POR CLIENTES' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
             infoBd.cnn.Open();
             reader = infoBd.comandoProSql.ExecuteReader();
+            reader.Read();
+            int numLinhas = reader.GetInt32(0);
+
             try
             {
                 if (reader.HasRows)
                 {
+                    infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS RELATADAS POR CLIENTES' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
+                    infoBd.cnn.Open();
+                    reader = infoBd.comandoProSql.ExecuteReader();
+                    reader.Read();
                     rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "INCONSISTÊNCIAS RELATADAS POR CLIENTES \n";
-                    while (reader.HasRows)
+                    for (int i = 0; i < numLinhas; i++)
                     {
                         codTarefa = reader.GetInt32(0);
                         desc = reader.GetString(1);
                         rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + codTarefa + " - " + desc + "\n";
-                        reader.NextResult();
+                        //reader.NextResult();
+                        reader.Read();
                     }
                     //se tiver insere o texto de bugs externos
                     //aqui vai os bugs externos
@@ -87,7 +94,7 @@ namespace FormatadorDePostagens.Forms
                 reader = infoBd.comandoProSql.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    MessageBox.Show(reader.ToString());
+                    
                     //se tiver insere o texto de bugs internos
                     //aqui vai os bugs internos
                 }
@@ -102,9 +109,9 @@ namespace FormatadorDePostagens.Forms
                     //aqui vai as customizações
                 }
             }
-            catch
+            catch(Exception e)
             {
-
+                MessageBox.Show(e.ToString());
             }
 
             //aqui fica o texto do rodapé da mensagem, onde vai validar a mensagem para compatibilidade
@@ -118,7 +125,7 @@ namespace FormatadorDePostagens.Forms
             }
             else
             {
-                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Compatível com a versão " + versoesObject.versaoCompatibilidade + " do " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
+                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\nCompatível com a versão " + versoesObject.versaoCompatibilidade + " do " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
             
         }

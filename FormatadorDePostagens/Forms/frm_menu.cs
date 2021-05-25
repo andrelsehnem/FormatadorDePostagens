@@ -30,7 +30,6 @@ namespace FormatadorDePostagens
         public frm_menu()
         {
             InitializeComponent();
-            infoBd.Execute();
             getTxt();
         }
 
@@ -60,7 +59,8 @@ namespace FormatadorDePostagens
 
         private void bt_conectar_Click(object sender, EventArgs e)
         {
-            
+            setInfosBanco();
+            infoBd.Execute();
             infoBd.ConectaBanco();
             infoBd.ComandoSql("use " + infoBd.banco);
             String comandoLogin = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador + "')";
@@ -80,10 +80,10 @@ namespace FormatadorDePostagens
             if (infoBd.conectado)
             {
                 alteraTabelas();
+                setTxt();
                 frm_menu2 frmmenu2 = new frm_menu2(infoBd);
                 frmmenu2.Show();
                 this.Visible = false;
-                setTxt();
             }
         }
 
@@ -103,7 +103,8 @@ namespace FormatadorDePostagens
         
         private void criaBD()
         {
-            String cmd = ""; 
+            String cmd = "";
+            infoBd.Execute();
             infoBd.ConectaBanco();
             try
             {
@@ -249,8 +250,16 @@ namespace FormatadorDePostagens
             infoBd.Execute();
             infoBd.ConectaBanco();
             infoBd.ComandoSql("use " + infoBd.banco);
-            String comandoLogin = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador + "')";
-            infoBd.ComandoSql(comandoLogin);
+            
+
+            infoBd.ComandoSql("SELECT codTarefa FROM tarefas WHERE tipoTarefa = 'INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE'");
+            infoBd.cnn.Open();
+
+            reader = infoBd.comandoProSql.ExecuteReader();
+            reader.Read();
+
+            MessageBox.Show(Convert.ToString(reader.GetInt32(0)));
+
         }
     }
 }

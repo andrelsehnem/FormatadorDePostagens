@@ -28,14 +28,15 @@ namespace FormatadorDePostagens
         {
             comandoProSql.Connection = cnn;
             comandoProSql.CommandType = CommandType.Text;
+            
         }
         public void ComandoSql(String cmd)
         {
-            
-            cnn.Open();
+            cnn.Close();
             comandoProSql.CommandText = cmd;
             try
             {
+                cnn.Open();
                 comandoProSql.ExecuteNonQuery();
                 cnn.Close();
             }
@@ -55,13 +56,12 @@ namespace FormatadorDePostagens
             }
             catch (Exception ex)
             {
-                
                 MessageBox.Show("Conexão não estabelecida, verifique as informações inseridas");
                 MessageBox.Show(ex.ToString());
                 return;
             }
             conectado = true;
-            cnn.Close();
+            
         }
 
         
