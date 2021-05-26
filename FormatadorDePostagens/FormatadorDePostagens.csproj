@@ -109,6 +109,12 @@
   <ItemGroup>
     <Compile Include="Classes\BancoInfos.cs" />
     <Compile Include="Classes\Versoes.cs" />
+    <Compile Include="Forms\frm_editaTexto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm_editaTexto.Designer.cs">
+      <DependentUpon>frm_editaTexto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frm_versaoFinal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frm_adicionaTexto.resx">
       <DependentUpon>frm_adicionaTexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm_editaTexto.resx">
+      <DependentUpon>frm_editaTexto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm_menu2.resx">
       <DependentUpon>frm_menu2.cs</DependentUpon>

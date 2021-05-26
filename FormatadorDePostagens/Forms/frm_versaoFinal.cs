@@ -16,16 +16,21 @@ namespace FormatadorDePostagens.Forms
         static Versoes versoesObject = new Versoes();
         private BancoInfos infoBd;
         public MySqlDataReader reader;
+
+        //ESSAS TAGS SÃO PARA FORMATAÇÃO DA MENSAGEM
+        private String tagInicio_negrito = "";
+        private String tagFim_negrito = "";
+
+
         public frm_versaoFinal(Versoes temp_versoesObj, BancoInfos temp_infoBd)
         {
             InitializeComponent();
             infoBd = temp_infoBd;
             versoesObject = temp_versoesObj;
 
-            lbl_liberacao.Text = "Liberação da versão " + versoesObject.versao + " do " + versoesObject.sistema + ", compatível com o " + versoesObject.sistemaCompatibilidade + " (" + versoesObject.versaoCompatibilidade + ")";
-            
-            if (versoesObject.versaoFinal) versaoFinal();
-            else versaoRelease();
+            lbl_liberacao.Text = "Liberação da versão " + versoesObject.versao + " do " + versoesObject.sistema  +".";
+
+            incluiTexto();
             
         }
 
@@ -34,9 +39,15 @@ namespace FormatadorDePostagens.Forms
             
         }
 
+        private void incluiTexto()
+        {
+            if (versoesObject.versaoFinal) versaoFinal();
+            else versaoRelease();
+        }
+
         private void versaoFinal()
         {
-            rch_hitoricoFinal.Text = "Olá! Versão final " + versoesObject.versao + " do " + versoesObject.sistema + " disponível para atualizações. \n\n";
+            rch_hitoricoFinal.Text = "Olá! Versão final " + tagInicio_negrito + versoesObject.versao + tagFim_negrito + " do " + tagInicio_negrito+ versoesObject.sistema + tagFim_negrito + " disponível para atualizações. \n\n";
             if (versoesObject.naoCompativel)
             {
                 rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Não compatível com o " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
@@ -47,7 +58,7 @@ namespace FormatadorDePostagens.Forms
             }
             else
             {
-                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Compatível com a versão " + versoesObject.versaoCompatibilidade + " do " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
+                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Compatível com a versão " + tagInicio_negrito + versoesObject.versaoCompatibilidade + tagFim_negrito + " do " + tagInicio_negrito + versoesObject.sistemaCompatibilidade + tagFim_negrito + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
             
 
@@ -58,7 +69,7 @@ namespace FormatadorDePostagens.Forms
         {
             int codTarefa = 0;
             String desc = "";
-            rch_hitoricoFinal.Text = "Olá! Versão " + versoesObject.versao + " do " + versoesObject.sistema + " disponível para atualizações. \n\n";
+            rch_hitoricoFinal.Text = "Olá! Versão " + tagInicio_negrito + versoesObject.versao + tagFim_negrito + " do " + tagInicio_negrito + versoesObject.sistema + tagFim_negrito + " disponível para atualizações. \n\n";
             try
             {
                 //aqui valda se tem bugs externos
@@ -67,18 +78,18 @@ namespace FormatadorDePostagens.Forms
                 reader = infoBd.comandoProSql.ExecuteReader();
                 reader.Read();
                 int numLinhas = reader.GetInt32(0);
-                if (reader.HasRows)
+                if (numLinhas > 0)
                 {
                     infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS RELATADAS POR CLIENTES' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
                     infoBd.cnn.Open();
                     reader = infoBd.comandoProSql.ExecuteReader();
                     reader.Read();
-                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "INCONSISTÊNCIAS RELATADAS POR CLIENTES \n";
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + "INCONSISTÊNCIAS RELATADAS POR CLIENTES" + tagFim_negrito + "\n";
                     for (int i = 0; i < numLinhas; i++)
                     {
                         codTarefa = reader.GetInt32(0);
                         desc = reader.GetString(1);
-                        rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + codTarefa + " - " + desc + "\n";
+                        rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + codTarefa + tagFim_negrito + " - " + desc + "\n";
                         reader.Read();
                     }
                 }
@@ -89,18 +100,18 @@ namespace FormatadorDePostagens.Forms
                 reader = infoBd.comandoProSql.ExecuteReader();
                 reader.Read();
                 numLinhas = reader.GetInt32(0);
-                if (reader.HasRows)
+                if (numLinhas > 0)
                 {
                     infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
                     infoBd.cnn.Open();
                     reader = infoBd.comandoProSql.ExecuteReader();
                     reader.Read();
-                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\nINCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE \n";
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text  +"\n" + tagInicio_negrito + "INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE" + tagFim_negrito + "\n" ;
                     for (int i = 0; i < numLinhas; i++)
                     {
                         codTarefa = reader.GetInt32(0);
                         desc = reader.GetString(1);
-                        rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + codTarefa + " - " + desc + "\n";
+                        rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + codTarefa + tagFim_negrito + " - " + desc + "\n";
                         reader.Read();
                     }
                 }
@@ -111,20 +122,21 @@ namespace FormatadorDePostagens.Forms
                 reader = infoBd.comandoProSql.ExecuteReader();
                 reader.Read();
                 numLinhas = reader.GetInt32(0);
-                if (reader.HasRows)
+                if (numLinhas > 0)
                 {
                     infoBd.ComandoSql("SELECT t.codTarefa, t.descricao FROM tarefas t WHERE t.tipoTarefa = 'CUSTOMIZAÇÕES INCLUSAS' AND t.sistema = '" + versoesObject.sistema + "' AND t.versao = '" + versoesObject.versao + "' ORDER BY t.codTarefa;");
                     infoBd.cnn.Open();
                     reader = infoBd.comandoProSql.ExecuteReader();
                     reader.Read();
-                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\nCUSTOMIZAÇÕES INCLUSAS \n";
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\n" + tagInicio_negrito + "CUSTOMIZAÇÕES INCLUSAS" + tagFim_negrito + "\n";
                     for (int i = 0; i < numLinhas; i++)
                     {
                         codTarefa = reader.GetInt32(0);
                         desc = reader.GetString(1);
-                        rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + codTarefa + " - " + desc + "\n";
+                        rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + codTarefa + tagFim_negrito + " - " + desc + "\n";
                         reader.Read();
                     }
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\n";
                 }
             }
             catch(Exception e)
@@ -135,7 +147,7 @@ namespace FormatadorDePostagens.Forms
             //aqui fica o texto do rodapé da mensagem, onde vai validar a mensagem para compatibilidade
             if (versoesObject.naoCompativel)
             {
-                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Não compatível com o " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
+                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + "Não compatível" +tagFim_negrito +" com o " + tagInicio_negrito + versoesObject.sistemaCompatibilidade + tagFim_negrito + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
             else if (versoesObject.sistemaCompatibilidade == "Sem compatibilidade")
             {
@@ -143,7 +155,7 @@ namespace FormatadorDePostagens.Forms
             }
             else
             {
-                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\nCompatível com a versão " + versoesObject.versaoCompatibilidade + " do " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
+                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Compatível com a versão " + tagInicio_negrito + versoesObject.versaoCompatibilidade + tagFim_negrito + " do " +tagInicio_negrito + versoesObject.sistemaCompatibilidade + tagFim_negrito + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
         }
 
@@ -152,6 +164,35 @@ namespace FormatadorDePostagens.Forms
             this.Close();
         }
 
-        
+        private void rb_workplace_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_workplace.Checked)
+            {
+                tagInicio_negrito = "**";
+                tagFim_negrito = "**";
+                incluiTexto();
+            }
+        }
+
+        private void rb_normal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_normal.Checked)
+            {
+                tagInicio_negrito = "";
+                tagFim_negrito = "";
+                incluiTexto();
+            }
+            
+        }
+
+        private void rb_forum_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_forum.Checked)
+            {
+                tagInicio_negrito = "[b]";
+                tagFim_negrito = "[/b]";
+                incluiTexto();
+            }
+        }
     }
 }

@@ -136,5 +136,11 @@ namespace FormatadorDePostagens
                 check_naoCompativel.Enabled = true;
             }
         }
+
+        private void bt_editarCorrecoes_Click(object sender, EventArgs e)
+        {
+            Forms.frm_editaTexto frm = new Forms.frm_editaTexto();
+            frm.Show();
+        }
     }
 }
