@@ -2,7 +2,7 @@
 
 namespace FormatadorDePostagens
 {
-    internal class Versoes
+    public class Versoes
     {
         public String versao = "";
         public String versaoCompatibilidade = "";

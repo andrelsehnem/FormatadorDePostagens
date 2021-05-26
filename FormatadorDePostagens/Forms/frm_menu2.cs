@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FormatadorDePostagens
@@ -32,14 +25,14 @@ namespace FormatadorDePostagens
             infoBd = temp_bcInf;
 
         }
-        
+
         private void frm_menu2_Load(object sender, EventArgs e)
         {
             validado = false;
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)
-            {   
+        {
             this.Close();
             Application.Exit();
         }
@@ -70,17 +63,23 @@ namespace FormatadorDePostagens
         private void validaVersoes()
         {
             validado = false;
-            if (msk_versao.Text == " .  .  ."){
+            if (msk_versao.Text == " .  .  .")
+            {
                 MessageBox.Show("Informe o número da versão que vai ser liberada");
                 return;
-            }else{
+            }
+            else
+            {
                 versao = msk_versao.Text;
                 //pegar o radio button
             }
-            if (msk_compVersao.Text == " .  .  ."){
+            if (msk_compVersao.Text == " .  .  .")
+            {
                 MessageBox.Show("Informe o número da versão de compatibilidade");
                 return;
-            }else{
+            }
+            else
+            {
                 versaoCompatibilidade = msk_compVersao.Text;
                 //pegar o radio button
             }
@@ -114,6 +113,7 @@ namespace FormatadorDePostagens
 
         private void setVers()
         {
+            validaVersoes();
             versaoObj.sistema = validaSistema();
             versaoObj.sistemaCompatibilidade = validaCompativel();
             versaoObj.versao = versao;
@@ -139,7 +139,8 @@ namespace FormatadorDePostagens
 
         private void bt_editarCorrecoes_Click(object sender, EventArgs e)
         {
-            Forms.frm_editaTexto frm = new Forms.frm_editaTexto();
+            setVers();
+            Forms.frm_editaTexto frm = new Forms.frm_editaTexto(versaoObj, infoBd);
             frm.Show();
         }
     }

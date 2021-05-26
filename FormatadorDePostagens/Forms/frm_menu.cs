@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using Microsoft.SqlServer;
 using MySql.Data.MySqlClient;
-using MySql.Data.Types;
 using System.IO;
 
 namespace FormatadorDePostagens
@@ -24,7 +14,7 @@ namespace FormatadorDePostagens
         public MySqlDataReader reader;
         private String nomeDoComputador;
         public String arquivoConfig = "Config.txt";
-        
+
         public frm_menu()
         {
             InitializeComponent();
@@ -94,11 +84,11 @@ namespace FormatadorDePostagens
             infoBd.banco = txt_banco.Text;
             infoBd.pcName = nomeDoComputador;
             infoBd.colaborador = txt_nomeUsuario.Text;
-            infoBd.cnn = cnn; 
+            infoBd.cnn = cnn;
             infoBd.comandoProSql = comandoProSql;
         }
 
-        
+
         private void criaBD()
         {
             String cmd = "";
@@ -106,7 +96,7 @@ namespace FormatadorDePostagens
             infoBd.ConectaBanco();
             try
             {
-                cmd = "CREATE DATABASE IF NOT EXISTS " + infoBd.banco ;
+                cmd = "CREATE DATABASE IF NOT EXISTS " + infoBd.banco;
                 infoBd.ComandoSql(cmd);
                 infoBd.ComandoSql("use " + infoBd.banco);
                 criaTabelas();
@@ -115,10 +105,10 @@ namespace FormatadorDePostagens
             {
                 MessageBox.Show("Verifique a conexão SQL");
                 return;
-                
+
             }
 
-            cmd = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador +"')";
+            cmd = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador + "')";
             infoBd.ComandoSql(cmd);
         }
 
@@ -137,13 +127,14 @@ namespace FormatadorDePostagens
             //TRIGGER DE LOG PARA INSERIR NA TABELA DE TAREFAS DA VERSAO QUANDO HOUVER ALTERAÇÕES
             infoBd.ComandoSql("create trigger if not exists dataUpdate before update on tarefas for each row set new.dataAlteracao = NOW()");
             //TRIGGER DE LOG PARA INSERIR NA TABELA DE TAREFAS DA VERSAO quem alterou
-            infoBd.ComandoSql("create trigger if not exists userUpdate before update on tarefas for each row set new.usuarioAlteracao = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1)");  
+            infoBd.ComandoSql("create trigger if not exists userUpdate before update on tarefas for each row set new.usuarioAlteracao = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1)");
         }
 
         private void alteraTabelas() //para cada alter table fazer o if com o valida tabela
         {
-            try{
-                if (!validaTabela("tarefas","tipoTarefa"))
+            try
+            {
+                if (!validaTabela("tarefas", "tipoTarefa"))
                 {
                     reader.Close();
                     infoBd.ComandoSql("ALTER TABLE tarefas add tipoTarefa varchar(45) NOT NULL DEFAULT 'INCONSISTÊNCIAS RELATADAS POR CLIENTES';");
@@ -158,10 +149,10 @@ namespace FormatadorDePostagens
         private Boolean validaTabela(String tabela, String coluna)
         {
             //essa função vai retornar se a coluna existe nesta tabela
-            infoBd.ComandoSql("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" + infoBd.banco +"' AND TABLE_NAME = '"+ tabela +"' AND COLUMN_NAME = '"+ coluna +"'");
+            infoBd.ComandoSql("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" + infoBd.banco + "' AND TABLE_NAME = '" + tabela + "' AND COLUMN_NAME = '" + coluna + "'");
             reader = comandoProSql.ExecuteReader();
             //reader.Read();
- 
+
             return reader.HasRows; //se existir retorna TRUE
         }
 
@@ -180,17 +171,23 @@ namespace FormatadorDePostagens
                     {
                         switch (cont)
                         {
-                            case 1: txt_banco.Text = line;
+                            case 1:
+                                txt_banco.Text = line;
                                 break;
-                            case 2: txt_nomeUsuario.Text = line;
+                            case 2:
+                                txt_nomeUsuario.Text = line;
                                 break;
-                            case 3: txt_porta.Text = line;
+                            case 3:
+                                txt_porta.Text = line;
                                 break;
-                            case 4: txt_senha.Text = line;
+                            case 4:
+                                txt_senha.Text = line;
                                 break;
-                            case 5: txt_servidor.Text = line;
+                            case 5:
+                                txt_servidor.Text = line;
                                 break;
-                            case 6: txt_user.Text = line;
+                            case 6:
+                                txt_user.Text = line;
                                 break;
                         }
                         cont++;
@@ -200,14 +197,16 @@ namespace FormatadorDePostagens
                 }
                 else
                 {
-                    MessageBox.Show("Arquivo ''"+ arquivoConfig +"'' não encontrado na pasta, configurações de conexão não serão salvas");
+                    MessageBox.Show("Arquivo ''" + arquivoConfig + "'' não encontrado na pasta, configurações de conexão não serão salvas");
                 }
-            }catch (Exception e)
+            }
+            catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
-            }finally
+            }
+            finally
             {
-                
+
             }
 
         }
@@ -248,7 +247,7 @@ namespace FormatadorDePostagens
             infoBd.Execute();
             infoBd.ConectaBanco();
             infoBd.ComandoSql("use " + infoBd.banco);
-            
+
 
             infoBd.ComandoSql("SELECT codTarefa FROM tarefas WHERE tipoTarefa = 'INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE'");
             infoBd.cnn.Open();

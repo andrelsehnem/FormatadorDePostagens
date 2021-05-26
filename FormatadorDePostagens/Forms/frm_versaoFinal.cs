@@ -1,12 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FormatadorDePostagens.Forms
@@ -28,15 +21,15 @@ namespace FormatadorDePostagens.Forms
             infoBd = temp_infoBd;
             versoesObject = temp_versoesObj;
 
-            lbl_liberacao.Text = "Liberação da versão " + versoesObject.versao + " do " + versoesObject.sistema  +".";
+            lbl_liberacao.Text = "Liberação da versão " + versoesObject.versao + " do " + versoesObject.sistema + ".";
 
             incluiTexto();
-            
+
         }
 
         private void frm_versaoFinal_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void incluiTexto()
@@ -47,7 +40,7 @@ namespace FormatadorDePostagens.Forms
 
         private void versaoFinal()
         {
-            rch_hitoricoFinal.Text = "Olá! Versão final " + tagInicio_negrito + versoesObject.versao + tagFim_negrito + " do " + tagInicio_negrito+ versoesObject.sistema + tagFim_negrito + " disponível para atualizações. \n\n";
+            rch_hitoricoFinal.Text = "Olá! Versão final " + tagInicio_negrito + versoesObject.versao + tagFim_negrito + " do " + tagInicio_negrito + versoesObject.sistema + tagFim_negrito + " disponível para atualizações. \n\n";
             if (versoesObject.naoCompativel)
             {
                 rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Não compatível com o " + versoesObject.sistemaCompatibilidade + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
@@ -60,9 +53,9 @@ namespace FormatadorDePostagens.Forms
             {
                 rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Compatível com a versão " + tagInicio_negrito + versoesObject.versaoCompatibilidade + tagFim_negrito + " do " + tagInicio_negrito + versoesObject.sistemaCompatibilidade + tagFim_negrito + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
-            
 
-            
+
+
         }
 
         private void versaoRelease()
@@ -106,7 +99,7 @@ namespace FormatadorDePostagens.Forms
                     infoBd.cnn.Open();
                     reader = infoBd.comandoProSql.ExecuteReader();
                     reader.Read();
-                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text  +"\n" + tagInicio_negrito + "INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE" + tagFim_negrito + "\n" ;
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\n" + tagInicio_negrito + "INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE" + tagFim_negrito + "\n";
                     for (int i = 0; i < numLinhas; i++)
                     {
                         codTarefa = reader.GetInt32(0);
@@ -139,7 +132,7 @@ namespace FormatadorDePostagens.Forms
                     rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\n";
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
             }
@@ -147,7 +140,7 @@ namespace FormatadorDePostagens.Forms
             //aqui fica o texto do rodapé da mensagem, onde vai validar a mensagem para compatibilidade
             if (versoesObject.naoCompativel)
             {
-                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + "Não compatível" +tagFim_negrito +" com o " + tagInicio_negrito + versoesObject.sistemaCompatibilidade + tagFim_negrito + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
+                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + "Não compatível" + tagFim_negrito + " com o " + tagInicio_negrito + versoesObject.sistemaCompatibilidade + tagFim_negrito + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
             else if (versoesObject.sistemaCompatibilidade == "Sem compatibilidade")
             {
@@ -155,7 +148,7 @@ namespace FormatadorDePostagens.Forms
             }
             else
             {
-                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Compatível com a versão " + tagInicio_negrito + versoesObject.versaoCompatibilidade + tagFim_negrito + " do " +tagInicio_negrito + versoesObject.sistemaCompatibilidade + tagFim_negrito + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
+                rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "Compatível com a versão " + tagInicio_negrito + versoesObject.versaoCompatibilidade + tagFim_negrito + " do " + tagInicio_negrito + versoesObject.sistemaCompatibilidade + tagFim_negrito + ". \n\nAtenciosamente, " + versoesObject.colaborador + ".";
             }
         }
 
@@ -182,7 +175,7 @@ namespace FormatadorDePostagens.Forms
                 tagFim_negrito = "";
                 incluiTexto();
             }
-            
+
         }
 
         private void rb_forum_CheckedChanged(object sender, EventArgs e)
