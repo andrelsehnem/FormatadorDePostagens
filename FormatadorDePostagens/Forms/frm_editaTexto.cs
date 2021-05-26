@@ -52,6 +52,7 @@ namespace FormatadorDePostagens.Forms
             try
             {
                 infoBd.ComandoSql("UPDATE tarefas  SET descricao = '" + rch_descricaoTarefa.Text + "' WHERE codTarefa =" + Convert.ToInt32(msk_codTarefa.Text));
+                MessageBox.Show("Descrição da tarefa alterada!");
                 //infoBd.cnn.Open();
             }
             catch (Exception ex)

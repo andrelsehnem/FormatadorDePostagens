@@ -1,23 +1,15 @@
 INCONSISTÊNCIAS RELATADAS POR CLIENTES:
-105919 - Ajustada inconsistência ao finalizar venda com desconto.
-107775 - Ajustada inconsistência ao realizar movimentações financeiras.
-108204 - Ajustada inconsistência na emissão de NF-e.
-108219 - Ajustada inconsistência ao gerar conciliação bancária.
-108224 - Ajustada inconsistência na pesquisa de produtos do Relatório de Vendas (produtos).
-108229 - Ajustada inconsistência na baixa parcial de Pedidos de Compras.
-108237 - Ajustada inconsistência na importação de CT-e.
-108282 - Ajustada inconsistência na exibição de Contas a Receber no Caixa Principal.
-108305 - Ajustada inconsistência ao realizar impressão de cópia DANFE do fornecedor na tela de Entradas de Mercadorias.
-108310 - Ajustada inconsistência na inclusão de funcionários no lançamento de serviços da Ordem de Serviço.
-108316 - Ajustada inconsistência no cadastro de senha de crediário para clientes.
+109833 - Ajustado inconsistência no faturamento de produtos do tipo de medicamentos, pela tela de emissão manual de saída. 
+109982 - Ajustada inconsistência no envio do link de cotação de preços, através do whatsapp.
+109758 - Ajustado inconsistência na exibição do relatório de contas a pagar pagas agrupado por detalhado forma de pag. (contaspagarpagasdetalhado.rpt)
+109983 - Ajustada inconsistência na impressão de vendas.
+110023 - Ajustado inconsistência no faturamento de vendas, onde o sistema não estava calculando corretamente o valor de st 
+110039 - Ajustada inconsitência na importação de arquivos da adquirente getnet.
+109926 - Ajustada inconsistêncoa no lançamento de ordens de serviços.
+109839 - Ajustada inconsistência ao realizar alteração diversa de produtos.
+109980 - Ajustada inconsistência na inclusão de itens no inventário para o sped fiscal.
 
 INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE:
-108018 - Ajustada inconsistência na impressão de comprovantes de recebimentos de Contas a Receber usando modalidade bancária.
-108249 - Ajustada inconsistência ao gerar Ordem de Entrega com produtos, de modalidade lote, sem estoque.
-108386 - Ajustada inconsistência na finalização da venda, com a forma de parcelamento "personalizada".
-108323 - Ajustada inconsistência na exibição dos valores totais na impressão do recibo de contas à receber.
-108317 - Ajustada inconsistência na impressão do comprovante de recebimentos no caixa em dinheiro e cheque.
+109984 - Ajustada inconsistência no desdobramento dos pagamentos sem desconto nas vendas
+109990 - Ajustada inconcistência ao recusar o valor do desconto nos orçamentos onde o valor de frete estava sendo desconciderado 
 
-CUSTOMIZAÇÕES INCLUSAS:
-107931 - Adicionado novos campos de totalizadores no relatório de ordem de produção comparativo (produção x entrada).
-108197 - Liberado campo "estoque" para personalização no relatório de orçamentos (orcamento.rpt).
