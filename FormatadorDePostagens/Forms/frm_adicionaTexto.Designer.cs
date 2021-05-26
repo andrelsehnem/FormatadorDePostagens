@@ -90,7 +90,7 @@ namespace FormatadorDePostagens.Forms
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(710, 409);
+            this.label2.Location = new System.Drawing.Point(711, 409);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 7);
             this.label2.TabIndex = 16;
@@ -100,7 +100,7 @@ namespace FormatadorDePostagens.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 418);
+            this.ClientSize = new System.Drawing.Size(794, 418);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.bt_adicionar);

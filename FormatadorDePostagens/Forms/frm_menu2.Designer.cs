@@ -239,7 +239,7 @@ namespace FormatadorDePostagens
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(407, 318);
+            this.label3.Location = new System.Drawing.Point(393, 318);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 7);
             this.label3.TabIndex = 16;
@@ -269,7 +269,7 @@ namespace FormatadorDePostagens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 325);
+            this.ClientSize = new System.Drawing.Size(476, 325);
             this.Controls.Add(this.check_naoCompativel);
             this.Controls.Add(this.bt_editarCorrecoes);
             this.Controls.Add(this.label3);
