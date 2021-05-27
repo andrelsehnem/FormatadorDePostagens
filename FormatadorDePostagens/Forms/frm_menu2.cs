@@ -122,6 +122,7 @@ namespace FormatadorDePostagens
             versaoObj.versaoFinal = versaoFinal;
             versaoObj.colaborador = colaborador;
             versaoObj.naoCompativel = naoCompativel;
+            validaVersoesAdicionais();
             versaoObj.versoesMensagem = versoesAdicionais;
         }
 
@@ -158,14 +159,8 @@ namespace FormatadorDePostagens
             {
                 msk_v1.Enabled = false;
                 msk_v2.Enabled = false;
-                msk_v3.Enabled = false;
-                msk_v4.Enabled = false;
                 check_v2.Enabled = false;
-                check_v3.Enabled = false;
-                check_v4.Enabled = false;
                 check_v2.Checked = false;
-                check_v3.Checked = false;
-                check_v4.Checked = false;
             }
         }
 
@@ -185,11 +180,8 @@ namespace FormatadorDePostagens
             {
                 msk_v2.Enabled = false;
                 msk_v3.Enabled = false;
-                msk_v4.Enabled = false;
                 check_v3.Enabled = false;
-                check_v4.Enabled = false;
                 check_v3.Checked = false;
-                check_v4.Checked = false;
             }
         }
 
@@ -223,6 +215,7 @@ namespace FormatadorDePostagens
 
         private void validaVersoesAdicionais()
         {
+            versoesAdicionais = "'" + versao + "'";
             if (check_v1.Checked)
             {
                 if (msk_v1.Text == " .  .  .")
@@ -232,7 +225,7 @@ namespace FormatadorDePostagens
                 }
                 else
                 {
-                    versoesAdicionais = msk_v1.Text;
+                    versoesAdicionais = versoesAdicionais + "," + "'" + msk_v1.Text + "'";
                 }
             }
             
@@ -245,7 +238,7 @@ namespace FormatadorDePostagens
                 }
                 else
                 {
-                    versoesAdicionais = versoesAdicionais + "," + msk_v2.Text;
+                    versoesAdicionais = versoesAdicionais + "," + "'" + msk_v2.Text + "'";
                 }
             }
 
@@ -258,7 +251,7 @@ namespace FormatadorDePostagens
                 }
                 else
                 {
-                    versoesAdicionais = versoesAdicionais + "," + msk_v3.Text;
+                    versoesAdicionais = versoesAdicionais + "," + "'" + msk_v3.Text + "'";
                 }
             }
 
@@ -271,7 +264,7 @@ namespace FormatadorDePostagens
                 }
                 else
                 {
-                    versoesAdicionais = versoesAdicionais + "," + msk_v4.Text;
+                    versoesAdicionais = versoesAdicionais + "," + "'" +msk_v4.Text + "'";
                 }
             }
         }
