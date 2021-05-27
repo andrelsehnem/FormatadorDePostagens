@@ -12,6 +12,7 @@ namespace FormatadorDePostagens
         public String sistemaCompatibilidade = "";
         public String colaborador = "";
         public Boolean naoCompativel = false;
+        public string versoesAdicionais = "";
 
         public Boolean validado = false;
 
@@ -121,6 +122,7 @@ namespace FormatadorDePostagens
             versaoObj.versaoFinal = versaoFinal;
             versaoObj.colaborador = colaborador;
             versaoObj.naoCompativel = naoCompativel;
+            versaoObj.versoesMensagem = versoesAdicionais;
         }
 
         private void rbt_semCompat_CheckedChanged(object sender, EventArgs e)
@@ -142,6 +144,136 @@ namespace FormatadorDePostagens
             setVers();
             Forms.frm_editaTexto frm = new Forms.frm_editaTexto(versaoObj, infoBd);
             frm.Show();
+        }
+
+        private void check_v1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_v1.Checked)
+            {
+                msk_v1.Enabled = true;
+                check_v2.Enabled = true;
+                
+            }
+            else
+            {
+                msk_v1.Enabled = false;
+                msk_v2.Enabled = false;
+                msk_v3.Enabled = false;
+                msk_v4.Enabled = false;
+                check_v2.Enabled = false;
+                check_v3.Enabled = false;
+                check_v4.Enabled = false;
+                check_v2.Checked = false;
+                check_v3.Checked = false;
+                check_v4.Checked = false;
+            }
+        }
+
+        private void gbox_versoesAdicionais_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void check_v2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_v2.Checked)
+            {
+                msk_v2.Enabled = true;
+                check_v3.Enabled = true ;
+            }
+            else
+            {
+                msk_v2.Enabled = false;
+                msk_v3.Enabled = false;
+                msk_v4.Enabled = false;
+                check_v3.Enabled = false;
+                check_v4.Enabled = false;
+                check_v3.Checked = false;
+                check_v4.Checked = false;
+            }
+        }
+
+        private void check_v3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_v3.Checked)
+            {
+                msk_v3.Enabled = true;
+                check_v4.Enabled = true;
+            }
+            else
+            {
+                msk_v3.Enabled = false;
+                msk_v4.Enabled = false;
+                check_v4.Enabled = false;
+                check_v4.Checked = false;
+            }
+        }
+
+        private void check_v4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_v4.Checked)
+            {
+                msk_v4.Enabled = true;
+            }
+            else
+            {
+                msk_v4.Enabled = false;
+            }
+        }
+
+        private void validaVersoesAdicionais()
+        {
+            if (check_v1.Checked)
+            {
+                if (msk_v1.Text == " .  .  .")
+                {
+                    MessageBox.Show("Informe uma versão correta!");
+                    return;
+                }
+                else
+                {
+                    versoesAdicionais = msk_v1.Text;
+                }
+            }
+            
+            if (check_v2.Checked)
+            {
+                if (msk_v2.Text == " .  .  .")
+                {
+                    MessageBox.Show("Informe uma versão correta!");
+                    return;
+                }
+                else
+                {
+                    versoesAdicionais = versoesAdicionais + "," + msk_v2.Text;
+                }
+            }
+
+            if (check_v3.Checked)
+            {
+                if (msk_v3.Text == " .  .  .")
+                {
+                    MessageBox.Show("Informe uma versão correta!");
+                    return;
+                }
+                else
+                {
+                    versoesAdicionais = versoesAdicionais + "," + msk_v3.Text;
+                }
+            }
+
+            if (check_v4.Checked)
+            {
+                if (msk_v4.Text == " .  .  .")
+                {
+                    MessageBox.Show("Informe uma versão correta!");
+                    return;
+                }
+                else
+                {
+                    versoesAdicionais = versoesAdicionais + "," + msk_v4.Text;
+                }
+            }
         }
     }
 }

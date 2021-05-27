@@ -50,8 +50,18 @@ namespace FormatadorDePostagens
             this.label3 = new System.Windows.Forms.Label();
             this.bt_editarCorrecoes = new System.Windows.Forms.Button();
             this.check_naoCompativel = new System.Windows.Forms.CheckBox();
+            this.gbox_versoesAdicionais = new System.Windows.Forms.GroupBox();
+            this.check_v4 = new System.Windows.Forms.CheckBox();
+            this.check_v3 = new System.Windows.Forms.CheckBox();
+            this.check_v2 = new System.Windows.Forms.CheckBox();
+            this.check_v1 = new System.Windows.Forms.CheckBox();
+            this.msk_v4 = new System.Windows.Forms.MaskedTextBox();
+            this.msk_v3 = new System.Windows.Forms.MaskedTextBox();
+            this.msk_v2 = new System.Windows.Forms.MaskedTextBox();
+            this.msk_v1 = new System.Windows.Forms.MaskedTextBox();
             this.gbox_Sistema.SuspendLayout();
             this.gbox_compatibilidade.SuspendLayout();
+            this.gbox_versoesAdicionais.SuspendLayout();
             this.SuspendLayout();
             // 
             // rbt_mycommerce
@@ -84,7 +94,7 @@ namespace FormatadorDePostagens
             this.gbox_Sistema.Controls.Add(this.rbt_mycommerce);
             this.gbox_Sistema.Location = new System.Drawing.Point(12, 58);
             this.gbox_Sistema.Name = "gbox_Sistema";
-            this.gbox_Sistema.Size = new System.Drawing.Size(160, 253);
+            this.gbox_Sistema.Size = new System.Drawing.Size(160, 171);
             this.gbox_Sistema.TabIndex = 5;
             this.gbox_Sistema.TabStop = false;
             this.gbox_Sistema.Text = "Sistema a ser liberado";
@@ -136,7 +146,7 @@ namespace FormatadorDePostagens
             this.gbox_compatibilidade.Controls.Add(this.rbt_compat_pdv);
             this.gbox_compatibilidade.Location = new System.Drawing.Point(188, 58);
             this.gbox_compatibilidade.Name = "gbox_compatibilidade";
-            this.gbox_compatibilidade.Size = new System.Drawing.Size(153, 252);
+            this.gbox_compatibilidade.Size = new System.Drawing.Size(153, 171);
             this.gbox_compatibilidade.TabIndex = 9;
             this.gbox_compatibilidade.TabStop = false;
             this.gbox_compatibilidade.Text = "Compatibilidade";
@@ -206,7 +216,7 @@ namespace FormatadorDePostagens
             // 
             // bt_adicionar
             // 
-            this.bt_adicionar.Location = new System.Drawing.Point(356, 72);
+            this.bt_adicionar.Location = new System.Drawing.Point(355, 58);
             this.bt_adicionar.Name = "bt_adicionar";
             this.bt_adicionar.Size = new System.Drawing.Size(109, 45);
             this.bt_adicionar.TabIndex = 12;
@@ -216,7 +226,7 @@ namespace FormatadorDePostagens
             // 
             // bt_visualizar
             // 
-            this.bt_visualizar.Location = new System.Drawing.Point(356, 184);
+            this.bt_visualizar.Location = new System.Drawing.Point(355, 160);
             this.bt_visualizar.Name = "bt_visualizar";
             this.bt_visualizar.Size = new System.Drawing.Size(109, 45);
             this.bt_visualizar.TabIndex = 14;
@@ -226,7 +236,7 @@ namespace FormatadorDePostagens
             // 
             // bt_fechar
             // 
-            this.bt_fechar.Location = new System.Drawing.Point(356, 239);
+            this.bt_fechar.Location = new System.Drawing.Point(356, 251);
             this.bt_fechar.Name = "bt_fechar";
             this.bt_fechar.Size = new System.Drawing.Size(109, 45);
             this.bt_fechar.TabIndex = 15;
@@ -247,7 +257,7 @@ namespace FormatadorDePostagens
             // 
             // bt_editarCorrecoes
             // 
-            this.bt_editarCorrecoes.Location = new System.Drawing.Point(356, 128);
+            this.bt_editarCorrecoes.Location = new System.Drawing.Point(356, 109);
             this.bt_editarCorrecoes.Name = "bt_editarCorrecoes";
             this.bt_editarCorrecoes.Size = new System.Drawing.Size(109, 45);
             this.bt_editarCorrecoes.TabIndex = 13;
@@ -265,11 +275,114 @@ namespace FormatadorDePostagens
             this.check_naoCompativel.Text = "Não compativel";
             this.check_naoCompativel.UseVisualStyleBackColor = true;
             // 
+            // gbox_versoesAdicionais
+            // 
+            this.gbox_versoesAdicionais.Controls.Add(this.check_v4);
+            this.gbox_versoesAdicionais.Controls.Add(this.check_v3);
+            this.gbox_versoesAdicionais.Controls.Add(this.check_v2);
+            this.gbox_versoesAdicionais.Controls.Add(this.check_v1);
+            this.gbox_versoesAdicionais.Controls.Add(this.msk_v4);
+            this.gbox_versoesAdicionais.Controls.Add(this.msk_v3);
+            this.gbox_versoesAdicionais.Controls.Add(this.msk_v2);
+            this.gbox_versoesAdicionais.Controls.Add(this.msk_v1);
+            this.gbox_versoesAdicionais.Location = new System.Drawing.Point(15, 235);
+            this.gbox_versoesAdicionais.Name = "gbox_versoesAdicionais";
+            this.gbox_versoesAdicionais.Size = new System.Drawing.Size(326, 77);
+            this.gbox_versoesAdicionais.TabIndex = 17;
+            this.gbox_versoesAdicionais.TabStop = false;
+            this.gbox_versoesAdicionais.Text = "Mensagens de versões a serem liberadas junto";
+            this.gbox_versoesAdicionais.Enter += new System.EventHandler(this.gbox_versoesAdicionais_Enter);
+            // 
+            // check_v4
+            // 
+            this.check_v4.AutoSize = true;
+            this.check_v4.Enabled = false;
+            this.check_v4.Location = new System.Drawing.Point(179, 53);
+            this.check_v4.Name = "check_v4";
+            this.check_v4.Size = new System.Drawing.Size(15, 14);
+            this.check_v4.TabIndex = 25;
+            this.check_v4.UseVisualStyleBackColor = true;
+            this.check_v4.CheckedChanged += new System.EventHandler(this.check_v4_CheckedChanged);
+            // 
+            // check_v3
+            // 
+            this.check_v3.AutoSize = true;
+            this.check_v3.Enabled = false;
+            this.check_v3.Location = new System.Drawing.Point(179, 27);
+            this.check_v3.Name = "check_v3";
+            this.check_v3.Size = new System.Drawing.Size(15, 14);
+            this.check_v3.TabIndex = 24;
+            this.check_v3.UseVisualStyleBackColor = true;
+            this.check_v3.CheckedChanged += new System.EventHandler(this.check_v3_CheckedChanged);
+            // 
+            // check_v2
+            // 
+            this.check_v2.AutoSize = true;
+            this.check_v2.Enabled = false;
+            this.check_v2.Location = new System.Drawing.Point(6, 53);
+            this.check_v2.Name = "check_v2";
+            this.check_v2.Size = new System.Drawing.Size(15, 14);
+            this.check_v2.TabIndex = 23;
+            this.check_v2.UseVisualStyleBackColor = true;
+            this.check_v2.CheckedChanged += new System.EventHandler(this.check_v2_CheckedChanged);
+            // 
+            // check_v1
+            // 
+            this.check_v1.AutoSize = true;
+            this.check_v1.Location = new System.Drawing.Point(6, 27);
+            this.check_v1.Name = "check_v1";
+            this.check_v1.Size = new System.Drawing.Size(15, 14);
+            this.check_v1.TabIndex = 22;
+            this.check_v1.UseVisualStyleBackColor = true;
+            this.check_v1.CheckedChanged += new System.EventHandler(this.check_v1_CheckedChanged);
+            // 
+            // msk_v4
+            // 
+            this.msk_v4.BeepOnError = true;
+            this.msk_v4.Enabled = false;
+            this.msk_v4.Location = new System.Drawing.Point(200, 50);
+            this.msk_v4.Mask = "9,99,99,9999";
+            this.msk_v4.Name = "msk_v4";
+            this.msk_v4.Size = new System.Drawing.Size(106, 20);
+            this.msk_v4.TabIndex = 21;
+            // 
+            // msk_v3
+            // 
+            this.msk_v3.BeepOnError = true;
+            this.msk_v3.Enabled = false;
+            this.msk_v3.Location = new System.Drawing.Point(200, 24);
+            this.msk_v3.Mask = "9,99,99,9999";
+            this.msk_v3.Name = "msk_v3";
+            this.msk_v3.Size = new System.Drawing.Size(106, 20);
+            this.msk_v3.TabIndex = 20;
+            // 
+            // msk_v2
+            // 
+            this.msk_v2.BeepOnError = true;
+            this.msk_v2.Enabled = false;
+            this.msk_v2.Location = new System.Drawing.Point(27, 50);
+            this.msk_v2.Mask = "9,99,99,9999";
+            this.msk_v2.Name = "msk_v2";
+            this.msk_v2.Size = new System.Drawing.Size(106, 20);
+            this.msk_v2.TabIndex = 19;
+            // 
+            // msk_v1
+            // 
+            this.msk_v1.BeepOnError = true;
+            this.msk_v1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.msk_v1.Enabled = false;
+            this.msk_v1.Location = new System.Drawing.Point(27, 24);
+            this.msk_v1.Mask = "9,99,99,9999";
+            this.msk_v1.Name = "msk_v1";
+            this.msk_v1.Size = new System.Drawing.Size(106, 20);
+            this.msk_v1.TabIndex = 18;
+            // 
             // frm_menu2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 325);
+            this.Controls.Add(this.gbox_versoesAdicionais);
             this.Controls.Add(this.check_naoCompativel);
             this.Controls.Add(this.bt_editarCorrecoes);
             this.Controls.Add(this.label3);
@@ -294,6 +407,8 @@ namespace FormatadorDePostagens
             this.gbox_Sistema.PerformLayout();
             this.gbox_compatibilidade.ResumeLayout(false);
             this.gbox_compatibilidade.PerformLayout();
+            this.gbox_versoesAdicionais.ResumeLayout(false);
+            this.gbox_versoesAdicionais.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,5 +435,14 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.RadioButton rbt_omni;
         private System.Windows.Forms.CheckBox check_naoCompativel;
         private System.Windows.Forms.RadioButton rbt_semCompat;
+        private System.Windows.Forms.GroupBox gbox_versoesAdicionais;
+        private System.Windows.Forms.CheckBox check_v4;
+        private System.Windows.Forms.CheckBox check_v3;
+        private System.Windows.Forms.CheckBox check_v2;
+        private System.Windows.Forms.CheckBox check_v1;
+        private System.Windows.Forms.MaskedTextBox msk_v4;
+        private System.Windows.Forms.MaskedTextBox msk_v3;
+        private System.Windows.Forms.MaskedTextBox msk_v2;
+        private System.Windows.Forms.MaskedTextBox msk_v1;
     }
 }
