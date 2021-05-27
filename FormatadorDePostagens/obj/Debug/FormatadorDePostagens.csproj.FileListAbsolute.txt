@@ -117,3 +117,4 @@ D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\pt-BR\Formatad
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.csproj.CopyComplete
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.exe
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.pdb
+E:\Documentos\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_editaTexto.resources

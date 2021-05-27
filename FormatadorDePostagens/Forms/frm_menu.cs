@@ -137,7 +137,7 @@ namespace FormatadorDePostagens
                 if (!validaTabela("tarefas", "tipoTarefa"))
                 {
                     reader.Close();
-                    infoBd.ComandoSql("ALTER TABLE tarefas add tipoTarefa varchar(45) NOT NULL DEFAULT 'INCONSISTÊNCIAS RELATADAS POR CLIENTES';");
+                    infoBd.ComandoSql("ALTER TABLE tarefas add tipoTarefa varchar(50) NOT NULL DEFAULT 'INCONSISTÊNCIAS RELATADAS POR CLIENTES';");
                 }
             }
             catch

@@ -13,6 +13,7 @@ namespace FormatadorDePostagens.Forms
         static Versoes versoesObj = new Versoes();
         public BancoInfos infosBd = new BancoInfos();
         private String tipoTarefa;
+        private String cmdSql = "";
 
         public frm_adicionaTexto(Versoes tmp_versoesObj, BancoInfos tmp_infosBd)
         {
@@ -96,7 +97,8 @@ namespace FormatadorDePostagens.Forms
                             else
                             {
                                 infosBd.cnn.Close();
-                                infosBd.ComandoSql("INSERT INTO tarefas (codTarefa, descricao, sistema, versao, compatibilidade, versaoCompat,pc, tipoTarefa) VALUES (" + Convert.ToInt32(codTarefa) + ",'" + descricaoT + "','" + versoesObj.sistema + "', '" + versoesObj.versao + "', '" + versoesObj.sistemaCompatibilidade + "', '" + versoesObj.versaoCompatibilidade + "','" + infosBd.pcName + "', '" + tipoTarefa + "')");
+                                cmdSql = "INSERT INTO tarefas (codTarefa, descricao, sistema, versao, compatibilidade, versaoCompat,pc, tipoTarefa) VALUES (" + Convert.ToInt64(codTarefa) + ",'" + descricaoT + "','" + versoesObj.sistema + "', '" + versoesObj.versao + "', '" + versoesObj.sistemaCompatibilidade + "', '" + versoesObj.versaoCompatibilidade + "','" + infosBd.pcName + "', '" + tipoTarefa + "')";
+                                infosBd.ComandoSql(cmdSql);
                             }
 
                             line = sr.ReadLine();
@@ -119,7 +121,6 @@ namespace FormatadorDePostagens.Forms
 
         private void jogaTxt()//nesse eu só to jogando pro arquivo .txt
         {
-            //vai ter que pegar um jeito de contar quantas linhas tem no richtext e fazer um loop com base nela dai inserir linha por linha
             try
             {
                 if (System.IO.File.Exists(nomeArquivo))
