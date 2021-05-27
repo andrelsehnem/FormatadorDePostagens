@@ -14,6 +14,7 @@ namespace FormatadorDePostagens
         public MySqlDataReader reader;
         private String nomeDoComputador;
         public String arquivoConfig = "Config.txt";
+        private Boolean valido = false;
 
         public frm_menu()
         {
@@ -59,8 +60,9 @@ namespace FormatadorDePostagens
 
         private void bt_criarBD_Click(object sender, EventArgs e)
         {
+            setInfosBanco();
             criaBD();
-            abreMenu2();
+            if (valido) abreMenu2();
         }
 
         private void abreMenu2()
@@ -100,6 +102,7 @@ namespace FormatadorDePostagens
                 infoBd.ComandoSql(cmd);
                 infoBd.ComandoSql("use " + infoBd.banco);
                 criaTabelas();
+                valido = true;
             }
             catch
             {
@@ -148,10 +151,19 @@ namespace FormatadorDePostagens
 
         private Boolean validaTabela(String tabela, String coluna)
         {
+
             //essa função vai retornar se a coluna existe nesta tabela
             infoBd.ComandoSql("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" + infoBd.banco + "' AND TABLE_NAME = '" + tabela + "' AND COLUMN_NAME = '" + coluna + "'");
-            reader = comandoProSql.ExecuteReader();
-            //reader.Read();
+            try
+            {
+                infoBd.cnn.Open();
+                reader = comandoProSql.ExecuteReader();
+                reader.Read();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
             return reader.HasRows; //se existir retorna TRUE
         }

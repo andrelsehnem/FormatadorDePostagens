@@ -22,7 +22,6 @@ namespace FormatadorDePostagens.Forms
             txt_sistema.Text = versaoObj.sistema;
             txt_versao.Text = versaoObj.versao;
             infoBd.Execute();
-
         }
 
         private void frm_editaTexto_Load(object sender, EventArgs e)
@@ -33,6 +32,7 @@ namespace FormatadorDePostagens.Forms
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void bt_gravar_Click(object sender, EventArgs e)
