@@ -85,6 +85,7 @@ namespace FormatadorDePostagens.Forms
                         rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + codTarefa + tagFim_negrito + " - " + desc + "\n";
                         reader.Read();
                     }
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\n";
                 }
 
                 //aqui valda se tem bugs internos
@@ -99,7 +100,7 @@ namespace FormatadorDePostagens.Forms
                     infoBd.cnn.Open();
                     reader = infoBd.comandoProSql.ExecuteReader();
                     reader.Read();
-                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\n" + tagInicio_negrito + "INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE" + tagFim_negrito + "\n";
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + "INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE" + tagFim_negrito + "\n";
                     for (int i = 0; i < numLinhas; i++)
                     {
                         codTarefa = reader.GetInt32(0);
@@ -107,6 +108,7 @@ namespace FormatadorDePostagens.Forms
                         rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + codTarefa + tagFim_negrito + " - " + desc + "\n";
                         reader.Read();
                     }
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\n";
                 }
 
                 //aqui valda se tem customizações
