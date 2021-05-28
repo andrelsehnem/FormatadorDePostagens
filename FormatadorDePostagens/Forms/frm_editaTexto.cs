@@ -32,7 +32,6 @@ namespace FormatadorDePostagens.Forms
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            
         }
 
         private void bt_gravar_Click(object sender, EventArgs e)

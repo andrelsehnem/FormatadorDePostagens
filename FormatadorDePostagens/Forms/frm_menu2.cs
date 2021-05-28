@@ -145,7 +145,7 @@ namespace FormatadorDePostagens
             setVers();
             Forms.frm_editaTexto frm = new Forms.frm_editaTexto(versaoObj, infoBd);
             frm.Show();
-            this.Visible = false;
+
         }
 
         private void check_v1_CheckedChanged(object sender, EventArgs e)

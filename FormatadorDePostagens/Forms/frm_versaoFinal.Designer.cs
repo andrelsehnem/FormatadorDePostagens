@@ -46,6 +46,7 @@ namespace FormatadorDePostagens.Forms
             // 
             this.lbl_liberacao.AutoSize = true;
             this.lbl_liberacao.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_liberacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_liberacao.Location = new System.Drawing.Point(12, 9);
             this.lbl_liberacao.Name = "lbl_liberacao";
             this.lbl_liberacao.Size = new System.Drawing.Size(111, 29);
@@ -63,6 +64,8 @@ namespace FormatadorDePostagens.Forms
             // 
             // rch_hitoricoFinal
             // 
+            this.rch_hitoricoFinal.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.rch_hitoricoFinal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.rch_hitoricoFinal.Location = new System.Drawing.Point(15, 61);
             this.rch_hitoricoFinal.Name = "rch_hitoricoFinal";
             this.rch_hitoricoFinal.ReadOnly = true;
@@ -83,21 +86,31 @@ namespace FormatadorDePostagens.Forms
             // 
             // bt_cancelar
             // 
-            this.bt_cancelar.Location = new System.Drawing.Point(670, 363);
+            this.bt_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
+            this.bt_cancelar.Location = new System.Drawing.Point(670, 365);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(108, 42);
             this.bt_cancelar.TabIndex = 3;
             this.bt_cancelar.Text = "Fechar";
-            this.bt_cancelar.UseVisualStyleBackColor = true;
+            this.bt_cancelar.UseVisualStyleBackColor = false;
             this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
             // 
             // gbox_formatacao
             // 
+            this.gbox_formatacao.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.gbox_formatacao.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbox_formatacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.gbox_formatacao.Controls.Add(this.rb_forum);
             this.gbox_formatacao.Controls.Add(this.rb_workplace);
             this.gbox_formatacao.Controls.Add(this.rb_normal);
+            this.gbox_formatacao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbox_formatacao.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gbox_formatacao.Location = new System.Drawing.Point(518, 25);
+            this.gbox_formatacao.Margin = new System.Windows.Forms.Padding(0);
             this.gbox_formatacao.Name = "gbox_formatacao";
+            this.gbox_formatacao.Padding = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.gbox_formatacao.Size = new System.Drawing.Size(257, 31);
             this.gbox_formatacao.TabIndex = 19;
             this.gbox_formatacao.TabStop = false;
@@ -141,6 +154,7 @@ namespace FormatadorDePostagens.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(792, 418);
             this.Controls.Add(this.gbox_formatacao);
             this.Controls.Add(this.bt_cancelar);
@@ -149,7 +163,8 @@ namespace FormatadorDePostagens.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_liberacao);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.ForeColor = System.Drawing.Color.AliceBlue;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frm_versaoFinal";

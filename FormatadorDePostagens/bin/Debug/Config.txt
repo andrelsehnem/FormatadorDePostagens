@@ -1,6 +1,6 @@
 formatador
 André Luis Sehnem
-3307
-vssql
+3306
+admin
 localhost
 root

@@ -49,6 +49,7 @@ namespace FormatadorDePostagens.Forms
             // lbl_codTarefa
             // 
             this.lbl_codTarefa.AutoSize = true;
+            this.lbl_codTarefa.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_codTarefa.Location = new System.Drawing.Point(19, 13);
             this.lbl_codTarefa.Name = "lbl_codTarefa";
             this.lbl_codTarefa.Size = new System.Drawing.Size(85, 13);
@@ -57,6 +58,8 @@ namespace FormatadorDePostagens.Forms
             // 
             // msk_codTarefa
             // 
+            this.msk_codTarefa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.msk_codTarefa.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.msk_codTarefa.Location = new System.Drawing.Point(19, 29);
             this.msk_codTarefa.Mask = "000000";
             this.msk_codTarefa.Name = "msk_codTarefa";
@@ -66,6 +69,7 @@ namespace FormatadorDePostagens.Forms
             // 
             // rch_descricaoTarefa
             // 
+            this.rch_descricaoTarefa.BackColor = System.Drawing.SystemColors.ControlDark;
             this.rch_descricaoTarefa.Location = new System.Drawing.Point(19, 82);
             this.rch_descricaoTarefa.MaxLength = 200;
             this.rch_descricaoTarefa.Name = "rch_descricaoTarefa";
@@ -76,6 +80,7 @@ namespace FormatadorDePostagens.Forms
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(19, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
@@ -84,6 +89,8 @@ namespace FormatadorDePostagens.Forms
             // 
             // bt_carregar
             // 
+            this.bt_carregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_carregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.bt_carregar.Location = new System.Drawing.Point(179, 18);
             this.bt_carregar.Name = "bt_carregar";
             this.bt_carregar.Size = new System.Drawing.Size(90, 40);
@@ -95,6 +102,7 @@ namespace FormatadorDePostagens.Forms
             // lbl_sistema
             // 
             this.lbl_sistema.AutoSize = true;
+            this.lbl_sistema.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_sistema.Location = new System.Drawing.Point(19, 291);
             this.lbl_sistema.Name = "lbl_sistema";
             this.lbl_sistema.Size = new System.Drawing.Size(44, 13);
@@ -103,6 +111,8 @@ namespace FormatadorDePostagens.Forms
             // 
             // txt_sistema
             // 
+            this.txt_sistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_sistema.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txt_sistema.Location = new System.Drawing.Point(19, 307);
             this.txt_sistema.Name = "txt_sistema";
             this.txt_sistema.ReadOnly = true;
@@ -112,6 +122,7 @@ namespace FormatadorDePostagens.Forms
             // lbl_versao
             // 
             this.lbl_versao.AutoSize = true;
+            this.lbl_versao.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_versao.Location = new System.Drawing.Point(19, 340);
             this.lbl_versao.Name = "lbl_versao";
             this.lbl_versao.Size = new System.Drawing.Size(40, 13);
@@ -120,6 +131,8 @@ namespace FormatadorDePostagens.Forms
             // 
             // txt_versao
             // 
+            this.txt_versao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_versao.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txt_versao.Location = new System.Drawing.Point(19, 356);
             this.txt_versao.Name = "txt_versao";
             this.txt_versao.ReadOnly = true;
@@ -128,6 +141,8 @@ namespace FormatadorDePostagens.Forms
             // 
             // bt_cancelar
             // 
+            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_cancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.bt_cancelar.Location = new System.Drawing.Point(179, 391);
             this.bt_cancelar.Name = "bt_cancelar";
             this.bt_cancelar.Size = new System.Drawing.Size(90, 40);
@@ -138,6 +153,8 @@ namespace FormatadorDePostagens.Forms
             // 
             // bt_gravar
             // 
+            this.bt_gravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_gravar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.bt_gravar.Location = new System.Drawing.Point(19, 391);
             this.bt_gravar.Name = "bt_gravar";
             this.bt_gravar.Size = new System.Drawing.Size(90, 40);
@@ -150,6 +167,7 @@ namespace FormatadorDePostagens.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label3.Location = new System.Drawing.Point(203, 447);
             this.label3.Name = "label3";
@@ -160,6 +178,7 @@ namespace FormatadorDePostagens.Forms
             // lbl_tipoTarefa
             // 
             this.lbl_tipoTarefa.AutoSize = true;
+            this.lbl_tipoTarefa.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_tipoTarefa.Location = new System.Drawing.Point(19, 243);
             this.lbl_tipoTarefa.Name = "lbl_tipoTarefa";
             this.lbl_tipoTarefa.Size = new System.Drawing.Size(73, 13);
@@ -168,6 +187,8 @@ namespace FormatadorDePostagens.Forms
             // 
             // txt_tipoTarefa
             // 
+            this.txt_tipoTarefa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.txt_tipoTarefa.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.txt_tipoTarefa.Location = new System.Drawing.Point(19, 259);
             this.txt_tipoTarefa.Name = "txt_tipoTarefa";
             this.txt_tipoTarefa.ReadOnly = true;
@@ -178,6 +199,7 @@ namespace FormatadorDePostagens.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(288, 458);
             this.Controls.Add(this.txt_tipoTarefa);
             this.Controls.Add(this.lbl_tipoTarefa);
@@ -193,6 +215,7 @@ namespace FormatadorDePostagens.Forms
             this.Controls.Add(this.rch_descricaoTarefa);
             this.Controls.Add(this.msk_codTarefa);
             this.Controls.Add(this.lbl_codTarefa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_editaTexto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

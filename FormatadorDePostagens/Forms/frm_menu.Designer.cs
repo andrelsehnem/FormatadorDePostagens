@@ -47,6 +47,8 @@ namespace FormatadorDePostagens
             this.bt_sair = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_nomeUsuario
@@ -57,11 +59,13 @@ namespace FormatadorDePostagens
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Name = "label1";
             // 
             // bt_conectar
             // 
             resources.ApplyResources(this.bt_conectar, "bt_conectar");
+            this.bt_conectar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.bt_conectar.Name = "bt_conectar";
             this.bt_conectar.UseVisualStyleBackColor = true;
             this.bt_conectar.Click += new System.EventHandler(this.bt_conectar_Click);
@@ -69,6 +73,7 @@ namespace FormatadorDePostagens
             // bt_criarBD
             // 
             resources.ApplyResources(this.bt_criarBD, "bt_criarBD");
+            this.bt_criarBD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.bt_criarBD.Name = "bt_criarBD";
             this.bt_criarBD.UseVisualStyleBackColor = true;
             this.bt_criarBD.Click += new System.EventHandler(this.bt_criarBD_Click);
@@ -76,26 +81,31 @@ namespace FormatadorDePostagens
             // lbl_servidor
             // 
             resources.ApplyResources(this.lbl_servidor, "lbl_servidor");
+            this.lbl_servidor.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_servidor.Name = "lbl_servidor";
             // 
             // lbl_banco
             // 
             resources.ApplyResources(this.lbl_banco, "lbl_banco");
+            this.lbl_banco.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_banco.Name = "lbl_banco";
             // 
             // lbl_porta
             // 
             resources.ApplyResources(this.lbl_porta, "lbl_porta");
+            this.lbl_porta.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_porta.Name = "lbl_porta";
             // 
             // lbl_user
             // 
             resources.ApplyResources(this.lbl_user, "lbl_user");
+            this.lbl_user.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_user.Name = "lbl_user";
             // 
             // lbl_pass
             // 
             resources.ApplyResources(this.lbl_pass, "lbl_pass");
+            this.lbl_pass.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lbl_pass.Name = "lbl_pass";
             // 
             // txt_servidor
@@ -126,6 +136,7 @@ namespace FormatadorDePostagens
             // bt_sair
             // 
             resources.ApplyResources(this.bt_sair, "bt_sair");
+            this.bt_sair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.UseVisualStyleBackColor = true;
             this.bt_sair.Click += new System.EventHandler(this.bt_sair_Click);
@@ -133,6 +144,8 @@ namespace FormatadorDePostagens
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Name = "label2";
             // 
             // button1
@@ -142,13 +155,23 @@ namespace FormatadorDePostagens
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.bt_sair);
+            this.panel1.Controls.Add(this.bt_criarBD);
+            this.panel1.Controls.Add(this.bt_conectar);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
             // frm_menu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.bt_sair);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txt_banco);
             this.Controls.Add(this.txt_senha);
             this.Controls.Add(this.txt_user);
@@ -159,16 +182,15 @@ namespace FormatadorDePostagens
             this.Controls.Add(this.lbl_porta);
             this.Controls.Add(this.lbl_banco);
             this.Controls.Add(this.lbl_servidor);
-            this.Controls.Add(this.bt_criarBD);
-            this.Controls.Add(this.bt_conectar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_nomeUsuario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frm_menu";
             this.Tag = "frmMenuLogin";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formClosing_main);
             this.Load += new System.EventHandler(this.frm_menu_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +215,7 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.Button bt_sair;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
