@@ -39,6 +39,7 @@ namespace FormatadorDePostagens.Forms
             this.rb_forum = new System.Windows.Forms.RadioButton();
             this.rb_workplace = new System.Windows.Forms.RadioButton();
             this.rb_normal = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbox_formatacao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,12 +151,26 @@ namespace FormatadorDePostagens.Forms
             this.rb_normal.UseVisualStyleBackColor = true;
             this.rb_normal.CheckedChanged += new System.EventHandler(this.rb_normal_CheckedChanged);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
+            this.button1.Location = new System.Drawing.Point(556, 365);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 42);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Palavras Maiúsculas";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frm_versaoFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(792, 418);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gbox_formatacao);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.label3);
@@ -163,7 +178,7 @@ namespace FormatadorDePostagens.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_liberacao);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ForeColor = System.Drawing.Color.AliceBlue;
+            this.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -189,5 +204,6 @@ namespace FormatadorDePostagens.Forms
         private System.Windows.Forms.RadioButton rb_forum;
         private System.Windows.Forms.RadioButton rb_workplace;
         private System.Windows.Forms.RadioButton rb_normal;
+        private System.Windows.Forms.Button button1;
     }
 }

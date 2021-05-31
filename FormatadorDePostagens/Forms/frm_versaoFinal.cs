@@ -189,5 +189,10 @@ namespace FormatadorDePostagens.Forms
                 incluiTexto();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -97,6 +97,7 @@ namespace FormatadorDePostagens.Forms
                             else
                             {
                                 infosBd.cnn.Close();
+                                descricaoT = palavraMaiuscula(descricaoT);
                                 cmdSql = "INSERT INTO tarefas (codTarefa, descricao, sistema, versao, compatibilidade, versaoCompat,pc, tipoTarefa) VALUES (" + Convert.ToInt64(codTarefa) + ",'" + descricaoT + "','" + versoesObj.sistema + "', '" + versoesObj.versao + "', '" + versoesObj.sistemaCompatibilidade + "', '" + versoesObj.versaoCompatibilidade + "','" + infosBd.pcName + "', '" + tipoTarefa + "')";
                                 infosBd.ComandoSql(cmdSql);
                             }
@@ -146,5 +147,20 @@ namespace FormatadorDePostagens.Forms
             separaTexto2();
             this.Close();
         }
+
+        private String palavraMaiuscula(String texto)
+        {
+            //faz 2 arrays, um certo e um errado
+            //dai roda pra ver se ta no errado dai ve a mesma posição no certo pra substituir
+
+
+
+            return texto;
+        }
     }
 }
+
+/*int i = 0;
+ *i = texto.IndexOf(" ");
+palavra = texto.Substring(0, i);
+*/
