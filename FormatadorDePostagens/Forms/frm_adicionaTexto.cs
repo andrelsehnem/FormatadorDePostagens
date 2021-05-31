@@ -14,6 +14,7 @@ namespace FormatadorDePostagens.Forms
         public BancoInfos infosBd = new BancoInfos();
         private String tipoTarefa;
         private String cmdSql = "";
+        private String tarefasAdicionadas = "";
 
         public frm_adicionaTexto(Versoes tmp_versoesObj, BancoInfos tmp_infosBd)
         {
@@ -47,7 +48,7 @@ namespace FormatadorDePostagens.Forms
                     StreamReader sr = new StreamReader(nomeArquivo);
                     line = sr.ReadLine();
 
-                    while (line != null) //buscar uma condição de loop melhor, acho que essa vai estar fraca
+                    while (line != null)
                     {
                         if (line == "INCONSISTÊNCIAS RELATADAS POR CLIENTES:")
                         {
@@ -100,13 +101,14 @@ namespace FormatadorDePostagens.Forms
                                 descricaoT = palavraMaiuscula(descricaoT);
                                 cmdSql = "INSERT INTO tarefas (codTarefa, descricao, sistema, versao, compatibilidade, versaoCompat,pc, tipoTarefa) VALUES (" + Convert.ToInt64(codTarefa) + ",'" + descricaoT + "','" + versoesObj.sistema + "', '" + versoesObj.versao + "', '" + versoesObj.sistemaCompatibilidade + "', '" + versoesObj.versaoCompatibilidade + "','" + infosBd.pcName + "', '" + tipoTarefa + "')";
                                 infosBd.ComandoSql(cmdSql);
+                                tarefasAdicionadas = tarefasAdicionadas + ", " + codTarefa;
                             }
 
                             line = sr.ReadLine();
                             contador = 0;
                         }
                     }
-                    MessageBox.Show("Tarefas adicionadas com sucesso");
+                    MessageBox.Show("Tarefas "+ tarefasAdicionadas + " adicionadas com sucesso!");
                     sr.Close();
                 }
                 else
@@ -148,6 +150,7 @@ namespace FormatadorDePostagens.Forms
             this.Close();
         }
 
+<<<<<<< Updated upstream
         private String palavraMaiuscula(String texto)
         {
             //faz 2 arrays, um certo e um errado
