@@ -150,12 +150,19 @@ namespace FormatadorDePostagens.Forms
             this.Close();
         }
 
-<<<<<<< Updated upstream
         private String palavraMaiuscula(String texto)
         {
             //faz 2 arrays, um certo e um errado
             //dai roda pra ver se ta no errado dai ve a mesma posição no certo pra substituir
+            int tamanhoTexto = texto.Length;
+            String[] palavrasErradas = new string[] { "nfe", "nf-e", "nfce", "nfc-e", "nfse", "nfs-e", "cte", "ct-e", "nf" };
+            String[] palavrasCertas = new string[] { "NF-e", "NF-e", "NFC-e", "NFC-e", "NFS-e", "NFS-e", "CT-e", "CT-e", "NF" };
+            int i = texto.IndexOf(" ");
+            while (i <= tamanhoTexto){
+                string palavra = texto.Substring(0, i);
 
+
+            }
 
 
             return texto;
