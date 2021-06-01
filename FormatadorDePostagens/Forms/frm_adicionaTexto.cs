@@ -99,7 +99,7 @@ namespace FormatadorDePostagens.Forms
                             else
                             {
                                 infosBd.cnn.Close();
-                                descricaoT = palavraMaiuscula(descricaoT);
+                                //descricaoT = palavraMaiuscula(descricaoT);
                                 cmdSql = "INSERT INTO tarefas (codTarefa, descricao, sistema, versao, compatibilidade, versaoCompat,pc, tipoTarefa) VALUES (" + Convert.ToInt64(codTarefa) + ",'" + descricaoT + "','" + versoesObj.sistema + "', '" + versoesObj.versao + "', '" + versoesObj.sistemaCompatibilidade + "', '" + versoesObj.versaoCompatibilidade + "','" + infosBd.pcName + "', '" + tipoTarefa + "')";
                                 infosBd.ComandoSql(cmdSql);
                                 tarefasAdicionadas = tarefasAdicionadas + ", " + codTarefa;
