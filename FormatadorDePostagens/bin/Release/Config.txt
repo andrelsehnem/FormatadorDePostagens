@@ -1,6 +1,6 @@
 formatador
-André Luis Sehnem
+Nome do colaborador
 3306
-admin
+vssql
 localhost
 root
