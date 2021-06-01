@@ -60,6 +60,7 @@ namespace FormatadorDePostagens
             this.msk_v2 = new System.Windows.Forms.MaskedTextBox();
             this.msk_v1 = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_adicionaTarefa = new System.Windows.Forms.Button();
             this.gbox_Sistema.SuspendLayout();
             this.gbox_compatibilidade.SuspendLayout();
             this.gbox_versoesAdicionais.SuspendLayout();
@@ -251,7 +252,7 @@ namespace FormatadorDePostagens
             this.bt_visualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.bt_visualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_visualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
-            this.bt_visualizar.Location = new System.Drawing.Point(9, 167);
+            this.bt_visualizar.Location = new System.Drawing.Point(9, 216);
             this.bt_visualizar.Name = "bt_visualizar";
             this.bt_visualizar.Size = new System.Drawing.Size(109, 45);
             this.bt_visualizar.TabIndex = 14;
@@ -289,7 +290,7 @@ namespace FormatadorDePostagens
             this.bt_editarCorrecoes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.bt_editarCorrecoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_editarCorrecoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
-            this.bt_editarCorrecoes.Location = new System.Drawing.Point(9, 115);
+            this.bt_editarCorrecoes.Location = new System.Drawing.Point(9, 165);
             this.bt_editarCorrecoes.Name = "bt_editarCorrecoes";
             this.bt_editarCorrecoes.Size = new System.Drawing.Size(109, 45);
             this.bt_editarCorrecoes.TabIndex = 13;
@@ -431,6 +432,7 @@ namespace FormatadorDePostagens
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.bt_adicionaTarefa);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.bt_editarCorrecoes);
             this.panel1.Controls.Add(this.bt_fechar);
@@ -440,6 +442,19 @@ namespace FormatadorDePostagens
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(125, 325);
             this.panel1.TabIndex = 18;
+            // 
+            // bt_adicionaTarefa
+            // 
+            this.bt_adicionaTarefa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.bt_adicionaTarefa.Enabled = false;
+            this.bt_adicionaTarefa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_adicionaTarefa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
+            this.bt_adicionaTarefa.Location = new System.Drawing.Point(9, 114);
+            this.bt_adicionaTarefa.Name = "bt_adicionaTarefa";
+            this.bt_adicionaTarefa.Size = new System.Drawing.Size(109, 45);
+            this.bt_adicionaTarefa.TabIndex = 17;
+            this.bt_adicionaTarefa.Text = "Adicionar Tarefa";
+            this.bt_adicionaTarefa.UseVisualStyleBackColor = false;
             // 
             // frm_menu2
             // 
@@ -508,5 +523,6 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.MaskedTextBox msk_v2;
         private System.Windows.Forms.MaskedTextBox msk_v1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button bt_adicionaTarefa;
     }
 }

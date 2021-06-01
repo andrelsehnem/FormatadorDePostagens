@@ -278,16 +278,23 @@ namespace FormatadorDePostagens
                 }
                 MessageBox.Show(palavra);
 
-                for (int cont = 7; cont < palavrasErradas.Length; cont++)
+                for (int cont = 8; cont < palavrasErradas.Length; cont++)
                 {
                     if (palavra == palavrasErradas[cont])
                     {
                         palavra = palavrasCertas[cont];
                     }
                 }
-                if (i == texto.Length) descricao = palavra + ".";
-                else descricao = palavra + " ";
-                ult = i + 1;
+                if (i == texto.Length)
+                {
+                    ult = i;
+                    descricao = palavra + ".";
+                }
+                else
+                {
+                    ult = i + 1;
+                    descricao = descricao + palavra + " ";
+                }
                 i = texto.IndexOf(" ", ult);
                 if (i == -1) i = texto.Length;
                 MessageBox.Show(descricao);
