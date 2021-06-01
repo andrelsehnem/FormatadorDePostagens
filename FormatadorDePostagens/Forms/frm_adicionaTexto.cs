@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.IO;
 using System.Windows.Forms;
 
@@ -152,16 +153,32 @@ namespace FormatadorDePostagens.Forms
 
         private String palavraMaiuscula(String texto)
         {
+            return texto; //remover essa depois
             //faz 2 arrays, um certo e um errado
             //dai roda pra ver se ta no errado dai ve a mesma posição no certo pra substituir
-            int tamanhoTexto = texto.Length;
             String[] palavrasErradas = new string[] { "nfe", "nf-e", "nfce", "nfc-e", "nfse", "nfs-e", "cte", "ct-e", "nf" };
             String[] palavrasCertas = new string[] { "NF-e", "NF-e", "NFC-e", "NFC-e", "NFS-e", "NFS-e", "CT-e", "CT-e", "NF" };
+            String descricao = ""; //aqui vai ir juntando as palavras pra fazer o texto de volta;
             int i = texto.IndexOf(" ");
-            while (i <= tamanhoTexto){
-                string palavra = texto.Substring(0, i);
+            int ult = 1;
+            string palavra = "";
+            while (i <= texto.Length)
+            {
+                if (ult == 1) palavra = texto.Substring(ult - 1, i - ult + 1);
+                else palavra = texto.Substring(ult, i - ult);
 
-
+                for (int cont = 0; cont < palavrasErradas.Length; cont++)
+                {
+                    if (palavra == palavrasErradas[cont])
+                    {
+                        palavra = palavrasCertas[cont];
+                    }
+                }
+                if (i == texto.Length) descricao = palavra + ".";
+                else descricao = palavra + " ";
+                ult = i + 1;
+                i = texto.IndexOf(" ", ult);
+                if (i == -1) i = texto.Length;
             }
 
 
