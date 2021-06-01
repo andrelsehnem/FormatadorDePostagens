@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
-using System.Collections;
 
 namespace FormatadorDePostagens
 {
@@ -146,7 +145,7 @@ namespace FormatadorDePostagens
             }
             catch
             {
-                MessageBox.Show("Tabelas atualizadas!");
+                
             }
         }
 
@@ -217,11 +216,6 @@ namespace FormatadorDePostagens
             {
                 MessageBox.Show(e.ToString());
             }
-            finally
-            {
-
-            }
-
         }
 
         private void setTxt()
@@ -256,8 +250,7 @@ namespace FormatadorDePostagens
 
         private void button1_Click(object sender, EventArgs e) //usado somente para testes
         {
-            
-            
+
         }
     }
 }

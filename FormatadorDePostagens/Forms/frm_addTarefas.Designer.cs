@@ -42,7 +42,7 @@ namespace FormatadorDePostagens.Forms
             this.bt_gravar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_tipoTarefa = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.combo_tarefa = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbl_codTarefa
@@ -172,18 +172,19 @@ namespace FormatadorDePostagens.Forms
             this.lbl_tipoTarefa.TabIndex = 18;
             this.lbl_tipoTarefa.Text = "Tipo da tarefa";
             // 
-            // comboBox1
+            // combo_tarefa
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.combo_tarefa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.combo_tarefa.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.combo_tarefa.FormattingEnabled = true;
+            this.combo_tarefa.Items.AddRange(new object[] {
             "INCONSISTÊNCIAS RELATADAS POR CLIENTES",
             "INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE",
             "CUSTOMIZAÇÕES INCLUSAS"});
-            this.comboBox1.Location = new System.Drawing.Point(22, 260);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(247, 21);
-            this.comboBox1.TabIndex = 19;
+            this.combo_tarefa.Location = new System.Drawing.Point(22, 260);
+            this.combo_tarefa.Name = "combo_tarefa";
+            this.combo_tarefa.Size = new System.Drawing.Size(247, 21);
+            this.combo_tarefa.TabIndex = 19;
             // 
             // frm_addTarefas
             // 
@@ -191,7 +192,7 @@ namespace FormatadorDePostagens.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(288, 458);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.combo_tarefa);
             this.Controls.Add(this.lbl_tipoTarefa);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.bt_gravar);
@@ -229,6 +230,6 @@ namespace FormatadorDePostagens.Forms
         private System.Windows.Forms.Button bt_gravar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_tipoTarefa;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox combo_tarefa;
     }
 }

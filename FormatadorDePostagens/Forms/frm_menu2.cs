@@ -155,7 +155,7 @@ namespace FormatadorDePostagens
             {
                 msk_v1.Enabled = true;
                 check_v2.Enabled = true;
-                
+
             }
             else
             {
@@ -176,7 +176,7 @@ namespace FormatadorDePostagens
             if (check_v2.Checked)
             {
                 msk_v2.Enabled = true;
-                check_v3.Enabled = true ;
+                check_v3.Enabled = true;
             }
             else
             {
@@ -230,7 +230,7 @@ namespace FormatadorDePostagens
                     versoesAdicionais = versoesAdicionais + "," + "'" + msk_v1.Text + "'";
                 }
             }
-            
+
             if (check_v2.Checked)
             {
                 if (msk_v2.Text == " .  .  .")
@@ -266,15 +266,20 @@ namespace FormatadorDePostagens
                 }
                 else
                 {
-                    versoesAdicionais = versoesAdicionais + "," + "'" +msk_v4.Text + "'";
+                    versoesAdicionais = versoesAdicionais + "," + "'" + msk_v4.Text + "'";
                 }
             }
         }
 
         private void bt_adicionaTarefa_Click(object sender, EventArgs e)
         {
-            frm_addTarefas frmadd = new frm_addTarefas(versaoObj, infoBd);
-            
+            validaVersoes();
+            if (validado)
+            {
+                setVers();
+                frm_addTarefas frmadd = new frm_addTarefas(versaoObj, infoBd);
+                frmadd.Show();
+            }
         }
     }
 }

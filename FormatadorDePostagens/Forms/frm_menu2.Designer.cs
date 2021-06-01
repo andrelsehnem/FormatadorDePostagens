@@ -446,7 +446,6 @@ namespace FormatadorDePostagens
             // bt_adicionaTarefa
             // 
             this.bt_adicionaTarefa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.bt_adicionaTarefa.Enabled = false;
             this.bt_adicionaTarefa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_adicionaTarefa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
             this.bt_adicionaTarefa.Location = new System.Drawing.Point(9, 114);

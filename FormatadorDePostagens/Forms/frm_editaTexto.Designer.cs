@@ -66,6 +66,7 @@ namespace FormatadorDePostagens.Forms
             this.msk_codTarefa.Size = new System.Drawing.Size(100, 20);
             this.msk_codTarefa.TabIndex = 1;
             this.msk_codTarefa.ValidatingType = typeof(int);
+            this.msk_codTarefa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.msk_codTarefa_KeyPress);
             // 
             // rch_descricaoTarefa
             // 

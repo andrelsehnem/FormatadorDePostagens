@@ -11,9 +11,6 @@ namespace FormatadorDePostagens.Forms
         public MySqlDataReader reader;
         public Versoes versaoObj = new Versoes();
 
-        private int count1 = 0;
-        private int count2 = 0;
-
         public frm_editaTexto(Versoes temp_vers, BancoInfos temp_banco)
         {
             InitializeComponent();
@@ -62,6 +59,11 @@ namespace FormatadorDePostagens.Forms
 
         private void bt_carregar_Click(object sender, EventArgs e)
         {
+            carregarFunction();
+        }
+
+        private void carregarFunction()
+        {
             try
             {
                 infoBd.ComandoSql("SELECT t.codTarefa, t.descricao, t.tipotarefa FROM tarefas t WHERE t.codTarefa = " + Convert.ToInt32(msk_codTarefa.Text));
@@ -71,7 +73,6 @@ namespace FormatadorDePostagens.Forms
                 rch_descricaoTarefa.Text = reader.GetString(1);
                 txt_tipoTarefa.Text = reader.GetString(2);
                 reader.Close();
-
             }
             catch (Exception)
             {
@@ -79,6 +80,14 @@ namespace FormatadorDePostagens.Forms
                 //MessageBox.Show(ex.ToString());
             }
 
+        }
+
+        private void msk_codTarefa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                carregarFunction();
+            }
         }
     }
 }
