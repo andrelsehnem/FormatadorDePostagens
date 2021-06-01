@@ -255,50 +255,9 @@ namespace FormatadorDePostagens
         }
 
         private void button1_Click(object sender, EventArgs e) //usado somente para testes
-        {//Ajustada inconsistência na emissão de nfe.
-            String texto = "Ajustada inconsistência na emissão de nfe.";
-            String[] palavrasErradas = new string[] { "nfe", "nf-e", "nfce", "nfc-e", "nfse", "nfs-e", "cte", "ct-e", "nf" };
-            String[] palavrasCertas = new string[] { "NF-e", "NF-e", "NFC-e", "NFC-e", "NFS-e", "NFS-e", "CT-e", "CT-e", "NF" };
-            String descricao = ""; //aqui vai ir juntando as palavras pra fazer o texto de volta;
-            int i = texto.IndexOf(" ");
-            int ult = 1;
-            string palavra = "";
-            while (i <= texto.Length)
-            {
-                if (ult == 1) palavra = texto.Substring(ult - 1, i - ult + 1);
-                else
-                {
-                    palavra = texto.Substring(ult, i - ult);
-                    String tempPalavra = palavra;
-                    if (tempPalavra.Substring(palavra.Length-1, 1) == ".")
-                    {
-                        palavra = palavra.Substring(0, palavra.Length - 1);
-                    }
-                    //palavra.
-                }
-                MessageBox.Show(palavra);
-
-                for (int cont = 8; cont < palavrasErradas.Length; cont++)
-                {
-                    if (palavra == palavrasErradas[cont])
-                    {
-                        palavra = palavrasCertas[cont];
-                    }
-                }
-                if (i == texto.Length)
-                {
-                    ult = i;
-                    descricao = palavra + ".";
-                }
-                else
-                {
-                    ult = i + 1;
-                    descricao = descricao + palavra + " ";
-                }
-                i = texto.IndexOf(" ", ult);
-                if (i == -1) i = texto.Length;
-                MessageBox.Show(descricao);
-            }
+        {
+            
+            
         }
     }
 }

@@ -1,15 +1,25 @@
 INCONSISTÊNCIAS RELATADAS POR CLIENTES:
-109833 - Ajustado inconsistência no faturamento de produtos do tipo de medicamentos, pela tela de emissão manual de saída. 
-109982 - Ajustada inconsistência no envio do link de cotação de preços, através do whatsapp.
-109758 - Ajustado inconsistência na exibição do relatório de contas a pagar pagas agrupado por detalhado forma de pag. (contaspagarpagasdetalhado.rpt)
-109983 - Ajustada inconsistência na impressão de vendas.
-110023 - Ajustado inconsistência no faturamento de vendas, onde o sistema não estava calculando corretamente o valor de st 
-110039 - Ajustada inconsitência na importação de arquivos da adquirente getnet.
-109926 - Ajustada inconsistêncoa no lançamento de ordens de serviços.
-109839 - Ajustada inconsistência ao realizar alteração diversa de produtos.
-109980 - Ajustada inconsistência na inclusão de itens no inventário para o sped fiscal.
-
+109958 - Ajustada inconsistência ao consultar vendas na tela de consulta de vendas efetuadas em PDVs.
+109985 - Ajustada inconsistência ao aplicar desconto da tabela de preço na tela de vendas de balcão.
+110052 - Ajustada inconsistência ao adicionar produtos na venda gerada de uma condicional
+110064 - Ajustado inconsistência na inclusão de cliente do tipo produtor rural na tela de vendas, onde o sistema não estava trazendo as informações de CPF e RG
+110067 - Ajustada inconsistência ao incluir produto que possui outros códigos de barras em controle de uso e consumo.
+110071 - Ajustada inconsistência no relatório de registro de entradas filtro por cidades.
+110077 - Ajustada inconsistência na impressão de pedidos as quantidades utilizadas em produtos do tipo de controle kit.
+110121 - Ajustado inconsistência ao enviar um manifesto de carga, devido à quantidade de caracteres no campo descrição
+110151 - Ajustada inconsistência na exibição da quantidade unitária de venda de produtos na análise de compra onde não somava os kits.
+110157 - Ajustado inconsistência na edição de serviço, onde após gravar um serviço  o sistema estava exibindo registros inválidos.
+110160 - Ajustado erro ortográfico no relatório de informações financeiras de clientes, (histFin_Cli.rpt).
+110213 - Ajustado inconsistência ao abrir a administração do sistema
+110217 - Ajustada inconsistência nas comissões do supervisor após efetuar o pagamento das comissões para o vendedor
+110223 - Ajustado inconsistência do campo "fornecedor" no relatório de lista de compras. (listadecompra.rpt)
+110232 - Ajustado inconsistência na tela de ajustes fiscais, onde o sistema não estava corrigindo  corretamente a base de calculo do produto de acordo com a mix fiscal
+110238 - Ajustado inconsistência ao adicionar a descrição de outros documentos, na tela de lançamento de cte
+110240 - Ajustada inconsistência no faturamento de controle de perdas, onde trazia os valores dos produtos errado.
+110244 - Ajustada inconsistência ao alterar o nome do cliente consumidor na tela de devoluções de vendas/os.
+110292 - Ajustada inconsistência na pesquisa de produtos.
+110297 - Ajustado inconsistência no envio de e-mail de nf-e.
 INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE:
-109984 - Ajustada inconsistência no desdobramento dos pagamentos sem desconto nas vendas
-109990 - Ajustada inconcistência ao recusar o valor do desconto nos orçamentos onde o valor de frete estava sendo desconciderado 
-
+110193 - Ajustada inconsistência ao enviar WhatsApp para clientes novos.
+110300 - Ajustada inconsistência no lançamento de notas de entradas.
+110337 - Ajustado inconsistência no cálculo de impostos na emissão de nfe pelo centro de custos.

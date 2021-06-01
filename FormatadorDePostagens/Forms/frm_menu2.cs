@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FormatadorDePostagens.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace FormatadorDePostagens
@@ -268,6 +269,12 @@ namespace FormatadorDePostagens
                     versoesAdicionais = versoesAdicionais + "," + "'" +msk_v4.Text + "'";
                 }
             }
+        }
+
+        private void bt_adicionaTarefa_Click(object sender, EventArgs e)
+        {
+            frm_addTarefas frmadd = new frm_addTarefas(versaoObj, infoBd);
+            
         }
     }
 }

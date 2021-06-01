@@ -12,7 +12,7 @@ namespace FormatadorDePostagens.Forms
 {
     public partial class frm_addTarefas : Form
     {
-        public frm_addTarefas()
+        public frm_addTarefas(Versoes temp_versaoObj, BancoInfos temp_infoBd)
         {
             InitializeComponent();
         }

@@ -119,3 +119,4 @@ D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePo
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.pdb
 E:\Documentos\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_editaTexto.resources
 E:\Documentos\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_addTarefas.resources
+D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_addTarefas.resources

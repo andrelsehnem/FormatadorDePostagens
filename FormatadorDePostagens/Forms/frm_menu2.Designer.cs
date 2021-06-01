@@ -243,7 +243,7 @@ namespace FormatadorDePostagens
             this.bt_adicionar.Name = "bt_adicionar";
             this.bt_adicionar.Size = new System.Drawing.Size(109, 45);
             this.bt_adicionar.TabIndex = 12;
-            this.bt_adicionar.Text = "Adicionar Correções";
+            this.bt_adicionar.Text = "Adicionar Texto Completo";
             this.bt_adicionar.UseVisualStyleBackColor = false;
             this.bt_adicionar.Click += new System.EventHandler(this.bt_adicionar_Click);
             // 
@@ -453,8 +453,9 @@ namespace FormatadorDePostagens
             this.bt_adicionaTarefa.Name = "bt_adicionaTarefa";
             this.bt_adicionaTarefa.Size = new System.Drawing.Size(109, 45);
             this.bt_adicionaTarefa.TabIndex = 17;
-            this.bt_adicionaTarefa.Text = "Adicionar Tarefa";
+            this.bt_adicionaTarefa.Text = "Adicionar Tarefa Individual";
             this.bt_adicionaTarefa.UseVisualStyleBackColor = false;
+            this.bt_adicionaTarefa.Click += new System.EventHandler(this.bt_adicionaTarefa_Click);
             // 
             // frm_menu2
             // 
