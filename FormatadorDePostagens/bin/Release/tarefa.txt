@@ -1,1 +1,12 @@
-a
+INCONSISTÊNCIAS RELATADAS POR CLIENTES:
+109198 - Ajustada inconsistência na inclusão de orçamento ao consultar nome do cliente direto no campo código do cliente.
+109124 - Ajustado inconsistência no valor de desconto na tela de orçamento, onde não estava aplicando corretamente as percentagens de acordo com a forma de parcelamento 
+108033 - Ajustado inconsistência na impressão direta do fechamento do caixa 
+
+INCONSISTÊNCIAS ENCONTRADAS INTERNAMENTE:
+109201 - Ajustado inconsistência onde o sistema estava aplicando acréscimo em um produto que não deveria receber acréscimo na tela de orçamento.
+109207 - Ajustado inconsistência no desconto da tela de vendas, onde o sistema não estava respeitando as porcentagens.
+
+CUSTOMIZAÇÕES INCLUSAS:
+109087 - Liberados campos "cpnj" e "cpf" para personalização do rpt (movimentocontacorrente.rpt).
+108701 - Liberado campo "referencia" para personalização do relatório de provisão de estoque agrupado por fabricante (estoqueprovisaoprevenda01_f.rpt)

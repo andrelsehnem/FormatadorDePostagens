@@ -1,6 +1,6 @@
 formatador
-Nome do colaborador
+André 
 3306
-vssql
+admin
 localhost
 root

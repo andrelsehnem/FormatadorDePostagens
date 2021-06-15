@@ -123,7 +123,7 @@ namespace FormatadorDePostagens.Forms
                     infoBd.cnn.Open();
                     reader = infoBd.comandoProSql.ExecuteReader();
                     reader.Read();
-                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + "\n" + tagInicio_negrito + "CUSTOMIZAÇÕES INCLUSAS" + tagFim_negrito + "\n";
+                    rch_hitoricoFinal.Text = rch_hitoricoFinal.Text + tagInicio_negrito + "CUSTOMIZAÇÕES INCLUSAS" + tagFim_negrito + "\n";
                     for (int i = 0; i < numLinhas; i++)
                     {
                         codTarefa = reader.GetInt32(0);

@@ -16,19 +16,20 @@ namespace FormatadorDePostagens
 
         public String palavraMaiuscula(String texto)
         {
-            String[] palavrasErradas = new string[] { "nfe", "nf-e", "nfce", "nfc-e", "nfse", "nfs-e", "cte", "ct-e", "nf", "nfse", "nfs-e", "pis", "cofins", "cst", "cfop", "coi", "icmsst", "icms-st", "icms", "sped", "ncm", "ipi", "inconsitencia", "inconcistencia", "inconsitência", "inconcistência", "Ajustado" };
-            String[] palavrasCertas = new string[] { "NF-e", "NF-e", "NFC-e", "NFC-e", "NFS-e", "NFS-e", "CT-e", "CT-e", "NF", "NFS-e", "NFS-e", "PIS", "COFINS", "CST", "CFOP", "COI", "ICMS-ST", "ICMS-ST", "ICMS", "SPED", "NCM", "IPI", "inconsistência", "inconsistência", "inconsistência", "inconsistência", "Ajustada" };
+            String[] palavrasErradas = new string[] { "nfe", "nf-e", "nfce", "nfc-e", "nfse", "nfs-e", "cte", "ct-e", "nf", "nfse", "nfs-e", "pis", "cofins", "cst", "cfop", "coi", "icmsst", "icms-st", "icms", "sped", "ncm", "ipi", "inconsitencia", "inconcistencia", "inconsitência", "inconcistência", "Ajustado", "inconsistencia", "incôncistencia " };
+            String[] palavrasCertas = new string[] { "NF-e", "NF-e", "NFC-e", "NFC-e", "NFS-e", "NFS-e", "CT-e", "CT-e", "NF", "NFS-e", "NFS-e", "PIS", "COFINS", "CST", "CFOP", "COI", "ICMS-ST", "ICMS-ST", "ICMS", "SPED", "NCM", "IPI", "inconsistência", "inconsistência", "inconsistência", "inconsistência", "Ajustada", "inconsistência", "inconsistência" };
             String descricao = ""; //aqui vai ir juntando as palavras pra fazer o texto de volta;
             int i = texto.IndexOf(" ");
             int ult = 1;
             string palavra = "";
             while (i <= texto.Length)
             {
+                
                 if (ult == 1)
                 {
                     descricao = "";
                     palavra = texto.Substring(0, i);
-                }
+                }else if (i == -1) { return descricao; }
                 else
                 {
                     if (ult == i) i++;
@@ -58,7 +59,7 @@ namespace FormatadorDePostagens
                     ult = i + 1;
                     descricao = descricao + palavra + " ";
                     i = texto.IndexOf(" ", ult);
-                    if (i == -1) i = texto.Length;
+                   //if (i == -1) i = texto.Length;
                 }
             }
             return descricao;

@@ -40,12 +40,13 @@ namespace FormatadorDePostagens.Forms
         {
             String line;
             int contador = 0;
+            StreamReader sr = new StreamReader(nomeArquivo);
             try
             {
                 if (System.IO.File.Exists(nomeArquivo))
                 {
 
-                    StreamReader sr = new StreamReader(nomeArquivo);
+                    
                     line = sr.ReadLine();
 
                     while (line != null)
@@ -118,6 +119,7 @@ namespace FormatadorDePostagens.Forms
             }
             catch (Exception e)
             {
+                sr.Close();
                 MessageBox.Show(e.ToString());
             }
         }
