@@ -1,22 +1,21 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using FormatadorDePostagens.Classes;
 using MySql.Data.MySqlClient;
-using System.IO;
-using FormatadorDePostagens;
-using FormatadorDePostagens.Classes;
+using System;
+using System.Windows.Forms;
 
 namespace FormatadorDePostagens
 {
     public partial class frm_menu : Form
     {
         public String usuario = "";
-        BancoInfos infoBd = new BancoInfos();
+        private BancoInfos infoBd = new BancoInfos();
         public MySqlConnection cnn = new MySqlConnection();
         public MySqlCommand comandoProSql = new MySqlCommand();
         public MySqlDataReader reader;
         private String nomeDoComputador;
         public String arquivoConfig = "Config.txt";
         private Boolean valido = false;
+        private IniFile ini = new IniFile("Configurações.ini");
 
         public frm_menu()
         {
@@ -44,7 +43,6 @@ namespace FormatadorDePostagens
             {
                 //Cancelar o evento
                 e.Cancel = true;
-
             }
         }
 
@@ -92,7 +90,6 @@ namespace FormatadorDePostagens
             infoBd.comandoProSql = comandoProSql;
         }
 
-
         private void criaBD()
         {
             String cmd = "";
@@ -110,7 +107,6 @@ namespace FormatadorDePostagens
             {
                 MessageBox.Show("Verifique a conexão SQL");
                 return;
-
             }
 
             cmd = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador + "')";
@@ -147,13 +143,11 @@ namespace FormatadorDePostagens
             }
             catch
             {
-                
             }
         }
 
         private Boolean validaTabela(String tabela, String coluna)
         {
-
             //essa função vai retornar se a coluna existe nesta tabela
             infoBd.ComandoSql("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" + infoBd.banco + "' AND TABLE_NAME = '" + tabela + "' AND COLUMN_NAME = '" + coluna + "'");
             try
@@ -172,96 +166,26 @@ namespace FormatadorDePostagens
 
         private void getTxt()
         {
-            String line;
-            int cont = 1;
-            try
-            {
-                if (System.IO.File.Exists(arquivoConfig))
-                {
-                    StreamReader sr = new StreamReader(arquivoConfig);
-                    line = sr.ReadLine();
-
-                    while (line != null)
-                    {
-                        switch (cont)
-                        {
-                            case 1:
-                                txt_banco.Text = line;
-                                break;
-                            case 2:
-                                txt_nomeUsuario.Text = line;
-                                break;
-                            case 3:
-                                txt_porta.Text = line;
-                                break;
-                            case 4:
-                                txt_senha.Text = line;
-                                break;
-                            case 5:
-                                txt_servidor.Text = line;
-                                break;
-                            case 6:
-                                txt_user.Text = line;
-                                break;
-                        }
-                        cont++;
-                        line = sr.ReadLine();
-                    }
-                    sr.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Arquivo ''" + arquivoConfig + "'' não encontrado na pasta, configurações de conexão não serão salvas");
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
+            txt_banco.Text = ini.Read("Banco","Conexao");
+            txt_nomeUsuario.Text = ini.Read("Colaborador"); ;
+            txt_porta.Text = ini.Read("Porta", "Conexao"); ;
+            txt_senha.Text = ini.Read("Senha", "Conexao"); ;
+            txt_servidor.Text = ini.Read("Servidor", "Conexao"); ;
+            txt_user.Text = ini.Read("User", "Conexao"); ;
         }
 
         private void setTxt()
         {
-            try
-            {
-                if (System.IO.File.Exists(arquivoConfig))
-                {
-                    StreamWriter sw = new StreamWriter(arquivoConfig);
-                    sw.WriteLine(infoBd.banco);
-                    sw.WriteLine(infoBd.colaborador);
-                    sw.WriteLine(infoBd.porta);
-                    sw.WriteLine(infoBd.senha);
-                    sw.WriteLine(infoBd.servidor);
-                    sw.WriteLine(infoBd.user);
-                    sw.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Arquivo ''" + arquivoConfig + "'' não encontrado na pasta, configurações de conexão não serão salvas");
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
-            finally
-            {
-
-            }
+            ini.Write("Banco", infoBd.banco, "Conexao");
+            ini.Write("Servidor", infoBd.servidor, "Conexao");
+            ini.Write("Porta", infoBd.porta.ToString(), "Conexao");
+            ini.Write("User", infoBd.user, "Conexao");
+            ini.Write("Senha", infoBd.senha, "Conexao");
+            ini.Write("Colaborador", infoBd.colaborador);
         }
 
         private void button1_Click(object sender, EventArgs e) //usado somente para testes
         {
-          
-            IniFile ini = new IniFile("Configurações.ini");
-            ini.Write("DefaultVolume","100", "inicio");
-            ini.Write("HomePage", "http://www.google.com", "final");
-            ini.Write("animal", "cavalo");
-
-            MessageBox.Show(ini.Read("DefaultVolume", "inicio"));
-            MessageBox.Show(ini.Read("HomePage", "final"));
-            MessageBox.Show(ini.Read("animal"));
-
         }
     }
 }

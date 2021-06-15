@@ -1,6 +1,0 @@
-formatador
-André Luis Sehnem
-3306
-admin
-localhost
-root
