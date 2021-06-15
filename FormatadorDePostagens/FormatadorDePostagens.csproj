@@ -50,6 +50,9 @@
   <PropertyGroup>
     <ApplicationIcon>man_poeple_person_inspector_revisor_checker_icon_179805.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FormatadorDePostagens.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -108,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BancoInfos.cs" />
+    <Compile Include="Classes\IniFile.cs" />
     <Compile Include="Classes\Versoes.cs" />
     <Compile Include="Forms\frm_addTarefas.cs">
       <SubType>Form</SubType>

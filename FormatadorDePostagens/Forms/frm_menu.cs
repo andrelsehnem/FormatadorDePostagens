@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
+using FormatadorDePostagens;
+using FormatadorDePostagens.Classes;
 
 namespace FormatadorDePostagens
 {
@@ -250,6 +252,15 @@ namespace FormatadorDePostagens
 
         private void button1_Click(object sender, EventArgs e) //usado somente para testes
         {
+          
+            IniFile ini = new IniFile("Configurações.ini");
+            ini.Write("DefaultVolume","100", "inicio");
+            ini.Write("HomePage", "http://www.google.com", "final");
+            ini.Write("animal", "cavalo");
+
+            MessageBox.Show(ini.Read("DefaultVolume", "inicio"));
+            MessageBox.Show(ini.Read("HomePage", "final"));
+            MessageBox.Show(ini.Read("animal"));
 
         }
     }
