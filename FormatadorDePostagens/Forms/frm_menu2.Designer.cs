@@ -30,17 +30,10 @@ namespace FormatadorDePostagens
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_menu2));
-            this.rbt_mycommerce = new System.Windows.Forms.RadioButton();
-            this.rbt_mymilk = new System.Windows.Forms.RadioButton();
-            this.gbox_Sistema = new System.Windows.Forms.GroupBox();
-            this.rbt_omni = new System.Windows.Forms.RadioButton();
-            this.rbt_pdv = new System.Windows.Forms.RadioButton();
             this.msk_versao = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbox_compatibilidade = new System.Windows.Forms.GroupBox();
-            this.rbt_semCompat = new System.Windows.Forms.RadioButton();
-            this.rbt_compat_myc = new System.Windows.Forms.RadioButton();
-            this.rbt_compat_pdv = new System.Windows.Forms.RadioButton();
+            this.list_comp = new System.Windows.Forms.ListBox();
             this.check_Final = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.msk_compVersao = new System.Windows.Forms.MaskedTextBox();
@@ -61,73 +54,13 @@ namespace FormatadorDePostagens
             this.msk_v1 = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bt_adicionaTarefa = new System.Windows.Forms.Button();
-            this.gbox_Sistema.SuspendLayout();
+            this.gbox_Sistema = new System.Windows.Forms.GroupBox();
+            this.list_sistemas = new System.Windows.Forms.ListBox();
             this.gbox_compatibilidade.SuspendLayout();
             this.gbox_versoesAdicionais.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.gbox_Sistema.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // rbt_mycommerce
-            // 
-            this.rbt_mycommerce.AutoSize = true;
-            this.rbt_mycommerce.Checked = true;
-            this.rbt_mycommerce.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.rbt_mycommerce.Location = new System.Drawing.Point(5, 19);
-            this.rbt_mycommerce.Name = "rbt_mycommerce";
-            this.rbt_mycommerce.Size = new System.Drawing.Size(89, 17);
-            this.rbt_mycommerce.TabIndex = 5;
-            this.rbt_mycommerce.TabStop = true;
-            this.rbt_mycommerce.Text = "MyCommerce";
-            this.rbt_mycommerce.UseVisualStyleBackColor = true;
-            // 
-            // rbt_mymilk
-            // 
-            this.rbt_mymilk.AutoSize = true;
-            this.rbt_mymilk.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.rbt_mymilk.Location = new System.Drawing.Point(5, 42);
-            this.rbt_mymilk.Name = "rbt_mymilk";
-            this.rbt_mymilk.Size = new System.Drawing.Size(58, 17);
-            this.rbt_mymilk.TabIndex = 6;
-            this.rbt_mymilk.Text = "MyMilk";
-            this.rbt_mymilk.UseVisualStyleBackColor = true;
-            // 
-            // gbox_Sistema
-            // 
-            this.gbox_Sistema.Controls.Add(this.rbt_omni);
-            this.gbox_Sistema.Controls.Add(this.rbt_pdv);
-            this.gbox_Sistema.Controls.Add(this.rbt_mymilk);
-            this.gbox_Sistema.Controls.Add(this.rbt_mycommerce);
-            this.gbox_Sistema.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.gbox_Sistema.Location = new System.Drawing.Point(12, 58);
-            this.gbox_Sistema.Name = "gbox_Sistema";
-            this.gbox_Sistema.Size = new System.Drawing.Size(160, 171);
-            this.gbox_Sistema.TabIndex = 5;
-            this.gbox_Sistema.TabStop = false;
-            this.gbox_Sistema.Text = "Sistema a ser liberado";
-            // 
-            // rbt_omni
-            // 
-            this.rbt_omni.AutoSize = true;
-            this.rbt_omni.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.rbt_omni.Location = new System.Drawing.Point(5, 89);
-            this.rbt_omni.Name = "rbt_omni";
-            this.rbt_omni.Size = new System.Drawing.Size(71, 17);
-            this.rbt_omni.TabIndex = 8;
-            this.rbt_omni.TabStop = true;
-            this.rbt_omni.Text = "OmniMulti";
-            this.rbt_omni.UseVisualStyleBackColor = true;
-            // 
-            // rbt_pdv
-            // 
-            this.rbt_pdv.AutoSize = true;
-            this.rbt_pdv.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.rbt_pdv.Location = new System.Drawing.Point(5, 65);
-            this.rbt_pdv.Name = "rbt_pdv";
-            this.rbt_pdv.Size = new System.Drawing.Size(114, 17);
-            this.rbt_pdv.TabIndex = 7;
-            this.rbt_pdv.TabStop = true;
-            this.rbt_pdv.Text = "MyCommerce PDV";
-            this.rbt_pdv.UseVisualStyleBackColor = true;
             // 
             // msk_versao
             // 
@@ -152,9 +85,7 @@ namespace FormatadorDePostagens
             // 
             // gbox_compatibilidade
             // 
-            this.gbox_compatibilidade.Controls.Add(this.rbt_semCompat);
-            this.gbox_compatibilidade.Controls.Add(this.rbt_compat_myc);
-            this.gbox_compatibilidade.Controls.Add(this.rbt_compat_pdv);
+            this.gbox_compatibilidade.Controls.Add(this.list_comp);
             this.gbox_compatibilidade.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gbox_compatibilidade.Location = new System.Drawing.Point(188, 58);
             this.gbox_compatibilidade.Name = "gbox_compatibilidade";
@@ -163,43 +94,17 @@ namespace FormatadorDePostagens
             this.gbox_compatibilidade.TabStop = false;
             this.gbox_compatibilidade.Text = "Compatibilidade";
             // 
-            // rbt_semCompat
+            // list_comp
             // 
-            this.rbt_semCompat.AutoSize = true;
-            this.rbt_semCompat.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.rbt_semCompat.Location = new System.Drawing.Point(6, 42);
-            this.rbt_semCompat.Name = "rbt_semCompat";
-            this.rbt_semCompat.Size = new System.Drawing.Size(122, 17);
-            this.rbt_semCompat.TabIndex = 10;
-            this.rbt_semCompat.TabStop = true;
-            this.rbt_semCompat.Text = "Sem compatibilidade";
-            this.rbt_semCompat.UseVisualStyleBackColor = true;
-            this.rbt_semCompat.CheckedChanged += new System.EventHandler(this.rbt_semCompat_CheckedChanged);
-            // 
-            // rbt_compat_myc
-            // 
-            this.rbt_compat_myc.AutoSize = true;
-            this.rbt_compat_myc.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.rbt_compat_myc.Location = new System.Drawing.Point(6, 65);
-            this.rbt_compat_myc.Name = "rbt_compat_myc";
-            this.rbt_compat_myc.Size = new System.Drawing.Size(89, 17);
-            this.rbt_compat_myc.TabIndex = 11;
-            this.rbt_compat_myc.TabStop = true;
-            this.rbt_compat_myc.Text = "MyCommerce";
-            this.rbt_compat_myc.UseVisualStyleBackColor = true;
-            // 
-            // rbt_compat_pdv
-            // 
-            this.rbt_compat_pdv.AutoSize = true;
-            this.rbt_compat_pdv.Checked = true;
-            this.rbt_compat_pdv.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.rbt_compat_pdv.Location = new System.Drawing.Point(6, 19);
-            this.rbt_compat_pdv.Name = "rbt_compat_pdv";
-            this.rbt_compat_pdv.Size = new System.Drawing.Size(114, 17);
-            this.rbt_compat_pdv.TabIndex = 9;
-            this.rbt_compat_pdv.TabStop = true;
-            this.rbt_compat_pdv.Text = "MyCommerce PDV";
-            this.rbt_compat_pdv.UseVisualStyleBackColor = true;
+            this.list_comp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.list_comp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.list_comp.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.list_comp.FormattingEnabled = true;
+            this.list_comp.Location = new System.Drawing.Point(7, 20);
+            this.list_comp.Name = "list_comp";
+            this.list_comp.Size = new System.Drawing.Size(140, 143);
+            this.list_comp.TabIndex = 0;
+            this.list_comp.SelectedValueChanged += new System.EventHandler(this.list_comp_SelectedValueChanged);
             // 
             // check_Final
             // 
@@ -456,6 +361,28 @@ namespace FormatadorDePostagens
             this.bt_adicionaTarefa.UseVisualStyleBackColor = false;
             this.bt_adicionaTarefa.Click += new System.EventHandler(this.bt_adicionaTarefa_Click);
             // 
+            // gbox_Sistema
+            // 
+            this.gbox_Sistema.Controls.Add(this.list_sistemas);
+            this.gbox_Sistema.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.gbox_Sistema.Location = new System.Drawing.Point(12, 58);
+            this.gbox_Sistema.Name = "gbox_Sistema";
+            this.gbox_Sistema.Size = new System.Drawing.Size(160, 171);
+            this.gbox_Sistema.TabIndex = 5;
+            this.gbox_Sistema.TabStop = false;
+            this.gbox_Sistema.Text = "Sistema a ser liberado";
+            // 
+            // list_sistemas
+            // 
+            this.list_sistemas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.list_sistemas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.list_sistemas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.list_sistemas.FormattingEnabled = true;
+            this.list_sistemas.Location = new System.Drawing.Point(6, 22);
+            this.list_sistemas.Name = "list_sistemas";
+            this.list_sistemas.Size = new System.Drawing.Size(148, 143);
+            this.list_sistemas.TabIndex = 1;
+            // 
             // frm_menu2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,40 +406,30 @@ namespace FormatadorDePostagens
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formatador de Postagens";
             this.Load += new System.EventHandler(this.frm_menu2_Load);
-            this.gbox_Sistema.ResumeLayout(false);
-            this.gbox_Sistema.PerformLayout();
             this.gbox_compatibilidade.ResumeLayout(false);
-            this.gbox_compatibilidade.PerformLayout();
             this.gbox_versoesAdicionais.ResumeLayout(false);
             this.gbox_versoesAdicionais.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.gbox_Sistema.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.RadioButton rbt_mycommerce;
-        private System.Windows.Forms.RadioButton rbt_mymilk;
-        private System.Windows.Forms.GroupBox gbox_Sistema;
         private System.Windows.Forms.MaskedTextBox msk_versao;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbox_compatibilidade;
-        private System.Windows.Forms.RadioButton rbt_compat_pdv;
-        private System.Windows.Forms.RadioButton rbt_compat_myc;
         private System.Windows.Forms.CheckBox check_Final;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox msk_compVersao;
         private System.Windows.Forms.Button bt_adicionar;
         private System.Windows.Forms.Button bt_visualizar;
         private System.Windows.Forms.Button bt_fechar;
-        private System.Windows.Forms.RadioButton rbt_pdv;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button bt_editarCorrecoes;
-        private System.Windows.Forms.RadioButton rbt_omni;
         private System.Windows.Forms.CheckBox check_naoCompativel;
-        private System.Windows.Forms.RadioButton rbt_semCompat;
         private System.Windows.Forms.GroupBox gbox_versoesAdicionais;
         private System.Windows.Forms.CheckBox check_v4;
         private System.Windows.Forms.CheckBox check_v3;
@@ -524,5 +441,8 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.MaskedTextBox msk_v1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button bt_adicionaTarefa;
+        private System.Windows.Forms.ListBox list_comp;
+        private System.Windows.Forms.GroupBox gbox_Sistema;
+        private System.Windows.Forms.ListBox list_sistemas;
     }
 }

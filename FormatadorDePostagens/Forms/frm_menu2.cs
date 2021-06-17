@@ -1,4 +1,5 @@
-﻿using FormatadorDePostagens.Forms;
+﻿using FormatadorDePostagens.Classes;
+using FormatadorDePostagens.Forms;
 using System;
 using System.Windows.Forms;
 
@@ -14,6 +15,10 @@ namespace FormatadorDePostagens
         public String colaborador = "";
         public Boolean naoCompativel = false;
         public string versoesAdicionais = "";
+        private IniFile ini = new IniFile("Sistemas.ini");
+        private int quantidadeComp = 0 ;
+        private int quantidadeSis = 0;
+
 
         public Boolean validado = false;
 
@@ -25,12 +30,15 @@ namespace FormatadorDePostagens
             InitializeComponent();
             colaborador = temp_bcInf.colaborador;
             infoBd = temp_bcInf;
-
+            quantidadeComp = Convert.ToInt32(ini.Read("Quantidade", "Compatibilidade"));
+            quantidadeSis = Convert.ToInt32(ini.Read("Quantidade", "Sistemas"));
         }
 
         private void frm_menu2_Load(object sender, EventArgs e)
         {
             validado = false;
+            addSistema();
+            addComps();
         }
 
         private void bt_fechar_Click(object sender, EventArgs e)
@@ -73,7 +81,6 @@ namespace FormatadorDePostagens
             else
             {
                 versao = msk_versao.Text;
-                //pegar o radio button
             }
             if (msk_compVersao.Text == " .  .  .")
             {
@@ -83,7 +90,6 @@ namespace FormatadorDePostagens
             else
             {
                 versaoCompatibilidade = msk_compVersao.Text;
-                //pegar o radio button
             }
             versaoFinal = check_Final.Checked;
             naoCompativel = check_naoCompativel.Checked;
@@ -92,25 +98,12 @@ namespace FormatadorDePostagens
 
         private String validaSistema()
         {
-            String sistema = "";
-
-            if (rbt_mycommerce.Checked) sistema = rbt_mycommerce.Text;
-            else if (rbt_mymilk.Checked) sistema = rbt_mymilk.Text;
-            else if (rbt_pdv.Checked) sistema = rbt_pdv.Text;
-            else if (rbt_omni.Checked) sistema = rbt_omni.Text;
-
-            return sistema;
+            return list_sistemas.SelectedItem.ToString();
         }
 
         private String validaCompativel()
         {
-            String sistema = "";
-
-            if (rbt_compat_myc.Checked) sistema = rbt_compat_myc.Text;
-            else if (rbt_semCompat.Checked) sistema = rbt_semCompat.Text;
-            else if (rbt_compat_pdv.Checked) sistema = rbt_compat_pdv.Text;
-
-            return sistema;
+            return list_comp.SelectedItem.ToString();
         }
 
         private void setVers()
@@ -127,19 +120,6 @@ namespace FormatadorDePostagens
             versaoObj.versoesMensagem = versoesAdicionais;
         }
 
-        private void rbt_semCompat_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rbt_semCompat.Checked)
-            {
-                check_naoCompativel.Checked = false;
-                check_naoCompativel.Enabled = false;
-            }
-            else
-            {
-                check_naoCompativel.Checked = false;
-                check_naoCompativel.Enabled = true;
-            }
-        }
 
         private void bt_editarCorrecoes_Click(object sender, EventArgs e)
         {
@@ -279,6 +259,46 @@ namespace FormatadorDePostagens
                 setVers();
                 frm_addTarefas frmadd = new frm_addTarefas(versaoObj, infoBd);
                 frmadd.Show();
+            }
+        }
+
+        public void addComps()
+        {
+            int cont = 0;
+            list_comp.Items.Clear();
+            list_comp.BeginUpdate();
+            while (cont < quantidadeComp)
+            {
+                list_comp.Items.Add(ini.Read("Nome" + cont,"Compatibilidade"));
+                cont++;
+            }
+            list_comp.EndUpdate();
+        }
+
+        public void addSistema()
+        {
+            int cont = 0;
+            list_sistemas.Items.Clear();
+            list_sistemas.BeginUpdate();
+            while (cont < quantidadeSis)
+            {
+                list_sistemas.Items.Add(ini.Read("Nome" + cont, "Sistemas"));
+                cont++;
+            }
+            list_sistemas.EndUpdate();
+        }
+
+        private void list_comp_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (list_comp.SelectedItem.ToString() == "Sem compatibilidade")
+            {
+                check_naoCompativel.Checked = false;
+                check_naoCompativel.Enabled = false;
+            }
+            else
+            {
+                check_naoCompativel.Checked = false;
+                check_naoCompativel.Enabled = true;
             }
         }
     }

@@ -103,7 +103,6 @@ D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\bin\Debug\System.Buffers
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\bin\Debug\System.Memory.xml
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\bin\Debug\System.Numerics.Vectors.xml
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.csprojAssemblyReference.cache
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_adicionaTexto.resources
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_editaTexto.resources
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.frm_menu2.resources
@@ -120,3 +119,4 @@ D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePo
 E:\Documentos\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_editaTexto.resources
 E:\Documentos\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_addTarefas.resources
 D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.Forms.frm_addTarefas.resources
+D:\Dev\C#\Formatador de Postagens\FormatadorDePostagens\obj\Debug\FormatadorDePostagens.csprojAssemblyReference.cache
