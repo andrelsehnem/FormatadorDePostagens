@@ -46,7 +46,7 @@ namespace FormatadorDePostagens
             this.txt_banco = new System.Windows.Forms.TextBox();
             this.bt_sair = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_teste = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -148,19 +148,20 @@ namespace FormatadorDePostagens
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.Name = "label2";
             // 
-            // button1
+            // bt_teste
             // 
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bt_teste.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.bt_teste.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.bt_teste, "bt_teste");
+            this.bt_teste.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.bt_teste.Name = "bt_teste";
+            this.bt_teste.UseVisualStyleBackColor = true;
+            this.bt_teste.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.bt_teste);
             this.panel1.Controls.Add(this.bt_sair);
             this.panel1.Controls.Add(this.bt_criarBD);
             this.panel1.Controls.Add(this.bt_conectar);
@@ -216,7 +217,7 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.TextBox txt_banco;
         private System.Windows.Forms.Button bt_sair;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_teste;
         private System.Windows.Forms.Panel panel1;
     }
 }

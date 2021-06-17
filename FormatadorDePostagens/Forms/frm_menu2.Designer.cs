@@ -56,6 +56,7 @@ namespace FormatadorDePostagens
             this.bt_adicionaTarefa = new System.Windows.Forms.Button();
             this.gbox_Sistema = new System.Windows.Forms.GroupBox();
             this.list_sistemas = new System.Windows.Forms.ListBox();
+            this.bt_config = new System.Windows.Forms.Button();
             this.gbox_compatibilidade.SuspendLayout();
             this.gbox_versoesAdicionais.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -337,6 +338,7 @@ namespace FormatadorDePostagens
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.bt_config);
             this.panel1.Controls.Add(this.bt_adicionaTarefa);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.bt_editarCorrecoes);
@@ -382,6 +384,15 @@ namespace FormatadorDePostagens
             this.list_sistemas.Name = "list_sistemas";
             this.list_sistemas.Size = new System.Drawing.Size(148, 143);
             this.list_sistemas.TabIndex = 1;
+            // 
+            // bt_config
+            // 
+            this.bt_config.Location = new System.Drawing.Point(78, 16);
+            this.bt_config.Name = "bt_config";
+            this.bt_config.Size = new System.Drawing.Size(34, 36);
+            this.bt_config.TabIndex = 18;
+            this.bt_config.Text = "֎";
+            this.bt_config.UseVisualStyleBackColor = true;
             // 
             // frm_menu2
             // 
@@ -444,5 +455,6 @@ namespace FormatadorDePostagens
         private System.Windows.Forms.ListBox list_comp;
         private System.Windows.Forms.GroupBox gbox_Sistema;
         private System.Windows.Forms.ListBox list_sistemas;
+        private System.Windows.Forms.Button bt_config;
     }
 }
