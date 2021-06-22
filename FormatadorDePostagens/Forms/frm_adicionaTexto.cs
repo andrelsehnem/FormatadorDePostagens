@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using FormatadorDePostagens.Classes;
 
 namespace FormatadorDePostagens.Forms
 {
@@ -15,7 +16,7 @@ namespace FormatadorDePostagens.Forms
         private String tipoTarefa;
         private String cmdSql = "";
         private String tarefasAdicionadas = "";
-
+        private Erros err = new Erros();
         public frm_adicionaTexto(Versoes tmp_versoesObj, BancoInfos tmp_infosBd)
         {
             InitializeComponent();
@@ -120,7 +121,7 @@ namespace FormatadorDePostagens.Forms
             catch (Exception e)
             {
                 sr.Close();
-                MessageBox.Show(e.ToString());
+                err.verifica(e, "frm_adicionaTexto.separaTexto2");
             }
         }
 
@@ -141,7 +142,7 @@ namespace FormatadorDePostagens.Forms
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                err.verifica(e, "frm_adicionaTexto.jogaTxt");
             }
         }
 

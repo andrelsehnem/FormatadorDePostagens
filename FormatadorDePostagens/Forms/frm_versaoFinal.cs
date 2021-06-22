@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
+using FormatadorDePostagens.Classes;
 
 namespace FormatadorDePostagens.Forms
 {
@@ -13,6 +14,7 @@ namespace FormatadorDePostagens.Forms
         //ESSAS TAGS SÃO PARA FORMATAÇÃO DA MENSAGEM
         private String tagInicio_negrito = "";
         private String tagFim_negrito = "";
+        private Erros err = new Erros();
 
 
         public frm_versaoFinal(Versoes temp_versoesObj, BancoInfos temp_infoBd)
@@ -136,7 +138,7 @@ namespace FormatadorDePostagens.Forms
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                err.verifica(e, "frm_versaoFinal.versaoRelease");
             }
 
             //aqui fica o texto do rodapé da mensagem, onde vai validar a mensagem para compatibilidade

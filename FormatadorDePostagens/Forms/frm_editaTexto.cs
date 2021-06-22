@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
-
+using FormatadorDePostagens.Classes;
 namespace FormatadorDePostagens.Forms
 {
     public partial class frm_editaTexto : Form
@@ -10,6 +10,7 @@ namespace FormatadorDePostagens.Forms
         public BancoInfos infoBd;
         public MySqlDataReader reader;
         public Versoes versaoObj = new Versoes();
+        private Erros err = new Erros();
 
         public frm_editaTexto(Versoes temp_vers, BancoInfos temp_banco)
         {
@@ -53,7 +54,7 @@ namespace FormatadorDePostagens.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using FormatadorDePostagens.Classes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace FormatadorDePostagens
         public MySqlCommand comandoProSql = new MySqlCommand();
         public MySqlDataReader reader;
         public Boolean conectado = false;
+        private Erros err = new Erros();
 
         public void Execute()
         {
@@ -38,7 +40,7 @@ namespace FormatadorDePostagens
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                err.conexaoBd(ex, "BancoInfos.ComandoSql("+cmd+")");
             }
         }
 
@@ -53,7 +55,7 @@ namespace FormatadorDePostagens
             catch (Exception ex)
             {
                 MessageBox.Show("Conexão não estabelecida, verifique as informações inseridas");
-                MessageBox.Show(ex.ToString());
+                err.conexaoBd(ex,"BancoInfos.ConectaBanco " + cnn.ConnectionString);
                 return;
             }
             conectado = true;

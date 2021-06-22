@@ -16,13 +16,13 @@ namespace FormatadorDePostagens
         public String arquivoConfig = "Config.txt";
         private Boolean valido = false;
         private IniFile ini = new IniFile("Configurações.ini");
+        private Erros err = new Erros();
 
         public frm_menu()
         {
             InitializeComponent();
             getTxt();
 
-            bu
 
         }
 
@@ -144,8 +144,9 @@ namespace FormatadorDePostagens
                     infoBd.ComandoSql("ALTER TABLE tarefas add tipoTarefa varchar(50) NOT NULL DEFAULT 'INCONSISTÊNCIAS RELATADAS POR CLIENTES';");
                 }
             }
-            catch
+            catch (Exception EX)
             {
+                err.verifica(EX, "frm_MENU.alteraTabelas");
             }
         }
 
@@ -161,7 +162,7 @@ namespace FormatadorDePostagens
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                err.verifica(ex, "frm_MENU.validaTabela."+tabela+"."+coluna);
             }
 
             return reader.HasRows; //se existir retorna TRUE
