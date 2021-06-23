@@ -22,7 +22,7 @@ namespace FormatadorDePostagens
             InitializeComponent();
             getTxt();
 
-            bu
+            //bu
 
         }
 
