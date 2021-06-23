@@ -57,7 +57,7 @@ namespace FormatadorDePostagens.Forms
             infosBd.ComandoSql("SELECT * FROM tarefas WHERE tarefas.codTarefa = " + Convert.ToInt32(codTarefa) + " AND tarefas.sistema = '" + versaoObj.sistema + "'");
             infosBd.cnn.Open();
             reader = infosBd.comandoProSql.ExecuteReader();
-
+            descricaoT = versaoObj.replaceChars(descricaoT);
             if (reader.HasRows)// busca se tem linha com where tarefas.codTarefa = codTarefa and tarefas.sistema = versoesObj.sistema
             {
                 infosBd.cnn.Close();
@@ -66,7 +66,8 @@ namespace FormatadorDePostagens.Forms
             else
             {
                 infosBd.cnn.Close();
-                descricaoT = versaoObj.palavraMaiuscula(descricaoT);
+                //descricaoT = versaoObj.palavraMaiuscula(descricaoT);
+                descricaoT = versaoObj.replacePalavras(descricaoT);
                 String cmdSql = "INSERT INTO tarefas (codTarefa, descricao, sistema, versao, compatibilidade, versaoCompat,pc, tipoTarefa) VALUES (" + Convert.ToInt64(codTarefa) + ",'" + descricaoT + "','" + versaoObj.sistema + "', '" + versaoObj.versao + "', '" + versaoObj.sistemaCompatibilidade + "', '" + versaoObj.versaoCompatibilidade + "','" + infosBd.pcName + "', '" + combo_tarefa.Text + "')";
                 infosBd.ComandoSql(cmdSql);
                 MessageBox.Show("Tarefa " + codTarefa + " adicionada com sucesso!");

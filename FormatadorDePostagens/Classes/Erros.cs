@@ -14,11 +14,11 @@ namespace FormatadorDePostagens.Classes
 
 
     {
-        private Mail mail = new Mail();
+        //private Mail mail = new Mail();
         public void conexaoBd(Exception ex, String local)
         {
-            mail.enviaEmail(ex.GetBaseException().ToString(), local);
-            MessageBox.Show(ex.GetBaseException().ToString() + local);
+            //mail.enviaEmail(ex.GetBaseException().ToString(), local);
+            MessageBox.Show("Erro ocororrido em: " + local + ex.GetBaseException().ToString());
             //ex.Message
             //TargetSite
             //ex.GetType()

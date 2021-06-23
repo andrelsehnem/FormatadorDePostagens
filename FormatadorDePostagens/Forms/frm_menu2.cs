@@ -273,6 +273,7 @@ namespace FormatadorDePostagens
                 cont++;
             }
             list_comp.EndUpdate();
+            list_comp.SetSelected(0,true);
         }
 
         public void addSistema()
@@ -286,6 +287,7 @@ namespace FormatadorDePostagens
                 cont++;
             }
             list_sistemas.EndUpdate();
+            list_sistemas.SetSelected(0, true);
         }
 
         private void list_comp_SelectedValueChanged(object sender, EventArgs e)

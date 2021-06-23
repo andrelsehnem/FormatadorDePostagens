@@ -146,7 +146,7 @@ namespace FormatadorDePostagens
             }
             catch (Exception EX)
             {
-                err.verifica(EX, "frm_MENU.alteraTabelas");
+                err.verifica(EX, "frm_MENU.alteraTabelas     ");
             }
         }
 
@@ -162,7 +162,7 @@ namespace FormatadorDePostagens
             }
             catch (Exception ex)
             {
-                err.verifica(ex, "frm_MENU.validaTabela."+tabela+"."+coluna);
+                err.verifica(ex, "frm_MENU.validaTabela."+tabela+"."+coluna+ "    ") ;
             }
 
             return reader.HasRows; //se existir retorna TRUE

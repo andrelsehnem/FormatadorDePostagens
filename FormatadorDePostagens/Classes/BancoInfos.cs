@@ -40,7 +40,7 @@ namespace FormatadorDePostagens
             }
             catch (Exception ex)
             {
-                err.conexaoBd(ex, "BancoInfos.ComandoSql("+cmd+")");
+                err.conexaoBd(ex, "BancoInfos.ComandoSql("+cmd+")    ");
             }
         }
 
