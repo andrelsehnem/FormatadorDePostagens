@@ -17,8 +17,8 @@ namespace FormatadorDePostagens.Forms
             InitializeComponent();
             infoBd = temp_banco;
             versaoObj = temp_vers;
-            txt_sistema.Text = versaoObj.sistema;
-            txt_versao.Text = versaoObj.versao;
+            //txt_sistema.Text = versaoObj.sistema;
+            //txt_versao.Text = versaoObj.versao;
             infoBd.Execute();
         }
 
@@ -67,12 +67,14 @@ namespace FormatadorDePostagens.Forms
         {
             try
             {
-                infoBd.ComandoSql("SELECT t.codTarefa, t.descricao, t.tipotarefa FROM tarefas t WHERE t.codTarefa = " + Convert.ToInt32(msk_codTarefa.Text));
+                infoBd.ComandoSql("SELECT t.codTarefa, t.descricao, t.tipotarefa, t.sistema, t.versao FROM tarefas t WHERE t.codTarefa = " + Convert.ToInt32(msk_codTarefa.Text));
                 infoBd.cnn.Open();
                 reader = infoBd.comandoProSql.ExecuteReader();
                 reader.Read();
                 rch_descricaoTarefa.Text = reader.GetString(1);
                 txt_tipoTarefa.Text = reader.GetString(2);
+                txt_sistema.Text = reader.GetString(3);
+                txt_versao.Text = reader.GetString(4);
                 reader.Close();
             }
             catch (Exception)

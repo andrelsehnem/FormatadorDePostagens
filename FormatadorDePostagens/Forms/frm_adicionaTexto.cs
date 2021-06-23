@@ -21,7 +21,7 @@ namespace FormatadorDePostagens.Forms
         {
             InitializeComponent();
             versoesObj = tmp_versoesObj;
-            lbl_liberacao.Text = "Liberação da versão " + versoesObj.versao + " do " + versoesObj.sistema + ", compatível com o " + versoesObj.sistemaCompatibilidade + " (" + versoesObj.versaoCompatibilidade + ")";
+            lbl_liberacao.Text = "Liberação da versão " + versoesObj.versao + " do " + versoesObj.sistema + ".";
             infosBd = tmp_infosBd;
             comandoProSql = infosBd.comandoProSql;
             infosBd.Execute();
