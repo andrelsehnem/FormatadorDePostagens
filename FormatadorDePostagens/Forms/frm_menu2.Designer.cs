@@ -53,10 +53,10 @@ namespace FormatadorDePostagens
             this.msk_v2 = new System.Windows.Forms.MaskedTextBox();
             this.msk_v1 = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_config = new System.Windows.Forms.Button();
             this.bt_adicionaTarefa = new System.Windows.Forms.Button();
             this.gbox_Sistema = new System.Windows.Forms.GroupBox();
             this.list_sistemas = new System.Windows.Forms.ListBox();
-            this.bt_config = new System.Windows.Forms.Button();
             this.gbox_compatibilidade.SuspendLayout();
             this.gbox_versoesAdicionais.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -350,6 +350,16 @@ namespace FormatadorDePostagens
             this.panel1.Size = new System.Drawing.Size(125, 325);
             this.panel1.TabIndex = 18;
             // 
+            // bt_config
+            // 
+            this.bt_config.Location = new System.Drawing.Point(78, 16);
+            this.bt_config.Name = "bt_config";
+            this.bt_config.Size = new System.Drawing.Size(34, 36);
+            this.bt_config.TabIndex = 18;
+            this.bt_config.Text = "֎";
+            this.bt_config.UseVisualStyleBackColor = true;
+            this.bt_config.Visible = false;
+            // 
             // bt_adicionaTarefa
             // 
             this.bt_adicionaTarefa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
@@ -384,15 +394,6 @@ namespace FormatadorDePostagens
             this.list_sistemas.Name = "list_sistemas";
             this.list_sistemas.Size = new System.Drawing.Size(148, 143);
             this.list_sistemas.TabIndex = 1;
-            // 
-            // bt_config
-            // 
-            this.bt_config.Location = new System.Drawing.Point(78, 16);
-            this.bt_config.Name = "bt_config";
-            this.bt_config.Size = new System.Drawing.Size(34, 36);
-            this.bt_config.TabIndex = 18;
-            this.bt_config.Text = "֎";
-            this.bt_config.UseVisualStyleBackColor = true;
             // 
             // frm_menu2
             // 
