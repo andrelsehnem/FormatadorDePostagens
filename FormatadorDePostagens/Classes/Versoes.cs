@@ -13,10 +13,10 @@ namespace FormatadorDePostagens
         public Boolean naoCompativel = false;
         public string versoesMensagem = ""; //essa aqui recebe as versões adicionais que vão ser liberadas
 
-        public String replacePalavras(String text)
+        public String replacePalavras(String text)  
         {
-            String[] palavrasErradas = new string[] { "nfe", "nf-e", "nfce", "nfc-e", "nfse", "nfs-e", "cte", "ct-e", "nf", "nfse", "nfs-e", "pis", "cofins", "cst", "cfop", "coi", "icmsst", "icms-st", "icms", "sped", "ncm", "ipi", "inconsitencia", "inconcistencia", "inconsitência", "inconcistência", "Ajustado", "inconsistencia", "incôncistencia ", "xml", "sat" };
-            String[] palavrasCertas = new string[] { "NF-e", "NF-e", "NFC-e", "NFC-e", "NFS-e", "NFS-e", "CT-e", "CT-e", "NF", "NFS-e", "NFS-e", "PIS", "COFINS", "CST", "CFOP", "COI", "ICMS-ST", "ICMS-ST", "ICMS", "SPED", "NCM", "IPI", "inconsistência", "inconsistência", "inconsistência", "inconsistência", "Ajustada", "inconsistência", "inconsistência", "XML", "SAT" };
+            String[] palavrasErradas = new string[] { " nfe ", " nf-e ", " nfce ", " nfc-e ", " nfse ", " nfs-e ", " cte ", " ct-e ", " nf ", " nfse ", " nfs-e ", " pis ", " cofins ", " cst ", " cfop ", " coi ", " icmsst ", " icms-st ", " icms ", " sped ", " ncm ", " ipi ", " inconsitencia ", " inconcistencia ", " inconsitência ", " inconcistência ", " Ajustado ", " inconsistencia ", " incôncistencia ", " xml ", " sat ", " qr code " };
+            String[] palavrasCertas = new string[] { " NF-e ", " NF-e ", " NFC-e ", " NFC-e ", " NFS-e ", " NFS-e ", " CT-e ", " CT-e ", " NF ", " NFS-e ", " NFS-e ", " PIS ", " COFINS ", " CST ", " CFOP ", " COI ", " ICMS-ST ", " ICMS-ST ", " ICMS ", " SPED", " NCM ", " IPI ", " inconsistência ", " inconsistência ", " inconsistência ", " inconsistência ", " Ajustada ", " inconsistência ", " inconsistência ", " XML ", " SAT ", " QR Code " };
             String descricao = "";
 
             for (int i = 0; i < palavrasErradas.Length; i++)
