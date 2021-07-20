@@ -22,8 +22,6 @@ namespace FormatadorDePostagens
         {
             InitializeComponent();
             getTxt();
-
-
         }
 
         private void frm_menu_Load(object sender, EventArgs e)

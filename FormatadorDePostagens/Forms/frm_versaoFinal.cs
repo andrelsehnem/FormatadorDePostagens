@@ -26,6 +26,7 @@ namespace FormatadorDePostagens.Forms
             lbl_liberacao.Text = "Liberação da versão " + versoesObject.versao + " do " + versoesObject.sistema + ".";
 
             incluiTexto();
+            verificaNTarefas();
 
         }
 
@@ -168,6 +169,7 @@ namespace FormatadorDePostagens.Forms
                 tagInicio_negrito = "**";
                 tagFim_negrito = "**";
                 incluiTexto();
+                verificaNTarefas();
             }
         }
 
@@ -178,6 +180,7 @@ namespace FormatadorDePostagens.Forms
                 tagInicio_negrito = "";
                 tagFim_negrito = "";
                 incluiTexto();
+                verificaNTarefas();
             }
 
         }
@@ -189,8 +192,25 @@ namespace FormatadorDePostagens.Forms
                 tagInicio_negrito = "[b]";
                 tagFim_negrito = "[/b]";
                 incluiTexto();
+                verificaNTarefas();
             }
         }
 
+        private void verificaNTarefas()
+        {
+            int quantidade = 0;
+            infoBd.ComandoSql("SELECT count(t.codigo) FROM tarefas t WHERE t.sistema = '" + versoesObject.sistema + "' AND t.versao  in (" + versoesObject.versoesMensagem + ");");
+            infoBd.cnn.Open();
+            reader = infoBd.comandoProSql.ExecuteReader();
+            reader.Read();
+            quantidade = reader.GetInt32(0);
+            lbl_NumTarefas.Text = quantidade + " Tarefas Para Liberação";
+        }
+
+        private void bt_editar_Click(object sender, EventArgs e)
+        {
+            Forms.frm_editaTexto frm = new Forms.frm_editaTexto(versoesObject, infoBd);
+            frm.Show();
+        }
     }
 }

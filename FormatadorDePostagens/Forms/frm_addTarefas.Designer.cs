@@ -70,7 +70,7 @@ namespace FormatadorDePostagens.Forms
             // 
             this.rch_descricaoTarefa.BackColor = System.Drawing.SystemColors.ControlDark;
             this.rch_descricaoTarefa.Location = new System.Drawing.Point(19, 82);
-            this.rch_descricaoTarefa.MaxLength = 200;
+            this.rch_descricaoTarefa.MaxLength = 300;
             this.rch_descricaoTarefa.Name = "rch_descricaoTarefa";
             this.rch_descricaoTarefa.Size = new System.Drawing.Size(250, 145);
             this.rch_descricaoTarefa.TabIndex = 3;

@@ -72,7 +72,7 @@ namespace FormatadorDePostagens.Forms
             // 
             this.rch_descricaoTarefa.BackColor = System.Drawing.SystemColors.ControlDark;
             this.rch_descricaoTarefa.Location = new System.Drawing.Point(19, 82);
-            this.rch_descricaoTarefa.MaxLength = 200;
+            this.rch_descricaoTarefa.MaxLength = 300;
             this.rch_descricaoTarefa.Name = "rch_descricaoTarefa";
             this.rch_descricaoTarefa.Size = new System.Drawing.Size(250, 145);
             this.rch_descricaoTarefa.TabIndex = 3;
@@ -216,7 +216,8 @@ namespace FormatadorDePostagens.Forms
             this.Controls.Add(this.rch_descricaoTarefa);
             this.Controls.Add(this.msk_codTarefa);
             this.Controls.Add(this.lbl_codTarefa);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_editaTexto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

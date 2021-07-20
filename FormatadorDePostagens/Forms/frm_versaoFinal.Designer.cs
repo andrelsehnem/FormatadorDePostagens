@@ -39,6 +39,8 @@ namespace FormatadorDePostagens.Forms
             this.rb_forum = new System.Windows.Forms.RadioButton();
             this.rb_workplace = new System.Windows.Forms.RadioButton();
             this.rb_normal = new System.Windows.Forms.RadioButton();
+            this.lbl_NumTarefas = new System.Windows.Forms.Label();
+            this.bt_editar = new System.Windows.Forms.Button();
             this.gbox_formatacao.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,12 +152,36 @@ namespace FormatadorDePostagens.Forms
             this.rb_normal.UseVisualStyleBackColor = true;
             this.rb_normal.CheckedChanged += new System.EventHandler(this.rb_normal_CheckedChanged);
             // 
+            // lbl_NumTarefas
+            // 
+            this.lbl_NumTarefas.AutoSize = true;
+            this.lbl_NumTarefas.Location = new System.Drawing.Point(15, 365);
+            this.lbl_NumTarefas.Name = "lbl_NumTarefas";
+            this.lbl_NumTarefas.Size = new System.Drawing.Size(47, 13);
+            this.lbl_NumTarefas.TabIndex = 20;
+            this.lbl_NumTarefas.Text = "x tarefas";
+            // 
+            // bt_editar
+            // 
+            this.bt_editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.bt_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_editar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
+            this.bt_editar.Location = new System.Drawing.Point(556, 365);
+            this.bt_editar.Name = "bt_editar";
+            this.bt_editar.Size = new System.Drawing.Size(108, 42);
+            this.bt_editar.TabIndex = 21;
+            this.bt_editar.Text = "Editar Tarefas";
+            this.bt_editar.UseVisualStyleBackColor = false;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
+            // 
             // frm_versaoFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(792, 418);
+            this.Controls.Add(this.bt_editar);
+            this.Controls.Add(this.lbl_NumTarefas);
             this.Controls.Add(this.gbox_formatacao);
             this.Controls.Add(this.bt_cancelar);
             this.Controls.Add(this.label3);
@@ -164,7 +190,7 @@ namespace FormatadorDePostagens.Forms
             this.Controls.Add(this.lbl_liberacao);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frm_versaoFinal";
@@ -189,5 +215,7 @@ namespace FormatadorDePostagens.Forms
         private System.Windows.Forms.RadioButton rb_forum;
         private System.Windows.Forms.RadioButton rb_workplace;
         private System.Windows.Forms.RadioButton rb_normal;
+        private System.Windows.Forms.Label lbl_NumTarefas;
+        private System.Windows.Forms.Button bt_editar;
     }
 }
