@@ -118,7 +118,7 @@ namespace FormatadorDePostagens.Forms
             this.Controls.Add(this.rch_historico);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_liberacao);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_adicionaTexto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

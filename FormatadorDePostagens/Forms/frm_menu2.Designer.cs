@@ -411,7 +411,7 @@ namespace FormatadorDePostagens
             this.Controls.Add(this.label1);
             this.Controls.Add(this.msk_versao);
             this.Controls.Add(this.gbox_Sistema);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frm_menu2";

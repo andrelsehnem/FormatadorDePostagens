@@ -15,14 +15,18 @@ namespace FormatadorDePostagens
 
         public String replacePalavras(String text)  
         {
-            String[] palavrasErradas = new string[] { " nfe ", " nf-e ", " nfce ", " nfc-e ", " nfse ", " nfs-e ", " cte ", " ct-e ", " nf ", " nfse ", " nfs-e ", 
+            String[] palavrasErradas = new string[] { 
+                " nfe ", " nf-e ", " nfce ", " nfc-e ", " nfse ", " nfs-e ", " cte ", " ct-e ", " nf ", " nfse ", " nfs-e ", " xml ", " sat ",
                 " pis ", " cofins ", " cst ", " cfop ", " coi ", " icmsst ", " icms-st ", " icms ", " sped ", " ncm ", " ipi ", 
-                " inconsitencia ", " inconcistencia ", " inconsitência ", " inconcistência ", " Ajustado ", " inconsistencia ", " incôncistencia ", 
-                " xml ", " sat ", " qr code ", " inconcitência ", " f1 ", " f2 ", " f3 ", " f4 ", " f5 ", " f6 ", " f7 ", " f8 ", " f9 ", " f10 ", " f11 ", " f12 ", " o.s ", "danfe " };
-            String[] palavrasCertas = new string[] { " NF-e ", " NF-e ", " NFC-e ", " NFC-e ", " NFS-e ", " NFS-e ", " CT-e ", " CT-e ", " NF ", " NFS-e ", " NFS-e ", 
+                " inconsitencia ", " inconcistencia ", " inconsitência ", " inconcistência ", " Ajustado ", " inconsistencia ", " incôncistencia ", " inconcitência ",
+                " qr code ", " cpf ", " cnpj ",
+                " f1 ", " f2 ", " f3 ", " f4 ", " f5 ", " f6 ", " f7 ", " f8 ", " f9 ", " f10 ", " f11 ", " f12 ", " o.s ", "danfe " };
+            String[] palavrasCertas = new string[] { 
+                " NF-e ", " NF-e ", " NFC-e ", " NFC-e ", " NFS-e ", " NFS-e ", " CT-e ", " CT-e ", " NF ", " NFS-e ", " NFS-e ", " XML ", " SAT ",
                 " PIS ", " COFINS ", " CST ", " CFOP ", " COI ", " ICMS-ST ", " ICMS-ST ", " ICMS ", " SPED ", " NCM ", " IPI ", 
-                " inconsistência ", " inconsistência ", " inconsistência ", " inconsistência ", " Ajustada ", " inconsistência ", " inconsistência ", 
-                " XML ", " SAT ", " QR Code ", " inconsistência ", " F1 ", " F2 ", " F3 ", " F4 ", " F5 ", " F6 ", " F7 ", " F8 ", " F9 ", " F10 ", " F11 ", " F12 ", " O.S. " };
+                " inconsistência ", " inconsistência ", " inconsistência ", " inconsistência ", " Ajustada ", " inconsistência ", " inconsistência ", " inconsistência ",
+                 " QR Code ", " CPF ", " CNPJ ",
+                " F1 ", " F2 ", " F3 ", " F4 ", " F5 ", " F6 ", " F7 ", " F8 ", " F9 ", " F10 ", " F11 ", " F12 ", " O.S. " };
             String descricao = "";
 
             for (int i = 0; i < palavrasErradas.Length; i++)
@@ -36,8 +40,12 @@ namespace FormatadorDePostagens
         public string replaceChars(String text)
         {
              
-            String[] palavrasErradas = new String[] {"'" };
-            String[] palavrasCertas = new String[] {"''"};
+            String[] palavrasErradas = new String[] {
+                "'"
+            };
+            String[] palavrasCertas = new String[] {
+                "''"
+            };
             String descricao = "";
 
             for (int i = 0; i < palavrasErradas.Length; i++)
