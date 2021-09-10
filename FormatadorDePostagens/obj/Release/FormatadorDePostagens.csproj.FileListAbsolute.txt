@@ -116,3 +116,44 @@ E:\Documentos\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\bin\Releas
 E:\Documentos\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\ru\DevExpress.Pdf.v19.2.Core.resources.dll
 E:\Documentos\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\pt-BR\FormatadorDePostagens.resources.dll
 E:\Documentos\Projetos C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.csproj.CopyComplete
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\FormatadorDePostagens.exe.config
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\FormatadorDePostagens.exe
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\FormatadorDePostagens.pdb
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\pt-BR\FormatadorDePostagens.resources.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\BouncyCastle.Crypto.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\Google.Protobuf.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\K4os.Compression.LZ4.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\K4os.Compression.LZ4.Streams.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\K4os.Hash.xxHash.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\MySql.Data.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\System.Buffers.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\System.Memory.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\System.Numerics.Vectors.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\Ubiety.Dns.Core.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\Zstandard.Net.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\Google.Protobuf.pdb
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\Google.Protobuf.xml
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\K4os.Compression.LZ4.xml
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\K4os.Compression.LZ4.Streams.xml
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\K4os.Hash.xxHash.xml
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\MySql.Data.xml
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\System.Buffers.xml
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\System.Memory.xml
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\System.Numerics.Vectors.xml
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.Forms.frm_addTarefas.resources
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.Forms.frm_adicionaTexto.resources
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.Forms.frm_editaTexto.resources
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.frm_menu2.resources
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.frm_menu.resources
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.Forms.frm_versaoFinal.resources
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.Properties.Resources.resources
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.frm_menu.pt-BR.resources
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.csproj.GenerateResource.cache
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.csproj.CoreCompileInputs.cache
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\pt-BR\FormatadorDePostagens.resources.dll
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.csproj.CopyComplete
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.exe
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.pdb
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.csproj.AssemblyReference.cache
