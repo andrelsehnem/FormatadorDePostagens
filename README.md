@@ -3,8 +3,8 @@
 O intuito do aplicativo é formatar as correções de tarefas para inseri-las em uma mensagem pronta para ser postado aos colaboradores e clientes, facilitando e agilizando assim o trabalho repetitivo.
 
 
-Instruções de uso iniciais: 
-1- Caso seja a primeira vez usando, é necessário criar um banco de dados que será usado para armazenar as informações. Função exibida na primeira tela. 
+Instruções de uso iniciais: \n
+1- Caso seja a primeira vez usando, é necessário criar um banco de dados que será usado para armazenar as informações. Função exibida na primeira tela. \n
 2- Inserir seu nome completo, que será inserido no final da mensagem. 
 3- Selecionar o sistema que haverá a liberação e informar a vesão da mesma. 
 4- Caso seja versão final é necessário marcar o checkBox de versão final. 
