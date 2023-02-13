@@ -212,5 +212,15 @@ namespace FormatadorDePostagens.Forms
             Forms.frm_editaTexto frm = new Forms.frm_editaTexto(versoesObject, infoBd);
             frm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frm_addCompatibilidade fadd = new frm_addCompatibilidade(versoesObject, infoBd);
+        }
+
+        private void rch_hitoricoFinal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

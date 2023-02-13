@@ -157,3 +157,4 @@ D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\Formatado
 D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.exe
 D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.pdb
 D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.csproj.AssemblyReference.cache
+D:\Projetos\C#\FormatadorDePostagens\FormatadorDePostagens\obj\Release\FormatadorDePostagens.csproj.SuggestedBindingRedirects.cache

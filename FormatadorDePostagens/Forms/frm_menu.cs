@@ -55,6 +55,7 @@ namespace FormatadorDePostagens
             infoBd.ComandoSql("use " + infoBd.banco);
             String comandoLogin = "insert into log_login (pc, usuario) VALUES('" + nomeDoComputador + "', '" + infoBd.colaborador + "')";
             infoBd.ComandoSql(comandoLogin);
+            criaTabelas();
             abreMenu2();
             infoBd.cnn.Close();
         }
@@ -130,6 +131,7 @@ namespace FormatadorDePostagens
             infoBd.ComandoSql("create trigger if not exists dataUpdate before update on tarefas for each row set new.dataAlteracao = NOW()");
             //TRIGGER DE LOG PARA INSERIR NA TABELA DE TAREFAS DA VERSAO quem alterou
             infoBd.ComandoSql("create trigger if not exists userUpdate before update on tarefas for each row set new.usuarioAlteracao = (SELECT usuario FROM log_login ORDER BY codigo DESC LIMIT 1)");
+            infoBd.ComandoSql("CREATE TABLE if NOT EXISTS compatibilidades (	`id` INT(11) NOT NULL AUTO_INCREMENT,	`versao_sistema` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8_general_ci',	`sistema` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8_general_ci',	`versao_compatibilidade` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8_general_ci',	`sistema_compatibilidade` VARCHAR(50) NOT NULL DEFAULT '' COLLATE 'utf8_general_ci', `excluido` TINYINT(4) NULL DEFAULT '0',   PRIMARY KEY(`id`) USING BTREE)COLLATE = 'utf8_general_ci'ENGINE = InnoDB;            ");
         }
 
         private void alteraTabelas() //para cada alter table fazer o if com o valida tabela
